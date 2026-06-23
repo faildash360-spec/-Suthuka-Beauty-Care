@@ -1,1628 +1,1001 @@
+cat > /mnt/user-data/outputs/suthuka-beauty.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Suthuka Beauty Care - Premium skincare and beauty products from Sri Lanka. Shop face serums, night creams, body lotions and more. Islandwide delivery.">
-<meta name="keywords" content="Suthuka Beauty Care, Sri Lanka skincare, face serum, night cream, body lotion, whitening cream">
-<meta property="og:title" content="Suthuka Beauty Care | Premium Skincare Sri Lanka">
-<meta property="og:description" content="Experience radiant, glowing skin with Suthuka Beauty Care's premium skincare range. Shop now and get islandwide delivery.">
+<meta name="description" content="Suthuka Beauty Care - Premium Skincare & Beauty Products. Shop whitening creams, serums, body lotions and more. Fast islandwide delivery in Sri Lanka.">
+<meta name="keywords" content="Suthuka Beauty, skincare Sri Lanka, whitening cream, face serum, body lotion">
+<meta property="og:title" content="Suthuka Beauty Care | Premium Skincare">
+<meta property="og:description" content="Premium Sri Lankan beauty brand with quality skincare products. Order via WhatsApp for fast islandwide delivery.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://drive.google.com/file/d/1VDjFMGQBl2hhRPsQbq3E1yCDU6_q79sx/view?usp=drive_link">
-<title>Suthuka Beauty Care | Premium Skincare Sri Lanka</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Suthuka Beauty Care | Premium Skincare & Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --rose-gold: #C9956A;
-    --rose-gold-light: #E8C4A8;
-    --rose-gold-dark: #A87850;
-    --blush: #F9EEE8;
-    --blush-mid: #F2D9D0;
-    --petal: #EDB8B8;
-    --white: #FFFFFF;
-    --cream: #FDF8F5;
-    --text-dark: #2C1810;
-    --text-mid: #6B4A3A;
-    --text-light: #9E7B6D;
-    --gradient-hero: linear-gradient(135deg, #FDF0EA 0%, #F9E4E0 40%, #F2D9D0 100%);
-    --gradient-gold: linear-gradient(135deg, #C9956A 0%, #E8C4A8 50%, #C9956A 100%);
-    --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #FDF8F5 100%);
-    --shadow-soft: 0 4px 24px rgba(201,149,106,0.12);
-    --shadow-card: 0 8px 32px rgba(44,24,16,0.08);
-    --shadow-hover: 0 16px 48px rgba(201,149,106,0.2);
-  }
+:root {
+  --rose-gold: #C9956C;
+  --rose-gold-light: #E8C4A8;
+  --rose-gold-dark: #A0714F;
+  --blush: #F5DDD5;
+  --blush-deep: #EDCABF;
+  --cream: #FDF8F5;
+  --white: #FFFFFF;
+  --charcoal: #2C2320;
+  --text-muted: #7A6A65;
+  --pink-soft: #F9EBE7;
+  --border: #EDD8CF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(253,248,245,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:1200px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-img{height:44px;width:44px;object-fit:contain;border-radius:50%}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--charcoal);line-height:1.1}
+.logo-sub{font-size:0.6rem;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:400}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;color:var(--charcoal);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--rose-gold)}
+.nav-actions{display:flex;align-items:center;gap:0.75rem}
+.lang-btn{background:none;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-family:'Jost',sans-serif;font-size:0.75rem;cursor:pointer;color:var(--text-muted);transition:all .2s}
+.lang-btn.active{background:var(--rose-gold);border-color:var(--rose-gold);color:#fff}
+.cart-btn{position:relative;background:none;border:none;cursor:pointer;padding:6px;color:var(--charcoal)}
+.cart-btn svg{width:22px;height:22px}
+.cart-count{position:absolute;top:-2px;right:-2px;background:var(--rose-gold);color:#fff;font-size:0.6rem;font-weight:600;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;display:none}
+.hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--charcoal)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);padding:1.5rem;z-index:999;flex-direction:column;gap:1rem}
+.mobile-menu a{text-decoration:none;font-size:0.9rem;color:var(--charcoal);font-weight:500;padding:.5rem 0;border-bottom:1px solid var(--border)}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
+/* HERO */
+.hero{padding-top:64px;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;background:linear-gradient(135deg,#FDF0EB 0%,var(--cream) 60%)}
+.hero-content{padding:5rem 3rem 5rem 5rem;max-width:600px}
+.hero-eyebrow{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--rose-gold);margin-bottom:1.5rem;font-weight:500}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--rose-gold)}
+.hero-desc{font-size:0.95rem;color:var(--text-muted);margin-bottom:2.5rem;max-width:440px;line-height:1.8}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--rose-gold);color:#fff;border:none;padding:.85rem 2rem;font-family:'Jost',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--rose-gold-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,149,108,0.3)}
+.btn-outline{background:transparent;color:var(--rose-gold);border:1px solid var(--rose-gold);padding:.85rem 2rem;font-family:'Jost',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s;text-decoration:none;display:inline-block}
+.btn-outline:hover{background:var(--rose-gold);color:#fff}
+.hero-visual{height:100%;min-height:100svh;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--blush) 0%,var(--blush-deep) 100%)}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 30% 50%,rgba(255,255,255,0.4) 0%,transparent 60%),radial-gradient(circle at 70% 20%,rgba(201,149,108,0.12) 0%,transparent 50%)}
+.hero-badges{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;width:100%}
+.badge{background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:2px;padding:.6rem 1.2rem;font-size:0.75rem;color:var(--charcoal);display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.badge-dot{width:6px;height:6px;background:var(--rose-gold);border-radius:50%}
+.hero-logo-big{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:220px;height:220px;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.08))}
+.hero-stats{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--rose-gold)}
+.stat-label{font-size:0.75rem;color:var(--text-muted);letter-spacing:0.05em}
 
-  /* ─── Scrollbar ─── */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--blush); }
-  ::-webkit-scrollbar-thumb { background: var(--rose-gold); border-radius: 3px; }
+/* TRUST BAR */
+.trust-bar{background:var(--charcoal);padding:1.2rem 1.5rem;overflow:hidden}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;gap:3rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,0.85);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:400}
+.trust-icon{font-size:1.1rem}
 
-  /* ─── Typography ─── */
-  .display { font-family: 'Playfair Display', serif; }
-  h1,h2,h3 { font-family: 'Playfair Display', serif; }
+/* SECTION */
+section{padding:5rem 1.5rem}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--rose-gold);margin-bottom:1rem;font-weight:500}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;color:var(--charcoal);margin-bottom:1.5rem}
+.section-title em{font-style:italic;color:var(--rose-gold)}
+.section-desc{font-size:0.95rem;color:var(--text-muted);max-width:540px;line-height:1.8}
 
-  /* ─── Navbar ─── */
-  #navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    background: rgba(253,248,245,0.92);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(201,149,106,0.15);
-    transition: all 0.3s ease;
-  }
-  #navbar.scrolled {
-    background: rgba(253,248,245,0.98);
-    box-shadow: 0 2px 20px rgba(201,149,106,0.15);
-  }
-  .nav-inner {
-    max-width: 1280px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 20px;
-    gap: 16px;
-  }
-  .logo-mark {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none;
-  }
-  .logo-icon {
-    width: 38px; height: 38px;
-    background: var(--gradient-gold);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 2px 12px rgba(201,149,106,0.3);
-  }
-  .logo-text-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px; font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1.1;
-  }
-  .logo-text-sub {
-    font-size: 10px; font-weight: 400;
-    color: var(--rose-gold);
-    letter-spacing: 1.5px; text-transform: uppercase;
-  }
-  .nav-links { display: flex; gap: 6px; align-items: center; }
-  .nav-links a {
-    font-size: 14px; font-weight: 500; color: var(--text-mid);
-    text-decoration: none; padding: 7px 12px; border-radius: 8px;
-    transition: all 0.2s;
-  }
-  .nav-links a:hover { color: var(--rose-gold); background: rgba(201,149,106,0.08); }
+/* PRODUCTS */
+.products-bg{background:var(--white)}
+.products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.product-card{background:var(--cream);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .3s;position:relative}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(201,149,108,0.15);border-color:var(--rose-gold-light)}
+.product-img-wrap{aspect-ratio:1;overflow:hidden;background:linear-gradient(135deg,var(--blush) 0%,var(--blush-deep) 100%);position:relative}
+.product-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.product-card:hover .product-img{transform:scale(1.05)}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--rose-gold);color:#fff;font-size:0.65rem;padding:3px 10px;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px}
+.product-body{padding:1.25rem}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--charcoal);margin-bottom:.5rem;line-height:1.2}
+.product-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.65;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.product-benefits{margin-bottom:1rem}
+.benefit-item{font-size:0.75rem;color:var(--text-muted);display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.35rem;line-height:1.5}
+.benefit-dot{color:var(--rose-gold);flex-shrink:0;margin-top:2px}
+.product-pricing{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.price-sale{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--rose-gold)}
+.price-orig{font-size:0.82rem;color:var(--text-muted);text-decoration:line-through}
+.price-save{font-size:0.7rem;background:var(--blush);color:var(--rose-gold-dark);padding:2px 8px;border-radius:10px;font-weight:500}
+.qty-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.qty-label{font-size:0.75rem;color:var(--text-muted);letter-spacing:0.05em}
+.qty-ctrl{display:flex;align-items:center;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.qty-btn{width:32px;height:32px;background:none;border:none;cursor:pointer;font-size:1rem;color:var(--charcoal);transition:background .2s;display:flex;align-items:center;justify-content:center}
+.qty-btn:hover{background:var(--blush)}
+.qty-input{width:40px;height:32px;border:none;border-left:1px solid var(--border);border-right:1px solid var(--border);text-align:center;font-family:'Jost',sans-serif;font-size:0.85rem;color:var(--charcoal);background:var(--white)}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.btn-cart{background:var(--charcoal);color:#fff;border:none;padding:.7rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.08em;cursor:pointer;border-radius:2px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.btn-cart:hover{background:var(--rose-gold-dark)}
+.btn-wa{background:var(--rose-gold);color:#fff;border:none;padding:.7rem;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.08em;cursor:pointer;border-radius:2px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.btn-wa:hover{background:var(--rose-gold-dark)}
 
-  .nav-actions { display: flex; align-items: center; gap: 10px; }
+/* WHY US */
+.why-bg{background:linear-gradient(135deg,var(--pink-soft) 0%,var(--cream) 100%)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:2rem;margin-top:3rem}
+.why-card{text-align:center;padding:2rem 1.5rem}
+.why-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--charcoal);margin-bottom:.5rem}
+.why-text{font-size:0.82rem;color:var(--text-muted);line-height:1.7}
 
-  .lang-switcher {
-    display: flex; align-items: center; gap: 4px;
-    background: var(--blush); border-radius: 20px;
-    padding: 4px 6px; border: 1px solid rgba(201,149,106,0.2);
-  }
-  .lang-btn {
-    font-size: 12px; font-weight: 600; padding: 3px 10px;
-    border-radius: 14px; border: none; cursor: pointer;
-    transition: all 0.2s; background: transparent; color: var(--text-light);
-  }
-  .lang-btn.active {
-    background: var(--rose-gold); color: white;
-    box-shadow: 0 2px 8px rgba(201,149,106,0.4);
-  }
+/* FAQ */
+.faq-list{max-width:720px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Jost',sans-serif;font-size:0.9rem;font-weight:500;color:var(--charcoal);text-align:left;gap:1rem;transition:background .2s}
+.faq-q:hover{background:var(--blush)}
+.faq-q.open{background:var(--blush)}
+.faq-arrow{font-size:1.2rem;color:var(--rose-gold);transition:transform .3s;flex-shrink:0}
+.faq-q.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:0.85rem;color:var(--text-muted);line-height:1.8}
+.faq-a.open{display:block}
 
-  .cart-btn {
-    position: relative; background: var(--gradient-gold);
-    border: none; border-radius: 12px;
-    padding: 9px 16px; cursor: pointer;
-    display: flex; align-items: center; gap: 7px;
-    font-size: 13px; font-weight: 600; color: white;
-    box-shadow: 0 3px 12px rgba(201,149,106,0.3);
-    transition: all 0.2s;
-  }
-  .cart-btn:hover { transform: translateY(-1px); box-shadow: 0 5px 18px rgba(201,149,106,0.4); }
-  .cart-count {
-    position: absolute; top: -5px; right: -5px;
-    background: #E85D5D; color: white;
-    font-size: 10px; font-weight: 700;
-    width: 18px; height: 18px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    border: 2px solid var(--cream);
-  }
+/* CART DRAWER */
+.cart-overlay{position:fixed;inset:0;background:rgba(44,35,32,0.5);z-index:1100;display:none;opacity:0;transition:opacity .3s}
+.cart-overlay.open{display:block;opacity:1}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:min(420px,100vw);background:var(--cream);z-index:1101;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,0.12)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{padding:1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
+.cart-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-muted);padding:.25rem}
+.cart-items{flex:1;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.cart-empty{text-align:center;color:var(--text-muted);padding:3rem 1rem;font-size:0.9rem}
+.cart-row{display:grid;grid-template-columns:64px 1fr auto;gap:1rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.cart-thumb{width:64px;height:64px;object-fit:cover;border-radius:2px;background:var(--blush)}
+.cart-item-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--charcoal);margin-bottom:.25rem}
+.cart-item-price{font-size:0.8rem;color:var(--rose-gold)}
+.cart-item-qty{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.cart-qty-btn{width:24px;height:24px;background:var(--white);border:1px solid var(--border);border-radius:2px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;color:var(--charcoal)}
+.cart-qty-num{font-size:0.82rem;min-width:20px;text-align:center}
+.cart-remove{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;padding:.25rem;line-height:1}
+.cart-remove:hover{color:var(--rose-gold)}
+.cart-foot{padding:1.5rem;border-top:1px solid var(--border);background:var(--white)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.cart-total-label{font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em}
+.cart-total-price{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--rose-gold)}
+.btn-checkout{width:100%;background:var(--rose-gold);color:#fff;border:none;padding:1rem;font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;font-weight:500}
+.btn-checkout:hover{background:var(--rose-gold-dark)}
 
-  /* ─── Hamburger ─── */
-  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; background: none; border: none; }
-  .hamburger span { width: 22px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all 0.3s; display: block; }
+/* CHECKOUT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(44,35,32,0.5);z-index:1200;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--cream);border-radius:4px;max-width:520px;width:100%;max-height:90svh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,0.15)}
+.modal-head{padding:1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--cream)}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
+.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-muted)}
+.modal-body{padding:1.5rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem;font-weight:500}
+.form-input{width:100%;padding:.85rem 1rem;border:1px solid var(--border);border-radius:2px;font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--charcoal);background:var(--white);transition:border .2s;outline:none}
+.form-input:focus{border-color:var(--rose-gold)}
+.order-summary{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.25rem;margin-bottom:1.5rem}
+.order-summary-title{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
+.summary-row{display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:.5rem;color:var(--charcoal)}
+.summary-total{display:flex;justify-content:space-between;align-items:center;padding-top:.75rem;border-top:1px solid var(--border);margin-top:.75rem}
+.summary-total-label{font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)}
+.summary-total-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--rose-gold)}
+.btn-place-order{width:100%;background:#25D366;color:#fff;border:none;padding:1rem;font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.6rem}
+.btn-place-order:hover{background:#20B859}
 
-  /* ─── Mobile Menu ─── */
-  #mobile-menu {
-    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--cream); z-index: 999; padding: 80px 24px 40px;
-    flex-direction: column; gap: 8px;
-    transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  }
-  #mobile-menu.open { transform: translateX(0); }
-  #mobile-menu.shown { display: flex; }
-  #mobile-menu a {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 600; color: var(--text-dark);
-    text-decoration: none; padding: 14px 0;
-    border-bottom: 1px solid rgba(201,149,106,0.15);
-  }
+/* CONTACT */
+.contact-bg{background:var(--charcoal)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-text .section-label{color:var(--rose-gold-light)}
+.contact-text .section-title{color:var(--white)}
+.contact-text .section-desc{color:rgba(255,255,255,0.6)}
+.contact-channels{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.contact-btn{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;border-radius:2px;text-decoration:none;font-size:0.85rem;font-weight:500;transition:all .2s;letter-spacing:0.05em}
+.contact-btn-wa{background:#25D366;color:#fff}
+.contact-btn-wa:hover{background:#20B859}
+.contact-btn-call{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.contact-btn-call:hover{background:rgba(255,255,255,0.15)}
+.contact-form{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:2rem}
+.contact-form .form-label{color:rgba(255,255,255,0.7)}
+.contact-form .form-input{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff}
+.contact-form .form-input:focus{border-color:var(--rose-gold)}
+.contact-form .form-input::placeholder{color:rgba(255,255,255,0.35)}
 
-  /* ─── Hero ─── */
-  #hero {
-    min-height: 100vh;
-    background: var(--gradient-hero);
-    display: flex; align-items: center;
-    padding: 100px 20px 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero-bg-circle {
-    position: absolute; border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-inner {
-    max-width: 1280px; margin: 0 auto; width: 100%;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px; align-items: center;
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,149,106,0.12);
-    border: 1px solid rgba(201,149,106,0.25);
-    border-radius: 20px; padding: 6px 14px;
-    font-size: 12px; font-weight: 600; color: var(--rose-gold);
-    letter-spacing: 1.5px; text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .hero-title {
-    font-size: clamp(36px, 5vw, 62px);
-    line-height: 1.12; font-weight: 700;
-    color: var(--text-dark); margin-bottom: 20px;
-  }
-  .hero-title em { font-style: italic; color: var(--rose-gold); }
-  .hero-sub {
-    font-size: 17px; color: var(--text-mid); line-height: 1.7;
-    margin-bottom: 36px; max-width: 440px;
-  }
-  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--gradient-gold);
-    color: white; font-size: 15px; font-weight: 600;
-    padding: 14px 28px; border-radius: 50px; border: none;
-    cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    box-shadow: 0 6px 24px rgba(201,149,106,0.35);
-    transition: all 0.25s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,149,106,0.45); }
-  .btn-outline {
-    background: transparent; color: var(--rose-gold);
-    font-size: 15px; font-weight: 600;
-    padding: 14px 28px; border-radius: 50px;
-    border: 2px solid var(--rose-gold);
-    cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    transition: all 0.25s;
-  }
-  .btn-outline:hover { background: rgba(201,149,106,0.08); transform: translateY(-2px); }
+/* FOOTER */
+footer{background:#1A1210;padding:3rem 1.5rem 2rem;text-align:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose-gold-light);margin-bottom:.5rem;font-weight:300;font-style:italic}
+.footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{color:rgba(255,255,255,0.4);font-size:0.75rem;text-decoration:none;transition:color .2s;letter-spacing:0.05em}
+.footer-links a:hover{color:var(--rose-gold-light)}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.25)}
 
-  .hero-stats {
-    display: flex; gap: 28px; margin-top: 40px; padding-top: 32px;
-    border-top: 1px solid rgba(201,149,106,0.2);
-  }
-  .stat-item { }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--rose-gold); }
-  .stat-label { font-size: 12px; color: var(--text-light); letter-spacing: 0.5px; }
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:pulse-wa 2.5s infinite}
+.float-wa svg{width:28px;height:28px;fill:#fff}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,0.65)}}
 
-  .hero-image-wrap {
-    position: relative; display: flex; justify-content: center; align-items: center;
-  }
-  .hero-img-bg {
-    width: 380px; height: 480px; border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-    background: linear-gradient(135deg, var(--blush-mid) 0%, var(--rose-gold-light) 100%);
-    position: absolute;
-    animation: morphBlob 8s ease-in-out infinite;
-  }
-  @keyframes morphBlob {
-    0%,100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
-    33% { border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%; }
-    66% { border-radius: 50% 50% 40% 60% / 60% 50% 50% 40%; }
-  }
-  .hero-img {
-    width: 340px; height: 440px; object-fit: cover;
-    border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-    position: relative; z-index: 1;
-    box-shadow: 0 24px 60px rgba(44,24,16,0.15);
-    background: linear-gradient(160deg, #F5D6CC, #E8B8B0);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 80px;
-  }
-  .hero-badge {
-    position: absolute; top: 30px; right: -10px;
-    background: white; border-radius: 16px; padding: 12px 16px;
-    box-shadow: var(--shadow-card); z-index: 2;
-  }
-  .hero-badge-icon { font-size: 22px; }
-  .hero-badge-text { font-size: 11px; font-weight: 600; color: var(--text-dark); }
-  .hero-badge-sub { font-size: 10px; color: var(--text-light); }
+/* TOAST */
+.toast{position:fixed;bottom:5rem;right:1.5rem;background:var(--charcoal);color:#fff;padding:.85rem 1.25rem;border-radius:4px;font-size:0.82rem;z-index:2000;transform:translateY(20px);opacity:0;transition:all .3s;pointer-events:none;max-width:260px;border-left:3px solid var(--rose-gold)}
+.toast.show{transform:translateY(0);opacity:1}
 
-  /* ─── Section Common ─── */
-  .section { padding: 80px 20px; }
-  .section-inner { max-width: 1280px; margin: 0 auto; }
-  .section-header { text-align: center; margin-bottom: 52px; }
-  .section-eyebrow {
-    display: inline-block;
-    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--rose-gold); margin-bottom: 12px;
-  }
-  .section-title { font-size: clamp(28px, 4vw, 42px); color: var(--text-dark); margin-bottom: 14px; }
-  .section-sub { font-size: 16px; color: var(--text-light); max-width: 520px; margin: 0 auto; line-height: 1.7; }
-
-  /* ─── Products ─── */
-  #products { background: var(--cream); }
-  .category-tabs {
-    display: flex; gap: 10px; flex-wrap: wrap;
-    justify-content: center; margin-bottom: 40px;
-  }
-  .cat-tab {
-    padding: 8px 20px; border-radius: 50px; border: 1.5px solid rgba(201,149,106,0.3);
-    background: transparent; font-size: 13px; font-weight: 500; color: var(--text-mid);
-    cursor: pointer; transition: all 0.2s;
-  }
-  .cat-tab:hover, .cat-tab.active {
-    background: var(--rose-gold); color: white; border-color: var(--rose-gold);
-    box-shadow: 0 3px 14px rgba(201,149,106,0.3);
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 24px;
-  }
-
-  .product-card {
-    background: var(--gradient-card);
-    border-radius: 24px; overflow: hidden;
-    border: 1px solid rgba(201,149,106,0.12);
-    box-shadow: var(--shadow-card);
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-    display: flex; flex-direction: column;
-  }
-  .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(201,149,106,0.3);
-  }
-  .product-img-wrap {
-    position: relative; aspect-ratio: 1;
-    overflow: hidden; background: var(--blush);
-  }
-  .product-img-wrap img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .product-card:hover .product-img-wrap img { transform: scale(1.05); }
-  .product-badge {
-    position: absolute; top: 12px; left: 12px;
-    background: #E85D5D; color: white;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
-    padding: 4px 10px; border-radius: 20px;
-  }
-  .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-  .product-category {
-    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--rose-gold); margin-bottom: 6px;
-  }
-  .product-name { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; line-height: 1.3; }
-  .product-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; margin-bottom: 12px; flex: 1; }
-  .product-benefits { margin-bottom: 14px; }
-  .product-benefits li {
-    font-size: 12px; color: var(--text-mid); list-style: none;
-    padding: 3px 0; display: flex; align-items: flex-start; gap: 6px;
-  }
-  .product-benefits li::before { content: '✦'; color: var(--rose-gold); font-size: 8px; margin-top: 3px; flex-shrink: 0; }
-  .product-footer { border-top: 1px solid rgba(201,149,106,0.1); padding-top: 14px; }
-  .product-price-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-  .price-sale { font-size: 20px; font-weight: 700; color: var(--rose-gold); }
-  .price-original { font-size: 13px; color: var(--text-light); text-decoration: line-through; }
-  .price-save {
-    font-size: 10px; background: rgba(201,149,106,0.12); color: var(--rose-gold);
-    padding: 2px 7px; border-radius: 10px; font-weight: 600;
-  }
-  .qty-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-  .qty-label { font-size: 12px; color: var(--text-light); flex: 1; }
-  .qty-control { display: flex; align-items: center; gap: 0; border: 1.5px solid rgba(201,149,106,0.25); border-radius: 10px; overflow: hidden; }
-  .qty-btn { width: 32px; height: 32px; border: none; background: var(--blush); color: var(--text-dark); font-size: 16px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; font-weight: 500; }
-  .qty-btn:hover { background: var(--rose-gold-light); }
-  .qty-val { width: 34px; text-align: center; font-size: 14px; font-weight: 600; color: var(--text-dark); border: none; outline: none; background: white; }
-  .btn-add-cart {
-    width: 100%; padding: 12px; border-radius: 14px;
-    background: var(--gradient-gold); color: white;
-    border: none; font-size: 14px; font-weight: 600; cursor: pointer;
-    transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .btn-add-cart:hover { transform: translateY(-1px); box-shadow: 0 5px 18px rgba(201,149,106,0.4); }
-  .btn-buy-now {
-    width: 100%; padding: 12px; border-radius: 14px;
-    background: transparent; color: var(--rose-gold);
-    border: 1.5px solid var(--rose-gold);
-    font-size: 14px; font-weight: 600; cursor: pointer;
-    transition: all 0.25s; margin-top: 8px;
-  }
-  .btn-buy-now:hover { background: rgba(201,149,106,0.08); }
-
-  /* ─── Why Choose Us ─── */
-  #why { background: linear-gradient(160deg, #FDF0EA 0%, #F9E4E0 100%); }
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
-  .why-card {
-    background: white; border-radius: 20px; padding: 28px 22px;
-    text-align: center; box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(201,149,106,0.1);
-    transition: all 0.3s;
-  }
-  .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-  .why-icon {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--gradient-gold);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; margin: 0 auto 16px;
-    box-shadow: 0 4px 16px rgba(201,149,106,0.3);
-  }
-  .why-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-  .why-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-
-  /* ─── Trust Bar ─── */
-  .trust-bar {
-    background: var(--text-dark);
-    padding: 20px;
-  }
-  .trust-bar-inner {
-    max-width: 1280px; margin: 0 auto;
-    display: flex; justify-content: center;
-    gap: 40px; flex-wrap: wrap;
-  }
-  .trust-item { display: flex; align-items: center; gap: 8px; }
-  .trust-icon { font-size: 18px; }
-  .trust-text { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
-
-  /* ─── FAQ ─── */
-  #faq { background: var(--cream); }
-  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-  .faq-item {
-    background: white; border-radius: 16px;
-    border: 1px solid rgba(201,149,106,0.12);
-    overflow: hidden; box-shadow: var(--shadow-soft);
-  }
-  .faq-q {
-    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-    padding: 20px 24px; display: flex; align-items: center; justify-content: space-between;
-    font-size: 15px; font-weight: 600; color: var(--text-dark);
-    gap: 14px;
-  }
-  .faq-q .icon {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--blush); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; color: var(--rose-gold);
-    transition: transform 0.3s, background 0.3s;
-  }
-  .faq-item.open .faq-q .icon { transform: rotate(45deg); background: var(--rose-gold); color: white; }
-  .faq-a {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-    padding: 0 24px;
-    font-size: 14px; color: var(--text-mid); line-height: 1.7;
-  }
-  .faq-item.open .faq-a { max-height: 200px; padding: 0 24px 20px; }
-
-  /* ─── Contact ─── */
-  #contact { background: linear-gradient(160deg, #FDF0EA 0%, #F2D9D0 100%); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  .contact-info h3 { font-size: 28px; margin-bottom: 16px; color: var(--text-dark); }
-  .contact-info p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 28px; }
-  .contact-btns { display: flex; flex-direction: column; gap: 14px; }
-  .btn-wa {
-    background: #25D366; color: white;
-    border: none; border-radius: 14px; padding: 14px 24px;
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    display: flex; align-items: center; gap: 10px; width: fit-content;
-    text-decoration: none;
-    box-shadow: 0 4px 18px rgba(37,211,102,0.3);
-    transition: all 0.25s;
-  }
-  .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
-  .btn-call {
-    background: white; color: var(--text-dark);
-    border: 1.5px solid rgba(201,149,106,0.3);
-    border-radius: 14px; padding: 14px 24px;
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    display: flex; align-items: center; gap: 10px; width: fit-content;
-    text-decoration: none; transition: all 0.25s;
-  }
-  .btn-call:hover { background: var(--blush); }
-
-  .contact-form-wrap {
-    background: white; border-radius: 24px; padding: 32px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid rgba(201,149,106,0.12);
-  }
-  .form-group { margin-bottom: 16px; }
-  .form-label { font-size: 12px; font-weight: 600; color: var(--text-mid); letter-spacing: 0.5px; display: block; margin-bottom: 6px; }
-  .form-input {
-    width: 100%; padding: 12px 16px;
-    border: 1.5px solid rgba(201,149,106,0.2);
-    border-radius: 12px; font-size: 14px; font-family: 'DM Sans', sans-serif;
-    color: var(--text-dark); background: var(--cream);
-    transition: border-color 0.2s, box-shadow 0.2s; outline: none;
-  }
-  .form-input:focus { border-color: var(--rose-gold); box-shadow: 0 0 0 3px rgba(201,149,106,0.1); }
-  textarea.form-input { resize: vertical; min-height: 90px; }
-  .form-submit {
-    width: 100%; padding: 14px;
-    background: var(--gradient-gold); color: white;
-    border: none; border-radius: 14px;
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    transition: all 0.25s;
-  }
-  .form-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,149,106,0.4); }
-
-  /* ─── Cart Sidebar ─── */
-  #cart-overlay {
-    position: fixed; inset: 0; background: rgba(44,24,16,0.4);
-    z-index: 2000; opacity: 0; pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  #cart-overlay.open { opacity: 1; pointer-events: all; }
-  #cart-sidebar {
-    position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 420px;
-    background: var(--cream); z-index: 2001;
-    transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-    display: flex; flex-direction: column;
-    box-shadow: -8px 0 40px rgba(44,24,16,0.12);
-  }
-  #cart-sidebar.open { transform: translateX(0); }
-  .cart-head {
-    padding: 24px; border-bottom: 1px solid rgba(201,149,106,0.15);
-    display: flex; align-items: center; justify-content: space-between;
-    background: white;
-  }
-  .cart-head h3 { font-size: 20px; color: var(--text-dark); }
-  .cart-close { background: var(--blush); border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; color: var(--text-dark); transition: all 0.2s; }
-  .cart-close:hover { background: var(--blush-mid); }
-  .cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-  .cart-empty { text-align: center; padding: 60px 20px; color: var(--text-light); }
-  .cart-empty .emoji { font-size: 48px; margin-bottom: 12px; }
-  .cart-item {
-    background: white; border-radius: 16px; padding: 14px;
-    display: flex; gap: 12px; align-items: flex-start;
-    border: 1px solid rgba(201,149,106,0.12);
-  }
-  .cart-item-img {
-    width: 60px; height: 60px; border-radius: 10px;
-    object-fit: cover; background: var(--blush); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 22px;
-  }
-  .cart-item-info { flex: 1; }
-  .cart-item-name { font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
-  .cart-item-price { font-size: 14px; font-weight: 700; color: var(--rose-gold); margin-bottom: 8px; }
-  .cart-item-qty { display: flex; align-items: center; gap: 8px; }
-  .ci-qty-btn { width: 26px; height: 26px; border-radius: 6px; border: 1.5px solid rgba(201,149,106,0.25); background: var(--blush); cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-  .ci-qty-btn:hover { background: var(--rose-gold-light); }
-  .ci-qty-val { font-size: 14px; font-weight: 600; min-width: 20px; text-align: center; }
-  .cart-remove { background: none; border: none; color: #E85D5D; font-size: 18px; cursor: pointer; padding: 4px; border-radius: 6px; transition: background 0.2s; }
-  .cart-remove:hover { background: rgba(232,93,93,0.1); }
-  .cart-foot { padding: 20px; border-top: 1px solid rgba(201,149,106,0.15); background: white; }
-  .cart-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-  .cart-total-label { font-size: 14px; color: var(--text-mid); font-weight: 500; }
-  .cart-total-val { font-size: 22px; font-weight: 700; color: var(--text-dark); }
-  .btn-checkout { width: 100%; padding: 15px; background: var(--gradient-gold); color: white; border: none; border-radius: 14px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.25s; }
-  .btn-checkout:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,149,106,0.4); }
-
-  /* ─── Checkout Modal ─── */
-  #checkout-modal {
-    position: fixed; inset: 0; background: rgba(44,24,16,0.5);
-    z-index: 3000; display: flex; align-items: center; justify-content: center;
-    padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-  }
-  #checkout-modal.open { opacity: 1; pointer-events: all; }
-  .checkout-box {
-    background: white; border-radius: 28px; width: 100%; max-width: 480px;
-    max-height: 90vh; overflow-y: auto;
-    box-shadow: 0 24px 80px rgba(44,24,16,0.2);
-    transform: scale(0.95); transition: transform 0.3s;
-  }
-  #checkout-modal.open .checkout-box { transform: scale(1); }
-  .checkout-head {
-    padding: 24px 28px; border-bottom: 1px solid rgba(201,149,106,0.12);
-    display: flex; align-items: center; justify-content: space-between;
-    background: linear-gradient(135deg, var(--blush) 0%, white 100%);
-    border-radius: 28px 28px 0 0;
-  }
-  .checkout-head h3 { font-size: 22px; color: var(--text-dark); }
-  .checkout-body { padding: 28px; }
-  .checkout-summary {
-    background: var(--blush); border-radius: 14px; padding: 14px;
-    margin-bottom: 22px; font-size: 13px;
-  }
-  .checkout-summary-title { font-weight: 700; color: var(--text-dark); margin-bottom: 8px; font-size: 14px; }
-  .checkout-summary-item { display: flex; justify-content: space-between; color: var(--text-mid); padding: 3px 0; }
-  .checkout-summary-total { display: flex; justify-content: space-between; font-weight: 700; color: var(--text-dark); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(201,149,106,0.2); font-size: 15px; }
-  .checkout-wa-btn {
-    width: 100%; padding: 15px; border-radius: 14px;
-    background: #25D366; color: white; border: none;
-    font-size: 16px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    box-shadow: 0 4px 18px rgba(37,211,102,0.35);
-    transition: all 0.25s; margin-top: 6px;
-  }
-  .checkout-wa-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(37,211,102,0.45); }
-
-  /* ─── Floating WA ─── */
-  #floating-wa {
-    position: fixed; bottom: 28px; right: 24px; z-index: 1500;
-    animation: floatWA 3s ease-in-out infinite;
-  }
-  @keyframes floatWA {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  #floating-wa a {
-    width: 60px; height: 60px; border-radius: 50%;
-    background: #25D366; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
-    text-decoration: none; font-size: 28px; transition: transform 0.2s;
-  }
-  #floating-wa a:hover { transform: scale(1.1); }
-  .wa-pulse {
-    position: absolute; inset: -4px; border-radius: 50%;
-    background: rgba(37,211,102,0.3);
-    animation: pulse 2.5s ease-out infinite;
-  }
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(1.5); opacity: 0; }
-  }
-
-  /* ─── Footer ─── */
-  footer {
-    background: var(--text-dark); color: rgba(255,255,255,0.75);
-    padding: 48px 20px 24px;
-  }
-  .footer-inner {
-    max-width: 1280px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
-  }
-  .footer-brand { }
-  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-  .footer-logo-icon { width: 38px; height: 38px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .footer-logo-name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; }
-  .footer-tagline { font-size: 13px; line-height: 1.7; max-width: 260px; }
-  .footer-h { font-family: 'Playfair Display', serif; font-size: 16px; color: white; margin-bottom: 16px; }
-  .footer-links { display: flex; flex-direction: column; gap: 8px; }
-  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--rose-gold-light); }
-  .footer-bottom { max-width: 1280px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; text-align: center; color: rgba(255,255,255,0.4); }
-
-  /* ─── Toast ─── */
-  #toast {
-    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px);
-    background: var(--text-dark); color: white;
-    padding: 12px 22px; border-radius: 50px; font-size: 14px; font-weight: 500;
-    z-index: 5000; opacity: 0; pointer-events: none;
-    transition: all 0.3s; white-space: nowrap;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  /* ─── Animations ─── */
-  .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* ─── Responsive ─── */
-  @media (max-width: 1024px) {
-    .hero-inner { grid-template-columns: 1fr; text-align: center; }
-    .hero-image-wrap { order: -1; }
-    .hero-sub { margin: 0 auto 36px; }
-    .hero-ctas { justify-content: center; }
-    .hero-stats { justify-content: center; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .footer-inner { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .section { padding: 56px 16px; }
-    .hero-img { width: 240px; height: 300px; }
-    .hero-img-bg { width: 280px; height: 340px; }
-    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .trust-bar-inner { gap: 20px; }
-  }
-  @media (max-width: 480px) {
-    .hero-stats { flex-direction: column; gap: 16px; }
-    .why-grid { grid-template-columns: 1fr; }
-    .products-grid { grid-template-columns: 1fr; }
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-visual{min-height:320px;order:-1}
+  .hero-content{padding:2.5rem 1.5rem;max-width:100%}
+  .hero-logo-big{width:160px;height:160px}
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .contact-inner{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero-stats{gap:1.25rem}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{gap:1.5rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{text-align:center}
+}
+@media(max-width:400px){
+  .products-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
-<nav id="navbar">
+<!-- NAV -->
+<nav>
   <div class="nav-inner">
-    <a href="#" class="logo-mark">
-      <div class="logo-icon">🌸</div>
+    <a href="#" class="logo-wrap">
+      <img src="https://drive.google.com/thumbnail?id=1mSaPeG0PN2O05WGIUWa5Jc8DCWUbf-OQ&sz=w100" alt="Suthuka Beauty Care Logo" class="logo-img" onerror="this.style.display='none'">
       <div>
-        <div class="logo-text-main">Suthuka Beauty</div>
-        <div class="logo-text-sub">Care Collection</div>
+        <div class="logo-text" data-t="brand">Suthuka</div>
+        <div class="logo-sub" data-t="brandSub">Beauty Care</div>
       </div>
     </a>
-
-    <div class="nav-links">
-      <a href="#hero" data-t="nav_home">Home</a>
-      <a href="#products" data-t="nav_products">Products</a>
-      <a href="#why" data-t="nav_why">About</a>
-      <a href="#faq" data-t="nav_faq">FAQ</a>
-      <a href="#contact" data-t="nav_contact">Contact</a>
-    </div>
-
+    <ul class="nav-links">
+      <li><a href="#products" data-t="navProducts">Products</a></li>
+      <li><a href="#why-us" data-t="navWhy">Why Us</a></li>
+      <li><a href="#faq" data-t="navFaq">FAQ</a></li>
+      <li><a href="#contact" data-t="navContact">Contact</a></li>
+    </ul>
     <div class="nav-actions">
-      <div class="lang-switcher">
-        <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" id="lang-si" onclick="setLang('si')">සිං</button>
-      </div>
-      <button class="cart-btn" onclick="toggleCart()">
-        🛒 <span data-t="cart_btn">Cart</span>
-        <span class="cart-count" id="cart-count">0</span>
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('si')" id="btn-si">සිං</button>
+      <button class="cart-btn" onclick="openCart()" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
       </button>
-      <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 </nav>
-
-<!-- ═══════════════════════════════ MOBILE MENU ═══════════════════════════════ -->
-<div id="mobile-menu">
-  <a href="#hero" onclick="toggleMobileMenu()" data-t="nav_home">Home</a>
-  <a href="#products" onclick="toggleMobileMenu()" data-t="nav_products">Products</a>
-  <a href="#why" onclick="toggleMobileMenu()" data-t="nav_why">About</a>
-  <a href="#faq" onclick="toggleMobileMenu()" data-t="nav_faq">FAQ</a>
-  <a href="#contact" onclick="toggleMobileMenu()" data-t="nav_contact">Contact</a>
-  <div style="display:flex;gap:10px;margin-top:16px;">
-    <button class="lang-btn active" onclick="setLang('en');toggleMobileMenu()" id="m-lang-en" style="border:1.5px solid var(--rose-gold);border-radius:20px;padding:6px 18px;font-size:14px;">EN</button>
-    <button class="lang-btn" onclick="setLang('si');toggleMobileMenu()" id="m-lang-si" style="border:1.5px solid rgba(201,149,106,0.3);border-radius:20px;padding:6px 18px;font-size:14px;">සිංහල</button>
-  </div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products" onclick="toggleMenu()" data-t="navProducts">Products</a>
+  <a href="#why-us" onclick="toggleMenu()" data-t="navWhy">Why Us</a>
+  <a href="#faq" onclick="toggleMenu()" data-t="navFaq">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()" data-t="navContact">Contact</a>
 </div>
 
-<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-<section id="hero">
-  <div class="hero-bg-circle" style="width:600px;height:600px;top:-200px;right:-100px;"></div>
-  <div class="hero-bg-circle" style="width:400px;height:400px;bottom:-100px;left:-80px;"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">✨ <span data-t="hero_eyebrow">Premium Sri Lankan Beauty</span></div>
-      <h1 class="hero-title" data-t="hero_title">Reveal Your <em>Natural</em> Radiance</h1>
-      <p class="hero-sub" data-t="hero_sub">Scientifically crafted skincare with the finest natural ingredients. Trusted by thousands across Sri Lanka for visible, lasting results.</p>
-      <div class="hero-ctas">
-        <a href="#products" class="btn-primary" data-t="hero_shop">Shop Now ✦</a>
-        <a href="https://wa.me/94707115227" target="_blank" class="btn-outline">💬 <span data-t="hero_wa">WhatsApp Us</span></a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item"><div class="stat-num">5000+</div><div class="stat-label" data-t="stat_customers">Happy Customers</div></div>
-        <div class="stat-item"><div class="stat-num">8</div><div class="stat-label" data-t="stat_products">Premium Products</div></div>
-        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label" data-t="stat_natural">Natural Ingredients</div></div>
-      </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-t="heroEyebrow">Sri Lanka's Premium Beauty Brand</div>
+    <h1 class="hero-title" data-t="heroTitle">Reveal Your <em>Natural</em> Radiance</h1>
+    <p class="hero-desc" data-t="heroDesc">Suthuka Beauty Care — crafted with nature's finest ingredients to nourish, brighten, and transform your skin. Trusted by thousands across Sri Lanka.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn-primary" data-t="shopNow">Shop Now</a>
+      <a href="https://wa.me/94707115227" target="_blank" class="btn-outline" data-t="chatUs">Chat on WhatsApp</a>
     </div>
-    <div class="hero-image-wrap">
-      <div class="hero-img-bg"></div>
-      <div class="hero-img">🌺</div>
-      <div class="hero-badge" style="top:30px;right:0;">
-        <div class="hero-badge-icon">⭐</div>
-        <div class="hero-badge-text" data-t="badge_rating">4.9 Rating</div>
-        <div class="hero-badge-sub" data-t="badge_reviews">500+ Reviews</div>
-      </div>
-      <div class="hero-badge" style="bottom:40px;left:-20px;top:auto;">
-        <div class="hero-badge-icon">🚚</div>
-        <div class="hero-badge-text" data-t="badge_delivery">Free Delivery</div>
-        <div class="hero-badge-sub" data-t="badge_island">Islandwide</div>
-      </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">5000+</div><div class="stat-label" data-t="statCustomers">Happy Customers</div></div>
+      <div><div class="stat-num">8+</div><div class="stat-label" data-t="statProducts">Premium Products</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label" data-t="statNatural">Natural Ingredients</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-pattern"></div>
+    <img src="https://drive.google.com/thumbnail?id=1mSaPeG0PN2O05WGIUWa5Jc8DCWUbf-OQ&sz=w400" alt="Suthuka Beauty Care" class="hero-logo-big" onerror="this.style.display='none'">
+    <div class="hero-badges">
+      <div class="badge"><span class="badge-dot"></span><span data-t="badgeDelivery">Islandwide Delivery</span></div>
+      <div class="badge"><span class="badge-dot"></span><span data-t="badgeNatural">100% Natural</span></div>
+      <div class="badge"><span class="badge-dot"></span><span data-t="badgeAuthentic">Authentic & Safe</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ TRUST BAR ═══════════════════════════════ -->
+<!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item"><span class="trust-icon">🚚</span><span class="trust-text" data-t="trust_delivery">Islandwide Delivery</span></div>
-    <div class="trust-item"><span class="trust-icon">✅</span><span class="trust-text" data-t="trust_authentic">100% Authentic Products</span></div>
-    <div class="trust-item"><span class="trust-icon">💬</span><span class="trust-text" data-t="trust_support">24/7 WhatsApp Support</span></div>
-    <div class="trust-item"><span class="trust-icon">🌿</span><span class="trust-text" data-t="trust_natural">Natural Ingredients</span></div>
-    <div class="trust-item"><span class="trust-icon">💝</span><span class="trust-text" data-t="trust_happy">5000+ Happy Customers</span></div>
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">✦</span><span data-t="trust1">Quality Ingredients</span></div>
+    <div class="trust-item"><span class="trust-icon">✦</span><span data-t="trust2">Dermatologist Approved</span></div>
+    <div class="trust-item"><span class="trust-icon">✦</span><span data-t="trust3">Fast Islandwide Delivery</span></div>
+    <div class="trust-item"><span class="trust-icon">✦</span><span data-t="trust4">WhatsApp Support</span></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ PRODUCTS ═══════════════════════════════ -->
-<section class="section" id="products">
-  <div class="section-inner">
-    <div class="section-header fade-up">
-      <div class="section-eyebrow" data-t="products_eyebrow">Our Collection</div>
-      <h2 class="section-title" data-t="products_title">Premium Beauty Products</h2>
-      <p class="section-sub" data-t="products_sub">Each product is meticulously crafted with premium ingredients for visible, lasting results.</p>
-    </div>
-    <div class="category-tabs" id="cat-tabs"></div>
-    <div class="products-grid" id="products-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ WHY CHOOSE US ═══════════════════════════════ -->
-<section class="section" id="why">
-  <div class="section-inner">
-    <div class="section-header fade-up">
-      <div class="section-eyebrow" data-t="why_eyebrow">Our Promise</div>
-      <h2 class="section-title" data-t="why_title">Why Choose Suthuka?</h2>
-      <p class="section-sub" data-t="why_sub">We believe every woman deserves to feel beautiful and confident in her own skin.</p>
-    </div>
-    <div class="why-grid" id="why-grid"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
-<section class="section" id="faq">
-  <div class="section-inner">
-    <div class="section-header fade-up">
-      <div class="section-eyebrow" data-t="faq_eyebrow">Support</div>
-      <h2 class="section-title" data-t="faq_title">Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-list" id="faq-list"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
-<section class="section" id="contact">
-  <div class="section-inner">
-    <div class="section-header fade-up">
-      <div class="section-eyebrow" data-t="contact_eyebrow">Get in Touch</div>
-      <h2 class="section-title" data-t="contact_title">Contact Us</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info fade-up">
-        <h3 data-t="contact_heading">We're Here for You</h3>
-        <p data-t="contact_desc">Have a question about a product or need skincare advice? Reach out to us anytime on WhatsApp. Our team is happy to help you find the perfect routine.</p>
-        <div class="contact-btns">
-          <a href="https://wa.me/94707115227" target="_blank" class="btn-wa">
-            💬 <span data-t="contact_wa">Chat on WhatsApp</span>
-          </a>
-          <a href="tel:+94707115227" class="btn-call">
-            📞 <span data-t="contact_call">+94 70 711 5227</span>
-          </a>
-        </div>
-        <div style="margin-top:28px;padding:20px;background:white;border-radius:16px;border:1px solid rgba(201,149,106,0.15);">
-          <div style="font-size:13px;color:var(--text-light);margin-bottom:6px;" data-t="contact_hours_label">Business Hours</div>
-          <div style="font-size:14px;font-weight:600;color:var(--text-dark);" data-t="contact_hours">Mon – Sat: 8:00 AM – 8:00 PM</div>
-          <div style="font-size:13px;color:var(--text-mid);margin-top:6px;" data-t="contact_location">📍 Sri Lanka – Islandwide Delivery</div>
-        </div>
-      </div>
-      <div class="contact-form-wrap fade-up">
-        <h3 style="font-size:20px;margin-bottom:20px;color:var(--text-dark);" data-t="contact_form_title">Send a Message</h3>
-        <div class="form-group">
-          <label class="form-label" data-t="form_name">Full Name</label>
-          <input type="text" class="form-input" id="cf-name" data-t-placeholder="form_name_ph">
-        </div>
-        <div class="form-group">
-          <label class="form-label" data-t="form_mobile">Mobile Number</label>
-          <input type="tel" class="form-input" id="cf-phone" data-t-placeholder="form_mobile_ph">
-        </div>
-        <div class="form-group">
-          <label class="form-label" data-t="form_message">Message</label>
-          <textarea class="form-input" id="cf-msg" data-t-placeholder="form_message_ph"></textarea>
-        </div>
-        <button class="form-submit" onclick="sendContactWA()">
-          💬 <span data-t="contact_send">Send via WhatsApp</span>
-        </button>
+<!-- PRODUCTS -->
+<section id="products" class="products-bg">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="section-label" data-t="productsLabel">Our Collection</div>
+        <h2 class="section-title" data-t="productsTitle">Premium <em>Skincare</em> Products</h2>
       </div>
     </div>
+    <div class="products-grid" id="productsGrid"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<!-- WHY US -->
+<section id="why-us" class="why-bg">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-t="whyLabel">Our Promise</div>
+    <h2 class="section-title" data-t="whyTitle">Why Choose <em>Suthuka?</em></h2>
+    <div class="why-grid">
+      <div class="why-card"><span class="why-icon">🌿</span><div class="why-title" data-t="why1Title">Natural Ingredients</div><div class="why-text" data-t="why1Text">Every product is crafted with carefully selected natural ingredients — Kojic Acid, Aloe Vera, Collagen, Sandalwood, and more.</div></div>
+      <div class="why-card"><span class="why-icon">💆</span><div class="why-title" data-t="why2Title">For Every Skin Type</div><div class="why-text" data-t="why2Text">Our formulations are gentle, effective, and suitable for all skin types — from oily to dry, sensitive to combination.</div></div>
+      <div class="why-card"><span class="why-icon">🚚</span><div class="why-title" data-t="why3Title">Islandwide Delivery</div><div class="why-text" data-t="why3Text">We deliver to every corner of Sri Lanka, fast and reliably, so your beauty routine is never interrupted.</div></div>
+      <div class="why-card"><span class="why-icon">💬</span><div class="why-title" data-t="why4Title">WhatsApp Support</div><div class="why-text" data-t="why4Text">Our friendly team is always available on WhatsApp. Order, ask questions, or track your delivery — all in one chat.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-t="faqLabel">Got Questions?</div>
+    <h2 class="section-title" data-t="faqTitle">Frequently Asked <em>Questions</em></h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <div class="section-label" data-t="contactLabel">Get In Touch</div>
+        <h2 class="section-title" data-t="contactTitle">We're Here to <em>Help</em></h2>
+        <p class="section-desc" data-t="contactDesc">Have questions about our products or your order? Reach out to us anytime — we're just a WhatsApp message away.</p>
+        <div class="contact-channels">
+          <a href="https://wa.me/94707115227" target="_blank" class="contact-btn contact-btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.522 5.828L.061 23.408a.5.5 0 00.53.621l5.753-1.509A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.877 9.877 0 01-5.048-1.386l-.362-.215-3.752.984 1.001-3.657-.236-.375A9.862 9.862 0 012.108 12C2.108 6.531 6.531 2.108 12 2.108c5.47 0 9.892 4.423 9.892 9.892 0 5.47-4.422 9.892-9.892 9.892z"/></svg>
+            <span data-t="contactWA">WhatsApp Us</span>
+          </a>
+          <a href="tel:+94707115227" class="contact-btn contact-btn-call">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.59 19.79 19.79 0 01.01 1a2 2 0 012-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            <span data-t="contactCall">Call Us: +94 70 711 5227</span>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="sendContactWA(event)">
+        <div class="form-group">
+          <label class="form-label" data-t="formName">Full Name</label>
+          <input class="form-input" type="text" id="cf-name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-t="formPhone">Mobile Number</label>
+          <input class="form-input" type="tel" id="cf-phone" placeholder="+94 7X XXX XXXX" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-t="formMessage">Message</label>
+          <textarea class="form-input" id="cf-msg" rows="4" placeholder="Your message..." style="resize:vertical"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%" data-t="contactSend">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo-icon">🌸</div>
-        <div class="footer-logo-name">Suthuka Beauty Care</div>
-      </div>
-      <p class="footer-tagline" data-t="footer_tagline">Premium skincare crafted with love and science. Suthuka Enterprises (Pvt) Ltd — trusted across Sri Lanka.</p>
-    </div>
-    <div>
-      <div class="footer-h" data-t="footer_quick">Quick Links</div>
-      <div class="footer-links">
-        <a href="#hero" data-t="nav_home">Home</a>
-        <a href="#products" data-t="nav_products">Products</a>
-        <a href="#why" data-t="nav_why">About</a>
-        <a href="#faq" data-t="nav_faq">FAQ</a>
-        <a href="#contact" data-t="nav_contact">Contact</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-h" data-t="footer_contact">Contact</div>
-      <div class="footer-links">
-        <a href="https://wa.me/94707115227">💬 WhatsApp</a>
-        <a href="tel:+94707115227">📞 +94 70 711 5227</a>
-        <a href="#" style="color:rgba(255,255,255,0.5)">📍 Sri Lanka</a>
-      </div>
-    </div>
+  <div class="footer-logo">Suthuka Beauty Care</div>
+  <div class="footer-sub" data-t="footerSub">Suthuka Enterprises (Pvt) Ltd · Sri Lanka</div>
+  <div class="footer-links">
+    <a href="#home" data-t="navHome">Home</a>
+    <a href="#products" data-t="navProducts">Products</a>
+    <a href="#why-us" data-t="navWhy">Why Us</a>
+    <a href="#faq" data-t="navFaq">FAQ</a>
+    <a href="#contact" data-t="navContact">Contact</a>
   </div>
-  <div class="footer-bottom" data-t="footer_copy">© 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.</div>
+  <div class="footer-copy" data-t="footerCopy">© 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.</div>
 </footer>
 
-<!-- ═══════════════════════════════ FLOATING WA ═══════════════════════════════ -->
-<div id="floating-wa">
-  <div class="wa-pulse"></div>
-  <a href="https://wa.me/94707115227" target="_blank" title="Chat on WhatsApp">💬</a>
-</div>
+<!-- FLOAT WA -->
+<a href="https://wa.me/94707115227" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.522 5.828L.061 23.408a.5.5 0 00.53.621l5.753-1.509A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.877 9.877 0 01-5.048-1.386l-.362-.215-3.752.984 1.001-3.657-.236-.375A9.862 9.862 0 012.108 12C2.108 6.531 6.531 2.108 12 2.108c5.47 0 9.892 4.423 9.892 9.892 0 5.47-4.422 9.892-9.892 9.892z"/></svg>
+</a>
 
-<!-- ═══════════════════════════════ CART SIDEBAR ═══════════════════════════════ -->
-<div id="cart-overlay" onclick="toggleCart()"></div>
-<div id="cart-sidebar">
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
   <div class="cart-head">
-    <h3>🛒 <span data-t="cart_title">Your Cart</span></h3>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
+    <div class="cart-title" data-t="cartTitle">Your Cart</div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
   </div>
-  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
     <div class="cart-total-row">
-      <span class="cart-total-label" data-t="cart_total">Order Total</span>
-      <span class="cart-total-val">Rs <span id="cart-total-val">0</span></span>
+      <div class="cart-total-label" data-t="cartTotal">Total</div>
+      <div class="cart-total-price" id="cartTotal">Rs 0</div>
     </div>
-    <button class="btn-checkout" onclick="openCheckout()" data-t="cart_checkout">Proceed to Checkout</button>
+    <button class="btn-checkout" onclick="openCheckout()" data-t="checkout">Proceed to Checkout</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ CHECKOUT MODAL ═══════════════════════════════ -->
-<div id="checkout-modal">
-  <div class="checkout-box">
-    <div class="checkout-head">
-      <h3 data-t="checkout_title">Place Your Order</h3>
-      <button class="cart-close" onclick="closeCheckout()">✕</button>
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" data-t="checkoutTitle">Complete Order</div>
+      <button class="modal-close" onclick="closeCheckout()">✕</button>
     </div>
-    <div class="checkout-body">
-      <div class="checkout-summary" id="checkout-summary"></div>
-      <div class="form-group">
-        <label class="form-label" data-t="form_name">Full Name *</label>
-        <input type="text" class="form-input" id="co-name" data-t-placeholder="form_name_ph">
+    <div class="modal-body">
+      <div class="order-summary">
+        <div class="order-summary-title" data-t="orderSummary">Order Summary</div>
+        <div id="summaryItems"></div>
+        <div class="summary-total">
+          <span class="summary-total-label" data-t="orderTotal">Total</span>
+          <span class="summary-total-price" id="summaryTotal">Rs 0</span>
+        </div>
       </div>
       <div class="form-group">
-        <label class="form-label" data-t="form_mobile">Mobile Number *</label>
-        <input type="tel" class="form-input" id="co-phone" data-t-placeholder="form_mobile_ph">
+        <label class="form-label" data-t="formName">Full Name *</label>
+        <input class="form-input" type="text" id="co-name" placeholder="Your full name" required>
       </div>
       <div class="form-group">
-        <label class="form-label" data-t="form_address">Address *</label>
-        <input type="text" class="form-input" id="co-address" data-t-placeholder="form_address_ph">
+        <label class="form-label" data-t="formPhone">Mobile Number *</label>
+        <input class="form-input" type="tel" id="co-phone" placeholder="+94 7X XXX XXXX" required>
       </div>
       <div class="form-group">
-        <label class="form-label" data-t="form_city">City *</label>
-        <input type="text" class="form-input" id="co-city" data-t-placeholder="form_city_ph">
+        <label class="form-label" data-t="formAddress">Delivery Address *</label>
+        <input class="form-input" type="text" id="co-address" placeholder="No, Street, Area" required>
       </div>
       <div class="form-group">
-        <label class="form-label" data-t="form_notes">Additional Notes</label>
-        <textarea class="form-input" id="co-notes" rows="2" data-t-placeholder="form_notes_ph"></textarea>
+        <label class="form-label" data-t="formCity">City *</label>
+        <input class="form-input" type="text" id="co-city" placeholder="Colombo" required>
       </div>
-      <button class="checkout-wa-btn" onclick="placeOrder()">
-        💬 <span data-t="checkout_place">Place Order via WhatsApp</span>
+      <div class="form-group">
+        <label class="form-label" data-t="formNotes">Additional Notes</label>
+        <textarea class="form-input" id="co-notes" rows="3" placeholder="Any special instructions..." style="resize:vertical"></textarea>
+      </div>
+      <button class="btn-place-order" onclick="placeOrder()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.522 5.828L.061 23.408a.5.5 0 00.53.621l5.753-1.509A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.877 9.877 0 01-5.048-1.386l-.362-.215-3.752.984 1.001-3.657-.236-.375A9.862 9.862 0 012.108 12C2.108 6.531 6.531 2.108 12 2.108c5.47 0 9.892 4.423 9.892 9.892 0 5.47-4.422 9.892-9.892 9.892z"/></svg>
+        <span data-t="placeOrder">Place Order via WhatsApp</span>
       </button>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ TOAST ═══════════════════════════════ -->
-<div id="toast"></div>
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-/* ═══════════════════════════════════════════
-   TRANSLATIONS
-═══════════════════════════════════════════ */
+// ─── DATA ─────────────────────────────────────────────────────────────────
+const products = [
+  {
+    id:1,
+    name:"Suthuka Face Brightening Serum",
+    nameKey:"p1Name",
+    image:"https://drive.google.com/thumbnail?id=1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr&sz=w400",
+    price:1500,
+    origPrice:2450,
+    descKey:"p1Desc",
+    benefitsKey:["p1b1","p1b2"],
+    howKey:"p1How",
+    weight:"30g",
+    badge:"Best Seller"
+  },
+  {
+    id:2,
+    name:"Suthuka Night Face Cream",
+    nameKey:"p2Name",
+    image:"https://drive.google.com/thumbnail?id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2&sz=w400",
+    price:1700,
+    origPrice:2850,
+    descKey:"p2Desc",
+    benefitsKey:["p2b1","p2b2"],
+    howKey:"p2How",
+    weight:"25g",
+    badge:"Popular"
+  },
+  {
+    id:3,
+    name:"Suthuka Face & Body Pack",
+    nameKey:"p3Name",
+    image:"https://drive.google.com/thumbnail?id=1FRR1oslc7hqdouWToJjTz62cLxXC5T9A&sz=w400",
+    price:1700,
+    origPrice:2650,
+    descKey:"p3Desc",
+    benefitsKey:["p3b1","p3b2"],
+    howKey:"p3How",
+    weight:"25g"
+  },
+  {
+    id:4,
+    name:"Suthuka Coffee Body Scrub",
+    nameKey:"p4Name",
+    image:"https://drive.google.com/thumbnail?id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2&sz=w400",
+    price:1700,
+    origPrice:2750,
+    descKey:"p4Desc",
+    benefitsKey:["p4b1","p4b2"],
+    howKey:"p4How",
+    weight:"30g"
+  },
+  {
+    id:5,
+    name:"Suthuka Night Body Lotion",
+    nameKey:"p5Name",
+    image:"https://drive.google.com/thumbnail?id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2&sz=w400",
+    price:1700,
+    origPrice:2950,
+    descKey:"p5Desc",
+    benefitsKey:["p5b1","p5b2"],
+    howKey:"p5How",
+    weight:"25g"
+  },
+  {
+    id:6,
+    name:"Suthuka Day Body Lotion",
+    nameKey:"p6Name",
+    image:"https://drive.google.com/thumbnail?id=1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem&sz=w400",
+    price:1700,
+    origPrice:2950,
+    descKey:"p6Desc",
+    benefitsKey:["p6b1","p6b2"],
+    howKey:"p6How",
+    weight:"25g"
+  },
+  {
+    id:7,
+    name:"Suthuka Day Face Cream",
+    nameKey:"p7Name",
+    image:"https://drive.google.com/thumbnail?id=1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE&sz=w400",
+    price:1650,
+    origPrice:2650,
+    descKey:"p7Desc",
+    benefitsKey:["p7b1","p7b2"],
+    howKey:"p7How"
+  },
+  {
+    id:8,
+    name:"Suthuka Body Butter",
+    nameKey:"p8Name",
+    image:"https://drive.google.com/thumbnail?id=1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE&sz=w400",
+    price:1850,
+    origPrice:3250,
+    descKey:"p8Desc",
+    benefitsKey:["p8b1","p8b2"],
+    howKey:"p8How",
+    badge:"New"
+  }
+];
+
 const translations = {
   en: {
-    nav_home: "Home", nav_products: "Products", nav_why: "About",
-    nav_faq: "FAQ", nav_contact: "Contact",
-    cart_btn: "Cart", cart_title: "Your Cart",
-    cart_total: "Order Total", cart_checkout: "Proceed to Checkout",
-    hero_eyebrow: "Premium Sri Lankan Beauty",
-    hero_title: "Reveal Your Natural Radiance",
-    hero_sub: "Scientifically crafted skincare with the finest natural ingredients. Trusted by thousands across Sri Lanka for visible, lasting results.",
-    hero_shop: "Shop Now ✦", hero_wa: "WhatsApp Us",
-    stat_customers: "Happy Customers", stat_products: "Premium Products", stat_natural: "Natural Ingredients",
-    badge_rating: "4.9 Rating", badge_reviews: "500+ Reviews",
-    badge_delivery: "Free Delivery", badge_island: "Islandwide",
-    trust_delivery: "Islandwide Delivery", trust_authentic: "100% Authentic Products",
-    trust_support: "24/7 WhatsApp Support", trust_natural: "Natural Ingredients",
-    trust_happy: "5000+ Happy Customers",
-    products_eyebrow: "Our Collection", products_title: "Premium Beauty Products",
-    products_sub: "Each product is meticulously crafted with premium ingredients for visible, lasting results.",
-    why_eyebrow: "Our Promise", why_title: "Why Choose Suthuka?",
-    why_sub: "We believe every woman deserves to feel beautiful and confident in her own skin.",
-    faq_eyebrow: "Support", faq_title: "Frequently Asked Questions",
-    contact_eyebrow: "Get in Touch", contact_title: "Contact Us",
-    contact_heading: "We're Here for You",
-    contact_desc: "Have a question about a product or need skincare advice? Reach out to us anytime on WhatsApp. Our team is happy to help you find the perfect routine.",
-    contact_wa: "Chat on WhatsApp", contact_call: "+94 70 711 5227",
-    contact_hours_label: "Business Hours", contact_hours: "Mon – Sat: 8:00 AM – 8:00 PM",
-    contact_location: "📍 Sri Lanka – Islandwide Delivery",
-    contact_form_title: "Send a Message",
-    form_name: "Full Name", form_mobile: "Mobile Number", form_address: "Address",
-    form_city: "City", form_notes: "Additional Notes", form_message: "Message",
-    form_name_ph: "Enter your full name", form_mobile_ph: "07X XXX XXXX",
-    form_address_ph: "Your delivery address", form_city_ph: "Your city",
-    form_notes_ph: "Any special requests?", form_message_ph: "Type your message here...",
-    contact_send: "Send via WhatsApp",
-    footer_tagline: "Premium skincare crafted with love and science. Suthuka Enterprises (Pvt) Ltd — trusted across Sri Lanka.",
-    footer_quick: "Quick Links", footer_contact: "Contact",
-    footer_copy: "© 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.",
-    checkout_title: "Place Your Order",
-    checkout_place: "Place Order via WhatsApp",
-    add_to_cart: "Add to Cart", buy_now: "Buy Now",
-    qty_label: "Qty",
-    cat_all: "All Products",
-    limited: "Limited Stock",
-    save: "Save",
-    wa_greeting: "Hello Suthuka Beauty Care,\nI would like to place an order.\n\n",
-    wa_details: "Customer Details:\nName: ",
-    wa_phone: "\nPhone: ",
-    wa_address: "\nAddress: ",
-    wa_city: ", ",
-    wa_products: "\n\nProducts Ordered:\n",
-    wa_total: "\nOrder Total: Rs ",
-    wa_close: "\n\nPlease confirm my order. Thank you! 🙏",
-    wa_contact_intro: "Hello Suthuka Beauty Care,\n\nName: ",
-    wa_contact_phone: "\nPhone: ",
-    wa_contact_msg: "\n\nMessage: ",
-    toast_added: "✦ Added to cart!",
-    toast_fill: "Please fill all required fields.",
-    toast_empty: "Your cart is empty.",
+    // NAV
+    brand:"Suthuka",brandSub:"Beauty Care",
+    navHome:"Home",navProducts:"Products",navWhy:"Why Us",navFaq:"FAQ",navContact:"Contact",
+    // HERO
+    heroEyebrow:"Sri Lanka's Premium Beauty Brand",
+    heroTitle:"Reveal Your Natural Radiance",
+    heroDesc:"Suthuka Beauty Care — crafted with nature's finest ingredients to nourish, brighten, and transform your skin. Trusted by thousands across Sri Lanka.",
+    shopNow:"Shop Now",chatUs:"Chat on WhatsApp",
+    statCustomers:"Happy Customers",statProducts:"Premium Products",statNatural:"Natural Ingredients",
+    badgeDelivery:"Islandwide Delivery",badgeNatural:"100% Natural",badgeAuthentic:"Authentic & Safe",
+    // TRUST
+    trust1:"Quality Ingredients",trust2:"Dermatologist Approved",trust3:"Fast Islandwide Delivery",trust4:"WhatsApp Support",
+    // PRODUCTS
+    productsLabel:"Our Collection",productsTitle:"Premium Skincare Products",
+    addCart:"Add to Cart",buyNow:"Buy Now",howToUse:"How to Use",benefits:"Benefits",
+    // WHY
+    whyLabel:"Our Promise",whyTitle:"Why Choose Suthuka?",
+    why1Title:"Natural Ingredients",why1Text:"Every product is crafted with carefully selected natural ingredients — Kojic Acid, Aloe Vera, Collagen, Sandalwood, and more.",
+    why2Title:"For Every Skin Type",why2Text:"Our formulations are gentle, effective, and suitable for all skin types — from oily to dry, sensitive to combination.",
+    why3Title:"Islandwide Delivery",why3Text:"We deliver to every corner of Sri Lanka, fast and reliably, so your beauty routine is never interrupted.",
+    why4Title:"WhatsApp Support",why4Text:"Our friendly team is always available on WhatsApp. Order, ask questions, or track your delivery — all in one chat.",
+    // FAQ
+    faqLabel:"Got Questions?",faqTitle:"Frequently Asked Questions",
+    faq1q:"How do I place an order?",
+    faq1a:"Ordering is simple! Browse our products, add your items to the cart, fill in your details, and click 'Place Order'. You'll be redirected to WhatsApp with your order details pre-filled. Our team will confirm and arrange delivery.",
+    faq2q:"How long does delivery take?",
+    faq2a:"We deliver islandwide across Sri Lanka. Delivery typically takes 1-3 business days depending on your location. Colombo and suburbs usually receive orders next day.",
+    faq3q:"What are the payment methods?",
+    faq3a:"We accept Cash on Delivery (COD) islandwide. We also accept bank transfers. Payment details will be confirmed via WhatsApp after you place your order.",
+    faq4q:"How do I contact customer support?",
+    faq4a:"You can reach us directly on WhatsApp at +94 70 711 5227 or call us. Our team is available 7 days a week to assist you with any questions about products or orders.",
+    // CONTACT
+    contactLabel:"Get In Touch",contactTitle:"We're Here to Help",
+    contactDesc:"Have questions about our products or your order? Reach out to us anytime — we're just a WhatsApp message away.",
+    contactWA:"WhatsApp Us",contactCall:"Call Us: +94 70 711 5227",
+    formName:"Full Name",formPhone:"Mobile Number",formMessage:"Message",formAddress:"Delivery Address",formCity:"City",formNotes:"Additional Notes",
+    contactSend:"Send via WhatsApp",
+    // CART
+    cartTitle:"Your Cart",cartTotal:"Total",checkout:"Proceed to Checkout",
+    cartEmpty:"Your cart is empty. Start shopping!",
+    // CHECKOUT
+    checkoutTitle:"Complete Order",orderSummary:"Order Summary",orderTotal:"Total",placeOrder:"Place Order via WhatsApp",
+    // FOOTER
+    footerSub:"Suthuka Enterprises (Pvt) Ltd · Sri Lanka",
+    footerCopy:"© 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.",
+    // WA MESSAGE
+    waHello:"Hello Suthuka Beauty Care,\nI would like to place an order.\n\n",
+    waCustomer:"*Customer Details:*\n",
+    waName:"Name: ",waPhone:"Phone: ",waAddr:"Address: ",waCity:"City: ",waNotes:"Notes: ",
+    waProducts:"\n*Products:*\n",waTotal:"\n*Order Total: Rs ",waTotalEnd:"*\n\nPlease confirm my order.",
+    // PRODUCTS
+    p1Name:"Suthuka Face Brightening Serum (30g)",
+    p1Desc:"A premium face brightening serum formulated with Kojic Acid and natural Aloe Vera gel. Penetrates deep into skin layers to restore natural radiance, with a delightful Jasmine fragrance.",
+    p1b1:"Eliminates skin dullness and unifies uneven skin tone.",p1b2:"Fades dark spots and blemishes for a flawless look.",
+    p1How:"After cleansing, apply a few drops to face and neck. Gently massage until fully absorbed. Use twice daily for best results.",
+    p2Name:"Suthuka Night Face Cream (25g)",
+    p2Desc:"Advanced overnight treatment cream enriched with Hydrolyzed Collagen and Glutathione. Specially designed for all skin types to nourish and rejuvenate while you sleep.",
+    p2b1:"Reduces fine lines and wrinkles for a youthful glow.",p2b2:"Shea Butter and Aloe Gel deeply hydrate and lock in moisture.",
+    p2How:"Apply a small amount to a clean face before bedtime. Massage in upward circular motions. Use daily at night.",
+    p3Name:"Suthuka Face & Body Pack (25g)",
+    p3Desc:"Revitalizing face and body pack with Sandalwood, Multani Mitti, and Hydrolyzed Collagen. Formulated to tighten the skin and boost natural radiance.",
+    p3b1:"Effectively tightens skin and prevents sagging.",p3b2:"Deeply purifies, detoxifies, and nourishes the skin.",
+    p3How:"Mix with yogurt, DI water, or fresh milk. Apply evenly, avoiding eyes. Leave 30–40 minutes until dry, then rinse. Use 2–3 times a week.",
+    p4Name:"Suthuka Coffee Body Scrub (30g)",
+    p4Desc:"Powerful body scrub crafted with Coffee powder, Sugar, and Glycolic Acid. Perfect for hard exfoliation and targeting hyperpigmentation.",
+    p4b1:"Removes dead skin cells to reveal smooth and soft skin.",p4b2:"Gradually lightens dark patches and evens out skin discoloration.",
+    p4How:"Apply to damp skin, massage in circular motions. Leave a few minutes, then rinse. Use 2–3 times a week. Not suitable for dry and sensitive skin.",
+    p5Name:"Suthuka Night Body Lotion (25g)",
+    p5Desc:"Specialized night repair body lotion with Glycerin, Hydrolyzed Collagen, and Kojic Acid. Works overnight to repair skin cells and improve overall texture.",
+    p5b1:"Reduces dark spots and promotes an even, brighter body complexion.",p5b2:"Stimulates skin cell regeneration during sleep.",
+    p5How:"Apply daily all over the body after bathing. Massage gently until fully absorbed.",
+    p6Name:"Suthuka Day Body Lotion (25g)",
+    p6Desc:"Protective day shield body lotion guarding against harsh sunlight and environmental pollutants. Infused with a refreshing Lavender fragrance.",
+    p6b1:"Deeply hydrates all day while preventing tanning.",p6b2:"Forms a lightweight protective barrier on the skin surface.",
+    p6How:"Apply daily all over the body before going out or after bathing. Massage gently until fully absorbed.",
+    p7Name:"Suthuka Day Face Cream",
+    p7Desc:"Nourishing daily face cream enriched with Sunflower Oil extract. Features a unique formula tailored for reliable UV protection during the day.",
+    p7b1:"Controls excess facial oil while fading blemishes and spots.",p7b2:"Provides instant brightening and a natural healthy glow.",
+    p7How:"Apply evenly to a clean face and neck every morning. Massage gently until absorbed.",
+    p8Name:"Suthuka Body Butter",
+    p8Desc:"Luxurious ultra-rich body butter made with natural Cocoa Butter. Ideally suited for dry, rough, or dehydrated skin requiring intense moisturization.",
+    p8b1:"Prevents skin cracking and roughness, keeping it velvety soft for hours.",p8b2:"Restores skin elasticity and provides deep nourishment.",
+    p8How:"Apply a generous amount to dry or rough areas (elbows, knees, feet) after a bath. Massage thoroughly.",
+    toastAdded:"Added to cart!",qty:"Qty",save:"Save"
   },
   si: {
-    nav_home: "මුල් පිටුව", nav_products: "නිෂ්පාදන", nav_why: "අප ගැන",
-    nav_faq: "ප්‍රශ්න", nav_contact: "සම්බන්ධ වන්න",
-    cart_btn: "කරත්තය", cart_title: "ඔබේ කරත්තය",
-    cart_total: "මුළු මුදල", cart_checkout: "ඇණවුම් කිරීමට",
-    hero_eyebrow: "Sri Lanka හොඳම Beauty Brand",
-    hero_title: "ඔබේ සම්භාවී සෞන්දර්යයෙ රහස අනාවරණය කරන්න",
-    hero_sub: "ශ්‍රේෂ්ඨ ස්වභාවික අමුද්‍රව්‍ය සමඟ විද්‍යාත්මකව නිර්මිත Skincare. ශ්‍රී ලංකාව පුරා දහස් ගණනකගේ විශ්වාසය දිනාගෙන ඇත.",
-    hero_shop: "දැන් කොළොල් කරන්න ✦", hero_wa: "WhatsApp කරන්න",
-    stat_customers: "සතුටු ගනුදෙනුකරුවන්", stat_products: "Premium නිෂ්පාදන", stat_natural: "ස්වභාවික අමුද්‍රව්‍ය",
-    badge_rating: "4.9 ශ්‍රේණිගත කිරීම", badge_reviews: "500+ අදහස්",
-    badge_delivery: "නොමිලේ Delivery", badge_island: "දිවයිනු පුරා",
-    trust_delivery: "දිවයිනු පුරා Delivery", trust_authentic: "100% සැබෑ නිෂ්පාදන",
-    trust_support: "24/7 WhatsApp සහය", trust_natural: "ස්වභාවික අමුද්‍රව්‍ය",
-    trust_happy: "5000+ සතුටු ගනුදෙනුකරුවන්",
-    products_eyebrow: "අපේ එකතුව", products_title: "Premium Beauty නිෂ්පාදන",
-    products_sub: "සෑම නිෂ්පාදනයක්ම ශ්‍රේෂ්ඨ අමුද්‍රව්‍ය සමඟ ප්‍රවේශමෙන් නිර්මිතය.",
-    why_eyebrow: "අපේ පොරොන්දුව", why_title: "ඇයි Suthuka තෝරා ගන්නේ?",
-    why_sub: "සෑම කාන්තාවකටම ඇගේ ස්වාභාවික සෞන්දර්යයෙ ආත්ම විශ්වාසය ලැබිය යුතු බව අපි විශ්වාස කරමු.",
-    faq_eyebrow: "සහය", faq_title: "නිතර අසන ප්‍රශ්න",
-    contact_eyebrow: "සම්බන්ධ වන්න", contact_title: "අප හා සම්බන්ධ වන්න",
-    contact_heading: "ඔබ සඳහා අපි මෙතැනය",
-    contact_desc: "නිෂ්පාදනයක් ගැන ප්‍රශ්නයක් හෝ Skincare උපදෙස් අවශ්‍ය නම්? WhatsApp හරහා ඕනෑම වෙලාවක අප හා සම්බන්ධ වන්න.",
-    contact_wa: "WhatsApp හරහා කතා කරන්න", contact_call: "+94 70 711 5227",
-    contact_hours_label: "ව්‍යාපාරික වේලාවන්", contact_hours: "සඳුදා – සෙනසුරාදා: ප.ව. 8:00 – ර.ව. 8:00",
-    contact_location: "📍 ශ්‍රී ලංකාව – දිවයිනු පුරා Delivery",
-    contact_form_title: "පණිවිඩයක් යවන්න",
-    form_name: "සම්පූර්ණ නම", form_mobile: "ජංගම දුරකථන අංකය", form_address: "ලිපිනය",
-    form_city: "නගරය", form_notes: "අමතර සටහන්", form_message: "පණිවිඩය",
-    form_name_ph: "ඔබේ සම්පූර්ණ නම ඇතුළු කරන්න", form_mobile_ph: "07X XXX XXXX",
-    form_address_ph: "Delivery ලිපිනය", form_city_ph: "ඔබේ නගරය",
-    form_notes_ph: "විශේෂ ඉල්ලීම් තිබේ ද?", form_message_ph: "ඔබේ පණිවිඩය මෙහි ටයිප් කරන්න...",
-    contact_send: "WhatsApp හරහා යවන්න",
-    footer_tagline: "ආදරයෙන් සහ විද්‍යාවෙන් නිර්මිත Premium Skincare. Suthuka Enterprises (Pvt) Ltd — ශ්‍රී ලංකාව පුරා විශ්වාසය.",
-    footer_quick: "ඉක්මන් සම්බන්ධ", footer_contact: "සම්බන්ධකම්",
-    footer_copy: "© 2025 Suthuka Enterprises (Pvt) Ltd. සියළු හිමිකම් ඇවිරිණි.",
-    checkout_title: "ඇණවුම ලබා දෙන්න",
-    checkout_place: "WhatsApp හරහා ඇණවුම කරන්න",
-    add_to_cart: "කරත්තයට එකතු කරන්න", buy_now: "දැන් ගන්න",
-    qty_label: "ප්‍රමාණය",
-    cat_all: "සියලු නිෂ්පාදන",
-    limited: "Stock සීමිතයි",
-    save: "ඉතිරිය",
-    wa_greeting: "ආයුබෝවන් Suthuka Beauty Care,\nමට ඇණවුමක් ලබා දෙන්නට අවශ්‍යයි.\n\n",
-    wa_details: "ගනුදෙනුකරු විස්තර:\nනම: ",
-    wa_phone: "\nදුරකථනය: ",
-    wa_address: "\nලිපිනය: ",
-    wa_city: ", ",
-    wa_products: "\n\nඇණවුම් කළ නිෂ්පාදන:\n",
-    wa_total: "\nමුළු මුදල: රු. ",
-    wa_close: "\n\nකරුණාකර ඔබේ Order Confirm කරන්න. ස්තූතියි! 🙏",
-    wa_contact_intro: "ආයුබෝවන් Suthuka Beauty Care,\n\nනම: ",
-    wa_contact_phone: "\nදුරකථනය: ",
-    wa_contact_msg: "\n\nපණිවිඩය: ",
-    toast_added: "✦ කරත්තයට එකතු කෙරිණි!",
-    toast_fill: "කරුණාකර අවශ්‍ය තොරතුරු සියල්ල පුරවන්න.",
-    toast_empty: "ඔබේ කරත්තය හිස්ය.",
+    brand:"සුතුක",brandSub:"බිව්ටි කෙයාර්",
+    navHome:"මුල් පිටුව",navProducts:"නිෂ්පාදන",navWhy:"ගැන",navFaq:"ප්‍රශ්න",navContact:"සම්බන්ධ වන්න",
+    heroEyebrow:"ශ්‍රී ලංකාවේ විශිෂ්ටතම රූපලාවණ්‍ය 브랜드",
+    heroTitle:"ස්වාභාවික දීප්තිය නැවත ලබා ගන්න",
+    heroDesc:"Suthuka Beauty Care — ස්වභාවික අමුද්‍රව්‍ය භාවිතයෙන් ඔබේ සමට පෝෂණය, දීප්තිය සහ නව ජීවයක් ලබා දෙයි. ශ්‍රී ලංකාව පුරා දහස් ගණනකගේ විශ්වාසය දිනාගත් ब्रांड.",
+    shopNow:"දැන් ඇණවුම් කරන්න",chatUs:"WhatsApp හරහා කතා කරන්න",
+    statCustomers:"සතුටු ගනුදෙනුකරුවන්",statProducts:"ගුණාත්මක නිෂ්පාදන",statNatural:"ස්වාභාවික අමුද්‍රව්‍ය",
+    badgeDelivery:"දූපත් පුරා ලබාදීම",badgeNatural:"100% ස්වාභාවික",badgeAuthentic:"ගුණාත්මක හා ආරක්ෂිත",
+    trust1:"ගුණාත්මක අමුද්‍රව්‍ය",trust2:"Dermatologist අනුමත",trust3:"ශ්‍රී ලංකාව පුරා නිරුත් ලබාදීම",trust4:"WhatsApp සහාය",
+    productsLabel:"අපේ එකතුව",productsTitle:"ගුණාත්මක සෙවිලිලි නිෂ්පාදන",
+    addCart:"කරත්තයට එකතු කරන්න",buyNow:"දැන් ගන්න",howToUse:"භාවිතා කරන ආකාරය",benefits:"ප්‍රතිලාභ",
+    whyLabel:"අපේ පොරොන්දුව",whyTitle:"Suthuka තෝරාගන්නේ ඇයි?",
+    why1Title:"ස්වාභාවික අමුද්‍රව්‍ය",why1Text:"Kojic Acid, Aloe Vera, Collagen, සඳුන් ඇතුළු ස්වාභාවික අමුද්‍රව්‍ය ඔස්සේ සෑම නිෂ්පාදනයක්ම සකස් කෙරේ.",
+    why2Title:"සෑම සමකටම ගැලපේ",why2Text:"තෙල්සහිත, වියළි, සංවේදී ඕනෑම සමකට ගැලපෙන, මෘදු හා ඵලදායී සූත්‍ර භාවිතා කෙරේ.",
+    why3Title:"දූපත් පුරා ලබාදීම",why3Text:"ශ්‍රී ලංකාවේ සෑම隅ක්ෂයකටම ඉක්මනින් නිෂ්පාදන ලබාදෙන්නෙමු.",
+    why4Title:"WhatsApp සහාය",why4Text:"ඇණවුම, ප්‍රශ්න, ලබාදීම nyomtatou — සියල්ල WhatsApp Chat එකකින් කළ හැකිය.",
+    faqLabel:"ප්‍රශ්න ඇතිද?",faqTitle:"නිතරම අසන ප්‍රශ්න",
+    faq1q:"ඇණවුම් කරන්නේ කෙසේද?",
+    faq1a:"ඉතා සරලයි! නිෂ්පාදන බලා, කරත්තයට එකතු කර, ඔබේ විස්තර ඇතුළත් කරන්න. 'WhatsApp හරහා ඇණවුම් කරන්න' ක්ලික් කළ විට ඔබේ ඇණවුම් විස්තර සමඟ WhatsApp වෙත යොමු වේ.",
+    faq2q:"ලබාදීම කොපමණ කාලයක් ගතවේද?",
+    faq2a:"ශ්‍රී ලංකාව පුරා ලබාදෙමු. සාමාන්‍යයෙන් ව්‍යාපාරික දින 1-3 ක් ගතවේ. කොළඹ හා ශාඛා ආශ්‍රිතව ඊළඟ දින ලැබිය හැකිය.",
+    faq3q:"ගෙවීම් ක්‍රම මොනවාද?",
+    faq3a:"ලංකාව පුරා Cash on Delivery (COD) ක්‍රමය භාවිතා කෙරේ. බැංකු හුවමාරු ද පිළිගනිමු. ඇණවුමෙන් පසු WhatsApp හරහා ගෙවීම් විස්තර ලැබේ.",
+    faq4q:"සහාය ලබාගන්නේ කෙසේද?",
+    faq4a:"+94 70 711 5227 හරහා WhatsApp හෝ ඇමතුමක් ගන්න. සතිය දිනක් 7ම ඔබේ ගැටළු හා ඇණවුම් සඳහා සහාය ලැබේ.",
+    contactLabel:"සම්බන්ධ වන්න",contactTitle:"ඔබට සහාය වීමට අප සූදානම්",
+    contactDesc:"නිෂ්පාදන හෝ ඇණවුම් ගැන ප්‍රශ්නයක් ඇත්නම් WhatsApp හරහා ඕනෑ වෙලාවක සම්බන්ධ වන්න.",
+    contactWA:"WhatsApp හරහා සම්බන්ධ වන්න",contactCall:"ඇමතුම: +94 70 711 5227",
+    formName:"සම්පූර්ණ නම",formPhone:"ජංගම දුරකථන අංකය",formMessage:"පණිවිඩය",formAddress:"ලිපිනය",formCity:"නගරය",formNotes:"අතිරේක සටහන්",
+    contactSend:"WhatsApp හරහා යවන්න",
+    cartTitle:"ඔබේ කරත්තය",cartTotal:"මුළු එකතුව",checkout:"ඇණවුම් කිරීමට ඉදිරියට යන්න",
+    cartEmpty:"ඔබේ කරත්තය හිස්ය. සාප්පු සවාරි යන්න!",
+    checkoutTitle:"ඇණවුම සම්පූර්ණ කරන්න",orderSummary:"ඇණවුම් සාරාංශය",orderTotal:"මුළු එකතුව",placeOrder:"WhatsApp හරහා ඇණවුම් කරන්න",
+    footerSub:"Suthuka Enterprises (Pvt) Ltd · ශ්‍රී ලංකාව",
+    footerCopy:"© 2025 Suthuka Enterprises (Pvt) Ltd. සෑම හිමිකම්ම ඇවිරිණි.",
+    waHello:"ආයුබෝවන් Suthuka Beauty Care,\nමට ඇණවුමක් කිරීමට අවශ්‍යයි.\n\n",
+    waCustomer:"*ගනුදෙනුකරු විස්තර:*\n",
+    waName:"නම: ",waPhone:"දුරකථනය: ",waAddr:"ලිපිනය: ",waCity:"නගරය: ",waNotes:"සටහන්: ",
+    waProducts:"\n*නිෂ්පාදන:*\n",waTotal:"\n*මුළු මිල: රු ",waTotalEnd:"*\n\nදයාකරලා ඇණවුම තහවුරු කරන්න.",
+    p1Name:"Suthuka Face Brightening Serum (30g)",
+    p1Desc:"කොජික් ඇසිඩ් (Kojic acid) සහ ඇලෝවේරා සාරය (Aloe gel) මුසු කර නිපදවූ සුවිශේෂී සීරම් එකක්. සම අභ්‍යන්තරයටම ගොස් සම පැහැපත් කරන අතර, සිත්ගන්නාසුලු Jasmine සුවඳකින් යුක්තයි.",
+    p1b1:"සමේ අඳුරු ගතිය නැති කර ස්වාභාවික දීප්තිය ලබා දෙයි.",p1b2:"ලප කැළැල් මකා දමා සමේ ඒකාකාරී පැහැය රැකදෙයි.",
+    p1How:"මුහුණ පිරිසිදු කර, සීරම් බිංදු කිහිපයක් මුහුණට සහ බෙල්ලට දමා, සමට හොඳින් උරා ගන්නා තෙක් මෘදුව සම්බාහනය කරන්න. ඉහළම ප්‍රතිඵල සඳහා දිනකට දෙවරක් භාවිතා කරන්න.",
+    p2Name:"Suthuka Night Face Cream (25g)",
+    p2Desc:"Hydrolyzed Collagen සහ Glutathione අඩංගු, රාත්‍රී නින්දේදී ඔබේ සමට අත්‍යවශ්‍ය පෝෂණය ලබා දෙන විශේෂිත රාත්‍රී ක්‍රීම් එකකි. සියලුම සමේ වර්ග සඳහා සුදුසුයි.",
+    p2b1:"සමේ රැලි වැටීම් අවම කර තරුණ සහ දීප්තිමත් පෙනුමක් ලබා දෙයි.",p2b2:"Shea Butter සහ Aloe Gel මගින් සම ගැඹුරින් තෙතමනය රැකදෙයි.",
+    p2How:"රාත්‍රී නින්දට පෙර, කුඩා ප්‍රමාණයක් ගෙන මුහුණේ ආලේප කරන්න. ඉහළ අතට වෘත්තාකාරව සම්බාහනය කර සමට හොඳින් උරා ගන්නා තෙක් තබන්න. දිනපතා රාත්‍රියේ භාවිතා කරන්න.",
+    p3Name:"Suthuka Face & Body Pack (25g)",
+    p3Desc:"සඳුන් (Sandalwood), Multani mitti සහ Hydrolyzed Collagen අඩංගු, සමේ තද බව වැඩි කර නැවුම් දීප්තියක් ලබා දෙන ෆේස් ඇන්ඩ් බොඩි පැක් එකකි.",
+    p3b1:"සමේ තද බව (Tightening) වැඩි කර එල්ලා වැටීම පාලනය කරයි.",p3b2:"ස්වාභාවික අමුද්‍රව්‍ය මගින් සම පිරිසිදු කර පෝෂණය කරයි.",
+    p3How:"Yogurt, ජලය හෝ නැවුම් කිරි සමඟ මිශ්‍ර කරන්න. ඇස් මඟහරිමින් සමේ ආලේප කරන්න. මිනිත්තු 30-40ක් හෝ වියළෙන තෙක් තබා, සෝදා හරින්න. (සතියකට 2-3 වතාවක්)",
+    p4Name:"Suthuka Coffee Body Scrub (30g)",
+    p4Desc:"Coffee කුඩු සහ Sugar අඩංගු, සමේ මැරුණු සෛල ගැඹුරින් ඉවත් කිරීමට සහ Hyperpigmentation මකා දැමීමට නිපදවූ Body Scrub එකකි.",
+    p4b1:"සමේ ඇති රළු ගතිය නැති කර සම මෘදු සහ සිනිඳු කරයි.",p4b2:"සිරුරේ අඳුරු ලප ක්‍රමයෙන් නැති කරයි.",
+    p4How:"තෙතමනය සහිත සම මත ආලේප කර, රළු ස්ථාන කෙරෙහි වැඩි අවධානයෙන් වෘත්තාකාරව සම්බාහනය කරන්න. මිනිත්තු කිහිපයකින් සෝදා හරින්න. (සතියකට 2-3 වතාවක්). වියළි සහ සංවේදී සමක් ඇති අය සඳහා නොගැලපේ.",
+    p5Name:"Suthuka Night Body Lotion (25g)",
+    p5Desc:"Glycerin, Hydrolyzed Collagen සහ Kojic acid අඩංගු රාත්‍රී සිරුර ගැඹුරින් අලුත්වැඩියා කරන Night Repair Body Lotion එකකි.",
+    p5b1:"සමේ අඳුරු ලප නැති කර, සිරුර ඒකාකාරීව පැහැපත් කරයි.",p5b2:"රාත්‍රී කාලයේදී සමේ සෛල වර්ධනය උත්තේජනය කරයි.",
+    p5How:"ස්නානය කිරීමෙන් පසු දිනපතා රාත්‍රී කාලයේදී මුළු සිරුරේ ආලේප කර සම්බාහනය කරන්න.",
+    p6Name:"Suthuka Day Body Lotion (25g)",
+    p6Desc:"හිරු එළියෙන් සහ දූවිල්ලෙන් සම ආරක්ෂා කරන Day Shield Body Lotion. ඉතාමත් සුවඳවත් Lavender සුවඳකින් යුක්තයි.",
+    p6b1:"දවස පුරා සම තෙතමනයෙන් (Hydrated) තබා ගනිමින් Tanning වළක්වයි.",p6b2:"සම මතුපිට ආරක්ෂිත ස්ථරයක් සාදයි.",
+    p6How:"උදෑසන ස්නානයෙන් පසු හෝ නිවසින් පිටතට යාමට පෙර සිරුරේ ආලේප කර සම්බාහනය කරන්න.",
+    p7Name:"Suthuka Day Face Cream",
+    p7Desc:"Sunflower Oil සාරය අඩංගු, UV ආරක්ෂාව සඳහා විශේෂ සූත්‍රයක් ඇති දහවල් සත්කාරක Face Cream එකකි.",
+    p7b1:"මුහුණේ Oil ගතිය පාලනය කරමින්, ලප කැළැල් මකා දමයි.",p7b2:"සමට ස්වාභාවික පැහැපත් බවක් සහ ක්ෂණික දීප්තිය ලබා දෙයි.",
+    p7How:"උදෑසන මුහුණ සහ බෙල්ල පිරිසිදු කර, ආලේප කරන්න. හොඳින් උරා ගන්නා තෙක් සම්බාහනය කරන්න.",
+    p8Name:"Suthuka Body Butter",
+    p8Desc:"ස්වාභාවික Cocoa Butter ගුණ අඩංගු, වියළි සහ රළු සමක් ඇති අයට ඉතාමත් සුදුසු Body Butter සත්කාරයකි.",
+    p8b1:"සම පැලීම, රළු වීම් වළක්වා දිගු වේලාවක් මෘදුව තබයි.",p8b2:"සමේ Elasticity වැඩි කර ගැඹුරින් පෝෂණය කරයි.",
+    p8How:"ස්නානයෙන් පසු Elbow, දණහිස් හෝ මුළු සිරුරේ වියළි ස්ථානවලට ආලේප කර හොඳින් සම්බාහනය කරන්න.",
+    toastAdded:"කරත්තයට එකතු කරන ලදි!",qty:"ප්‍රමාණය",save:"ඉතිරිය"
   }
 };
 
-/* ═══════════════════════════════════════════
-   PRODUCT DATA
-═══════════════════════════════════════════ */
-const products = [
-  {
-    id: 1,
-    category: "Serum",
-    name_en: "Suthuka Face Brightening Serum",
-    name_si: "Suthuka Face Brightening Serum",
-    image: "https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing",
-    price: 2450,
-    sale_price: 1500,
-    description_en: "A premium face brightening serum formulated with Kojic Acid and natural Aloe Vera gel. It penetrates deep into the skin layers to restore natural radiance, leaving a delightful Jasmine fragrance.",
-    description_si: "Kojic Acid සහ Aloe Vera Gel මුසු කර නිපදවූ සුවිශේෂී Serum එකක්. සම අභ්‍යන්තරයටම ගොස් සම පැහැපත් කරන අතර, Jasmine Fragrance යුක්තයි.",
-    benefits_en: ["Eliminates skin dullness and unifies uneven skin tone.", "Fades dark spots and blemishes for a flawless look."],
-    benefits_si: ["සමේ අඳුරු ගතිය නැති කර ස්වභාවික දීප්තිය ලබා දෙයි.", "ලප කැළැල් මකා දමා සමේ ඒකාකාරී පැහැය රැකදෙයි."],
-    weight: "30g", limited: true
-  },
-  {
-    id: 2,
-    category: "Night Cream",
-    name_en: "Suthuka Night Face Cream",
-    name_si: "Suthuka Night Face Cream",
-    image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
-    price: 2850,
-    sale_price: 1700,
-    description_en: "An advanced overnight treatment cream enriched with Hydrolyzed Collagen and Glutathione. Specially designed for all skin types to nourish and rejuvenate your skin while you sleep.",
-    description_si: "Hydrolyzed Collagen සහ Glutathione අඩංගු, රාත්‍රී නින්දේදී ඔබේ සමට පෝෂණය ලබා දෙන Night Cream. සියලු Skin Types සඳහා සුදුසුයි.",
-    benefits_en: ["Reduces the appearance of fine lines and wrinkles for a youthful glow.", "Enriched with Shea Butter and Aloe Gel to deeply hydrate and lock in moisture."],
-    benefits_si: ["සමේ රැලි අවම කර තරුණ දීප්තිමත් පෙනුමක් ලබා දෙයි.", "Shea Butter සහ Aloe Gel මගින් සම ගැඹුරින් Hydrate කරයි."],
-    weight: "25g", limited: false
-  },
-  {
-    id: 3,
-    category: "Face Pack",
-    name_en: "Suthuka Face & Body Pack",
-    name_si: "Suthuka Face & Body Pack",
-    image: "https://drive.google.com/file/d/1FRR1oslc7hqdouWToJjTz62cLxXC5T9A/view?usp=sharing",
-    price: 2650,
-    sale_price: 1700,
-    description_en: "A revitalizing face and body pack infused with Sandalwood, Multani Mitti, and Hydrolyzed Collagen. Formulated to tighten the skin and boost natural radiance.",
-    description_si: "Sandalwood, Multani Mitti සහ Hydrolyzed Collagen අඩංගු, සමේ Tightening වැඩි කර ස්වභාවික දීප්තිය ලබා දෙන Face & Body Pack.",
-    benefits_en: ["Effectively tightens the skin and prevents sagging.", "Deeply purifies, detoxifies, and nourishes the skin."],
-    benefits_si: ["සමේ Tightening වැඩි කර එල්ලා වැටීම වළක්වයි.", "ස්වභාවික අමුද්‍රව්‍ය මගින් සම පිරිසිදු කර Detox කරයි."],
-    weight: "25g", limited: false
-  },
-  {
-    id: 4,
-    category: "Scrub",
-    name_en: "Suthuka Coffee Body Scrub",
-    name_si: "Suthuka Coffee Body Scrub",
-    image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
-    price: 2750,
-    sale_price: 1700,
-    description_en: "A powerful body scrub crafted with Coffee powder, Sugar, and Glycolic Acid. Perfect for hard exfoliation and targeting hyperpigmentation across the body.",
-    description_si: "Coffee Powder සහ Sugar අඩංගු, Hyperpigmentation Exfoliation සඳහා නිපදවූ Body Scrub.",
-    benefits_en: ["Removes dead skin cells to reveal smooth and soft skin.", "Gradually lightens dark patches and evens out skin discoloration."],
-    benefits_si: ["සමේ Dead Cells ඉවත් කර සිනිඳු සමක් ලබා දෙයි.", "අඳුරු ලප ක්‍රමයෙන් නැති කරයි."],
-    weight: "30g", limited: true
-  },
-  {
-    id: 5,
-    category: "Body Lotion",
-    name_en: "Suthuka Night Body Lotion",
-    name_si: "Suthuka Night Body Lotion",
-    image: "https://drive.google.com/file/d/1mSaPeG0PN2O05WGIUWa5Jc8DCWUbf-OQ/view?usp=sharing",
-    price: 2950,
-    sale_price: 1700,
-    description_en: "A specialized night repair body lotion containing Glycerin, Hydrolyzed Collagen, and Kojic Acid. It works overnight to repair skin cells and improve overall texture.",
-    description_si: "Glycerin, Hydrolyzed Collagen සහ Kojic Acid අඩංගු, රාත්‍රී Repair සඳහා නිපදවූ Body Lotion.",
-    benefits_en: ["Reduces dark spots and promotes an even, brighter body complexion.", "Stimulates skin cell regeneration during your sleep."],
-    benefits_si: ["සිරුරේ අඳුරු ලප නැති කර Complexion Bright කරයි.", "රාත්‍රී කාලයේ සමේ Cell Regeneration උත්තේජනය කරයි."],
-    weight: "25g", limited: false
-  },
-  {
-    id: 6,
-    category: "Body Lotion",
-    name_en: "Suthuka Day Body Lotion",
-    name_si: "Suthuka Day Body Lotion",
-    image: "https://drive.google.com/file/d/1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem/view?usp=sharing",
-    price: 2950,
-    sale_price: 1700,
-    description_en: "A protective day shield body lotion formulated to guard your skin against harsh sunlight and environmental pollutants. Infused with a refreshing Lavender fragrance.",
-    description_si: "හිරු එළියෙන් සහ දූෂණයෙන් සම ආරක්ෂා කරන Day Shield Body Lotion. Refreshing Lavender Fragrance සහිතයි.",
-    benefits_en: ["Keeps the skin deeply hydrated all day while preventing tanning.", "Forms a lightweight protective barrier on the skin surface."],
-    benefits_si: ["සම Hydrated තබා Tan වීම වළක්වයි.", "සම මතුපිට Protective Layer සාදයි."],
-    weight: "25g", limited: false
-  },
-  {
-    id: 7,
-    category: "Day Cream",
-    name_en: "Suthuka Day Face Cream",
-    name_si: "Suthuka Day Face Cream",
-    image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
-    price: 2650,
-    sale_price: 1650,
-    description_en: "A nourishing daily face cream enriched with Sunflower Oil extract. Features a unique formula tailored for reliable UV protection during the day.",
-    description_si: "Sunflower Oil සාරය අඩංගු, UV Protection සහිත Day Face Cream. දිනපතා භාවිතයට සුදුසුයි.",
-    benefits_en: ["Controls excess facial oil while fading away blemishes and spots.", "Provides an instant brightening effect and a natural healthy glow."],
-    benefits_si: ["මුහුණේ Oil ගතිය පාලනය කරමින් ලප කැළැල් Fade කරයි.", "සමට ස්වභාවික Bright Glow ලබා දෙයි."],
-    weight: "25g", limited: false
-  },
-  {
-    id: 8,
-    category: "Body Butter",
-    name_en: "Suthuka Body Butter",
-    name_si: "Suthuka Body Butter",
-    image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
-    price: 3250,
-    sale_price: 1850,
-    description_en: "A luxurious, ultra-rich body butter made with natural Cocoa Butter. Ideally suited for dry, rough, or dehydrated skin requiring intense moisturization.",
-    description_si: "ස්වභාවික Cocoa Butter ගුණයෙන් සපිරි, වියළි සහ Rough සමක් ඇති අය සඳහා Intense Moisturizing Body Butter.",
-    benefits_en: ["Prevents skin cracking and roughness, keeping it velvety soft for hours.", "Restores skin elasticity and provides deep nourishment."],
-    benefits_si: ["සම Crack වීම, Rough වීම වළක්වා දිගු වේලාවක් Soft තබයි.", "සමේ Elasticity වැඩි කර Nourishment ලබා දෙයි."],
-    weight: "One Size", limited: true
-  }
-];
+// ─── STATE ────────────────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('sb_lang') || 'en';
+let cart = [];
 
-/* ═══════════════════════════════════════════
-   WHY CARDS
-═══════════════════════════════════════════ */
-const whyCards = [
-  { icon: "🌿", key_title: "why_natural", key_desc: "why_natural_d",
-    title_en: "Quality Ingredients", title_si: "ගුණාත්මක Ingredients",
-    desc_en: "We use only the finest natural ingredients, carefully selected for maximum skin benefit and safety.", desc_si: "ශ්‍රේෂ්ඨ ස්වභාවික Ingredients පමණක් භාවිත කරමු, Skin Benefit සහ ආරක්ෂාව සඳහා." },
-  { icon: "😊", key_title: "why_satisfaction", key_desc: "why_satisfaction_d",
-    title_en: "Customer Satisfaction", title_si: "ගනුදෙනුකරු සතුට",
-    desc_en: "5000+ happy customers across Sri Lanka trust Suthuka for visible, real skin transformation.", desc_si: "ශ්‍රී ලංකාව පුරා 5000+ ගනුදෙනුකරුවන් Suthuka Skin Transformation සඳහා විශ්වාස කරයි." },
-  { icon: "🚚", key_title: "why_delivery", key_desc: "why_delivery_d",
-    title_en: "Fast Island Delivery", title_si: "ඉක්මන් Delivery",
-    desc_en: "We deliver to every corner of Sri Lanka, swiftly and safely. Your beauty essentials at your doorstep.", desc_si: "ශ්‍රී ලංකාවේ සෑම隅කටම ඉක்மනින් Deliver කරනවා. ඔබේ Beauty Essentials ගෙදොරටම." },
-  { icon: "🔬", key_title: "why_formula", key_desc: "why_formula_d",
-    title_en: "Scientifically Formulated", title_si: "විද්‍යාත්මකව Formulated",
-    desc_en: "Each product is backed by dermatological research, blending science with the power of nature.", desc_si: "සෑම නිෂ්පාදනයක්ම Dermatological Research පිටුබලයෙන්, ස්වභාවය සහ විද්‍යාව ඒකාබද්ධ කරමිනි." },
-  { icon: "💯", key_title: "why_authentic", key_desc: "why_authentic_d",
-    title_en: "100% Authentic", title_si: "100% සැබෑ",
-    desc_en: "Every Suthuka product is original, quality-tested, and comes with our seal of guarantee.", desc_si: "Suthuka නිෂ්පාදන සියල්ල Original, Quality Tested, සහ Guarantee සමඟ ලැබේ." },
-  { icon: "💬", key_title: "why_support", key_desc: "why_support_d",
-    title_en: "WhatsApp Support", title_si: "WhatsApp සහය",
-    desc_en: "Our friendly team is available on WhatsApp to guide you on the right products for your skin.", desc_si: "ඔබේ Skin Type සඳහා නිවැරදි නිෂ්පාදන තෝරා ගැනීමට WhatsApp Support ලබා ගන්න." },
-];
+// ─── LANG ─────────────────────────────────────────────────────────────────
+function t(key){return translations[currentLang][key] || translations.en[key] || key}
 
-/* ═══════════════════════════════════════════
-   FAQ
-═══════════════════════════════════════════ */
-const faqs = [
-  { q_en: "How do I place an order?", q_si: "කෙසේ ද Order ලබා දෙන්නේ?",
-    a_en: "Simply browse our products, add items to your cart, fill in your details, and click 'Place Order via WhatsApp'. We'll confirm your order via WhatsApp instantly!",
-    a_si: "Products Browse කරන්න, Cart එකට Add කරන්න, Details පුරවන්න, 'WhatsApp හරහා Order' click කරන්න. WhatsApp හරහා Order Confirm කරමු!" },
-  { q_en: "How long does delivery take?", q_si: "Delivery කොපමණ කාලයකට ලැබේ ද?",
-    a_en: "Standard delivery takes 2–4 business days islandwide. Express delivery options are also available. We'll provide tracking updates via WhatsApp.",
-    a_si: "Standard Delivery දිවයිනු පුරා දින 2-4 ක් ගතවේ. Express Delivery ද ලබා ගත හැකිය. WhatsApp හරහා Tracking Updates ලබා දෙනු ඇත." },
-  { q_en: "What are the payment methods?", q_si: "ගෙවීම් ක්‍රම මොනවා ද?",
-    a_en: "We accept Cash on Delivery (COD), bank transfers, and digital payments. Payment details will be confirmed when you place your order via WhatsApp.",
-    a_si: "Cash on Delivery (COD), Bank Transfer සහ Digital Payments පිළිගනිමු. Order WhatsApp කිරීමෙදී Payment Details Confirm කෙරේ." },
-  { q_en: "Are the products suitable for sensitive skin?", q_si: "Sensitive Skin සඳහා සුදුසු ද?",
-    a_en: "Most of our products are formulated for all skin types. The Coffee Body Scrub is not recommended for very dry or sensitive skin. For personalized advice, contact us on WhatsApp.",
-    a_si: "බොහෝ නිෂ්පාදන Skin Types සියල්ල සඳහා සුදුසු වේ. Coffee Body Scrub Sensitive හෝ ඉතා Dry Skin සඳහා නිර්දේශ නොකෙරේ. WhatsApp හරහා Advice ගන්න." },
-  { q_en: "How do I contact customer support?", q_si: "Customer Support හා සම්බන්ධ වන්නේ කෙසේ ද?",
-    a_en: "You can reach us anytime via WhatsApp at +94 70 711 5227, or call us during business hours (Mon–Sat, 8AM–8PM). We're always happy to help!",
-    a_si: "WhatsApp +94 70 711 5227 හරහා ඕනෑම වෙලාවක Contact කරන්න, හෝ Business Hours (සඳුදා–සෙනසුරාදා, ප.ව. 8–ර.ව. 8) Call කරන්න." },
-  { q_en: "Can I return or exchange a product?", q_si: "Return හෝ Exchange කළ හැකි ද?",
-    a_en: "If you receive a damaged or incorrect item, please contact us within 24 hours of delivery via WhatsApp with a photo. We'll arrange a replacement promptly.",
-    a_si: "Damaged හෝ වැරදි Item ලැබුණහොත්, Delivery දිනට පසු පැය 24 ක් ඇතුළත Photo සමඟ WhatsApp කරන්න. ඉක්මනින් Replacement හෝ Refund Arrange කරනු ඇත." }
-];
-
-/* ═══════════════════════════════════════════
-   STATE
-═══════════════════════════════════════════ */
-let cart = JSON.parse(localStorage.getItem('suthuka_cart') || '[]');
-let currentLang = localStorage.getItem('suthuka_lang') || 'en';
-let activeCategory = 'all';
-let mobileMenuOpen = false;
-let cartOpen = false;
-
-/* ═══════════════════════════════════════════
-   LANGUAGE
-═══════════════════════════════════════════ */
-function t(key) { return translations[currentLang][key] || translations.en[key] || key; }
-
-function setLang(lang) {
+function setLang(lang){
   currentLang = lang;
-  localStorage.setItem('suthuka_lang', lang);
-  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-  document.getElementById('lang-si').classList.toggle('active', lang === 'si');
-  document.getElementById('m-lang-en').classList.toggle('active', lang === 'en');
-  document.getElementById('m-lang-si').classList.toggle('active', lang === 'si');
-  applyTranslations();
-  renderProducts();
-  renderWhy();
-  renderFAQ();
-  renderCart();
-}
-
-function applyTranslations() {
-  document.querySelectorAll('[data-t]').forEach(el => {
+  localStorage.setItem('sb_lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-si').classList.toggle('active', lang==='si');
+  document.querySelectorAll('[data-t]').forEach(el=>{
     const key = el.getAttribute('data-t');
-    const val = t(key);
-    if (val) el.textContent = val;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t(key+'Placeholder')||el.placeholder}
+    else{el.textContent=t(key)}
   });
-  document.querySelectorAll('[data-t-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-t-placeholder');
-    const val = t(key);
-    if (val) el.placeholder = val;
-  });
-}
-
-/* ═══════════════════════════════════════════
-   PRODUCTS RENDER
-═══════════════════════════════════════════ */
-function getCategories() {
-  const cats = ['all', ...new Set(products.map(p => p.category))];
-  return cats;
-}
-
-function renderCategoryTabs() {
-  const cats = getCategories();
-  const container = document.getElementById('cat-tabs');
-  container.innerHTML = cats.map(c => `
-    <button class="cat-tab ${c === activeCategory ? 'active' : ''}"
-      onclick="filterCategory('${c}')">
-      ${c === 'all' ? t('cat_all') : c}
-    </button>
-  `).join('');
-}
-
-function filterCategory(cat) {
-  activeCategory = cat;
-  renderCategoryTabs();
   renderProducts();
+  renderCart();
+  renderFAQ();
 }
 
-function renderProducts() {
-  renderCategoryTabs();
-  const filtered = activeCategory === 'all' ? products : products.filter(p => p.category === activeCategory);
-  const grid = document.getElementById('products-grid');
-  const isLang = currentLang === 'si';
-
-  grid.innerHTML = filtered.map(p => {
-    const name = isLang ? p.name_si : p.name_en;
-    const desc = isLang ? p.description_si : p.description_en;
-    const benefits = isLang ? p.benefits_si : p.benefits_en;
-    const saving = p.price - p.sale_price;
-    const cartItem = cart.find(c => c.id === p.id);
-    const qty = cartItem ? cartItem.qty : 1;
-
+// ─── PRODUCTS ─────────────────────────────────────────────────────────────
+function renderProducts(){
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = products.map(p=>{
+    const save = p.origPrice - p.price;
+    const pct = Math.round(save/p.origPrice*100);
     return `
-    <div class="product-card fade-up" id="pc-${p.id}">
+    <div class="product-card">
       <div class="product-img-wrap">
-        <img src="${p.image}" alt="${name}" onerror="this.style.display='none';this.parentElement.querySelector('.img-emoji').style.display='flex'">
-        <div class="img-emoji" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;font-size:64px;background:linear-gradient(135deg,#F9EEE8,#F2D9D0);">🌸</div>
-        ${p.limited ? `<div class="product-badge">${t('limited')}</div>` : ''}
+        <img class="product-img" src="${p.image}" alt="${t(p.nameKey)}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><rect fill=%22%23EDCABF%22 width=%22400%22 height=%22400%22/><text y=%22210%22 x=%22200%22 text-anchor=%22middle%22 font-size=%2228%22 fill=%22%23A0714F%22>Suthuka</text></svg>'">
+        ${p.badge?`<div class="product-badge">${p.badge}</div>`:''}
       </div>
       <div class="product-body">
-        <div class="product-category">${p.category} · ${p.weight}</div>
-        <div class="product-name">${name}</div>
-        <div class="product-desc">${desc}</div>
-        <ul class="product-benefits">
-          ${benefits.map(b => `<li>${b}</li>`).join('')}
-        </ul>
-        <div class="product-footer">
-          <div class="product-price-row">
-            <span class="price-sale">Rs ${p.sale_price.toLocaleString()}</span>
-            <span class="price-original">Rs ${p.price.toLocaleString()}</span>
-            <span class="price-save">${t('save')} Rs ${saving.toLocaleString()}</span>
+        <div class="product-name">${t(p.nameKey)}</div>
+        <div class="product-desc">${t(p.descKey)}</div>
+        <div class="product-benefits">
+          ${p.benefitsKey.map(b=>`<div class="benefit-item"><span class="benefit-dot">✦</span>${t(b)}</div>`).join('')}
+        </div>
+        <div class="product-pricing">
+          <span class="price-sale">Rs ${p.price.toLocaleString()}</span>
+          <span class="price-orig">Rs ${p.origPrice.toLocaleString()}</span>
+          <span class="price-save">${pct}% off</span>
+        </div>
+        <div class="qty-wrap">
+          <span class="qty-label">${t('qty')}:</span>
+          <div class="qty-ctrl">
+            <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+            <input class="qty-input" type="number" value="1" min="1" max="99" id="qty-${p.id}" onchange="validateQty(${p.id})">
+            <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
           </div>
-          <div class="qty-row">
-            <span class="qty-label">${t('qty_label')}:</span>
-            <div class="qty-control">
-              <button class="qty-btn" onclick="changeProductQty(${p.id}, -1)">−</button>
-              <input class="qty-val" id="pqty-${p.id}" type="number" value="${qty}" min="1" max="10" onchange="setProductQty(${p.id}, this.value)">
-              <button class="qty-btn" onclick="changeProductQty(${p.id}, 1)">+</button>
-            </div>
-          </div>
-          <button class="btn-add-cart" onclick="addToCart(${p.id})">🛒 ${t('add_to_cart')}</button>
-          <button class="btn-buy-now" onclick="buyNow(${p.id})">⚡ ${t('buy_now')}</button>
+        </div>
+        <div class="product-actions">
+          <button class="btn-cart" onclick="addToCart(${p.id})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            ${t('addCart')}
+          </button>
+          <button class="btn-wa" onclick="buyNow(${p.id})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.522 5.828L.061 23.408a.5.5 0 00.53.621l5.753-1.509A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.877 9.877 0 01-5.048-1.386l-.362-.215-3.752.984 1.001-3.657-.236-.375A9.862 9.862 0 012.108 12C2.108 6.531 6.531 2.108 12 2.108c5.47 0 9.892 4.423 9.892 9.892 0 5.47-4.422 9.892-9.892 9.892z"/></svg>
+            ${t('buyNow')}
+          </button>
         </div>
       </div>
     </div>`;
   }).join('');
-
-  observeFadeElements();
 }
 
-function changeProductQty(id, delta) {
-  const input = document.getElementById(`pqty-${id}`);
-  if (!input) return;
-  let val = parseInt(input.value) + delta;
-  val = Math.max(1, Math.min(10, val));
-  input.value = val;
+function changeQty(id, delta){
+  const inp = document.getElementById('qty-'+id);
+  if(!inp)return;
+  let v = parseInt(inp.value)||1;
+  v = Math.max(1, Math.min(99, v+delta));
+  inp.value = v;
+}
+function validateQty(id){
+  const inp = document.getElementById('qty-'+id);
+  if(!inp)return;
+  let v = parseInt(inp.value)||1;
+  inp.value = Math.max(1, Math.min(99, v));
 }
 
-function setProductQty(id, val) {
-  const input = document.getElementById(`pqty-${id}`);
-  if (!input) return;
-  let v = Math.max(1, Math.min(10, parseInt(val) || 1));
-  input.value = v;
-}
-
-/* ═══════════════════════════════════════════
-   CART
-═══════════════════════════════════════════ */
-function saveCart() { localStorage.setItem('suthuka_cart', JSON.stringify(cart)); }
-
-function updateCartCount() {
-  const total = cart.reduce((s, i) => s + i.qty, 0);
-  document.getElementById('cart-count').textContent = total;
-}
-
-function addToCart(id) {
-  const product = products.find(p => p.id === id);
-  const qtyInput = document.getElementById(`pqty-${id}`);
-  const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
-
-  const existing = cart.find(c => c.id === id);
-  if (existing) {
-    existing.qty = Math.min(existing.qty + qty, 10);
-  } else {
-    cart.push({ id, qty });
-  }
-  saveCart();
+// ─── CART ─────────────────────────────────────────────────────────────────
+function addToCart(id){
+  const p = products.find(x=>x.id===id);
+  const qty = parseInt(document.getElementById('qty-'+id)?.value)||1;
+  const existing = cart.find(x=>x.id===id);
+  if(existing){existing.qty += qty}
+  else{cart.push({...p, qty})}
   updateCartCount();
-  showToast(t('toast_added'));
   renderCart();
+  showToast(t('toastAdded'));
 }
 
-function buyNow(id) {
+function buyNow(id){
   addToCart(id);
-  toggleCart();
+  openCart();
 }
 
-function removeFromCart(id) {
-  cart = cart.filter(c => c.id !== id);
-  saveCart();
-  updateCartCount();
-  renderCart();
+function updateCartCount(){
+  const total = cart.reduce((s,i)=>s+i.qty,0);
+  const el = document.getElementById('cartCount');
+  el.textContent = total;
+  el.style.display = total>0?'flex':'none';
 }
 
-function updateCartQty(id, delta) {
-  const item = cart.find(c => c.id === id);
-  if (!item) return;
-  item.qty = Math.max(1, Math.min(10, item.qty + delta));
-  saveCart();
-  updateCartCount();
-  renderCart();
-}
+function getCartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
 
-function getCartTotal() {
-  return cart.reduce((s, c) => {
-    const p = products.find(pr => pr.id === c.id);
-    return s + (p ? p.sale_price * c.qty : 0);
-  }, 0);
-}
-
-function renderCart() {
-  const list = document.getElementById('cart-items-list');
-  const totalEl = document.getElementById('cart-total-val');
-  totalEl.textContent = getCartTotal().toLocaleString();
-
-  if (cart.length === 0) {
-    list.innerHTML = `<div class="cart-empty"><div class="emoji">🛒</div><p>${t('cart_title')} is empty</p></div>`;
+function renderCart(){
+  const wrap = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+  if(cart.length===0){
+    wrap.innerHTML = `<div class="cart-empty">${t('cartEmpty')}</div>`;
+    totalEl.textContent = 'Rs 0';
     return;
   }
-
-  list.innerHTML = cart.map(ci => {
-    const p = products.find(pr => pr.id === ci.id);
-    if (!p) return '';
-    const name = currentLang === 'si' ? p.name_si : p.name_en;
-    return `
-    <div class="cart-item">
-      <div class="cart-item-img">🌸</div>
-      <div class="cart-item-info">
-        <div class="cart-item-name">${name}</div>
-        <div class="cart-item-price">Rs ${(p.sale_price * ci.qty).toLocaleString()}</div>
+  wrap.innerHTML = cart.map(item=>`
+    <div class="cart-row">
+      <img class="cart-thumb" src="${item.image}" alt="${t(item.nameKey)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect fill=%22%23EDCABF%22 width=%2264%22 height=%2264%22/></svg>'">
+      <div>
+        <div class="cart-item-name">${t(item.nameKey)}</div>
+        <div class="cart-item-price">Rs ${item.price.toLocaleString()}</div>
         <div class="cart-item-qty">
-          <button class="ci-qty-btn" onclick="updateCartQty(${p.id}, -1)">−</button>
-          <span class="ci-qty-val">${ci.qty}</span>
-          <button class="ci-qty-btn" onclick="updateCartQty(${p.id}, 1)">+</button>
+          <button class="cart-qty-btn" onclick="cartQty(${item.id},-1)">−</button>
+          <span class="cart-qty-num">${item.qty}</span>
+          <button class="cart-qty-btn" onclick="cartQty(${item.id},1)">+</button>
         </div>
       </div>
-      <button class="cart-remove" onclick="removeFromCart(${p.id})">🗑</button>
-    </div>`;
-  }).join('');
+      <button class="cart-remove" onclick="removeFromCart(${item.id})">✕</button>
+    </div>`).join('');
+  totalEl.textContent = `Rs ${getCartTotal().toLocaleString()}`;
 }
 
-function toggleCart() {
-  cartOpen = !cartOpen;
-  document.getElementById('cart-overlay').classList.toggle('open', cartOpen);
-  document.getElementById('cart-sidebar').classList.toggle('open', cartOpen);
-  if (cartOpen) renderCart();
+function cartQty(id, delta){
+  const item = cart.find(x=>x.id===id);
+  if(!item)return;
+  item.qty = Math.max(0, item.qty+delta);
+  if(item.qty===0){cart = cart.filter(x=>x.id!==id)}
+  updateCartCount();
+  renderCart();
+  renderSummary();
 }
 
-/* ═══════════════════════════════════════════
-   CHECKOUT
-═══════════════════════════════════════════ */
-function openCheckout() {
-  if (cart.length === 0) { showToast(t('toast_empty')); return; }
-  toggleCart();
-
-  const summary = document.getElementById('checkout-summary');
-  const itemsHTML = cart.map(ci => {
-    const p = products.find(pr => pr.id === ci.id);
-    if (!p) return '';
-    const name = currentLang === 'si' ? p.name_si : p.name_en;
-    return `<div class="checkout-summary-item"><span>${name} × ${ci.qty}</span><span>Rs ${(p.sale_price * ci.qty).toLocaleString()}</span></div>`;
-  }).join('');
-
-  summary.innerHTML = `
-    <div class="checkout-summary-title">📦 Order Summary</div>
-    ${itemsHTML}
-    <div class="checkout-summary-total"><span>Total</span><span>Rs ${getCartTotal().toLocaleString()}</span></div>`;
-
-  document.getElementById('checkout-modal').classList.add('open');
-  applyTranslations();
+function removeFromCart(id){
+  cart = cart.filter(x=>x.id!==id);
+  updateCartCount();
+  renderCart();
+  renderSummary();
 }
 
-function closeCheckout() {
-  document.getElementById('checkout-modal').classList.remove('open');
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow='';
 }
 
-function placeOrder() {
+// ─── CHECKOUT ─────────────────────────────────────────────────────────────
+function renderSummary(){
+  const wrap = document.getElementById('summaryItems');
+  const totalEl = document.getElementById('summaryTotal');
+  wrap.innerHTML = cart.map(i=>`
+    <div class="summary-row">
+      <span>${t(i.nameKey)} × ${i.qty}</span>
+      <span>Rs ${(i.price*i.qty).toLocaleString()}</span>
+    </div>`).join('');
+  totalEl.textContent = `Rs ${getCartTotal().toLocaleString()}`;
+}
+
+function openCheckout(){
+  if(cart.length===0)return;
+  closeCart();
+  renderSummary();
+  document.getElementById('checkoutModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCheckout(){
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function placeOrder(){
   const name = document.getElementById('co-name').value.trim();
   const phone = document.getElementById('co-phone').value.trim();
   const address = document.getElementById('co-address').value.trim();
   const city = document.getElementById('co-city').value.trim();
   const notes = document.getElementById('co-notes').value.trim();
-
-  if (!name || !phone || !address || !city) { showToast(t('toast_fill')); return; }
-
-  let msg = t('wa_greeting');
-  msg += t('wa_details') + name;
-  msg += t('wa_phone') + phone;
-  msg += t('wa_address') + address + t('wa_city') + city;
-  msg += t('wa_products');
-
-  cart.forEach(ci => {
-    const p = products.find(pr => pr.id === ci.id);
-    if (p) {
-      const name_p = currentLang === 'si' ? p.name_si : p.name_en;
-      msg += `• ${name_p} × ${ci.qty} — Rs ${(p.sale_price * ci.qty).toLocaleString()}\n`;
-    }
-  });
-
-  msg += t('wa_total') + getCartTotal().toLocaleString();
-  if (notes) msg += `\n\nNotes: ${notes}`;
-  msg += t('wa_close');
-
-  const waURL = `https://wa.me/94707115227?text=${encodeURIComponent(msg)}`;
-  window.open(waURL, '_blank');
+  if(!name||!phone||!address||!city){alert('Please fill in all required fields.');return;}
+  let msg = t('waHello');
+  msg += t('waCustomer');
+  msg += t('waName')+name+'\n';
+  msg += t('waPhone')+phone+'\n';
+  msg += t('waAddr')+address+'\n';
+  msg += t('waCity')+city+'\n';
+  if(notes) msg += t('waNotes')+notes+'\n';
+  msg += t('waProducts');
+  cart.forEach(i=>{ msg += `${t(i.nameKey)} × ${i.qty} — Rs ${(i.price*i.qty).toLocaleString()}\n`; });
+  msg += t('waTotal')+getCartTotal().toLocaleString()+t('waTotalEnd');
+  const url = 'https://wa.me/94707115227?text='+encodeURIComponent(msg);
+  window.open(url,'_blank');
+  closeCheckout();
 }
 
-/* ═══════════════════════════════════════════
-   CONTACT FORM
-═══════════════════════════════════════════ */
-function sendContactWA() {
+// ─── FAQ ──────────────────────────────────────────────────────────────────
+const faqs = [
+  {q:'faq1q',a:'faq1a'},{q:'faq2q',a:'faq2a'},{q:'faq3q',a:'faq3a'},{q:'faq4q',a:'faq4a'}
+];
+function renderFAQ(){
+  const list = document.getElementById('faqList');
+  list.innerHTML = faqs.map((f,i)=>`
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(${i})" id="fq-${i}">
+        ${t(f.q)}<span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a" id="fa-${i}">${t(f.a)}</div>
+    </div>`).join('');
+}
+function toggleFaq(i){
+  const q = document.getElementById('fq-'+i);
+  const a = document.getElementById('fa-'+i);
+  q.classList.toggle('open');
+  a.classList.toggle('open');
+}
+
+// ─── CONTACT ──────────────────────────────────────────────────────────────
+function sendContactWA(e){
+  e.preventDefault();
   const name = document.getElementById('cf-name').value.trim();
   const phone = document.getElementById('cf-phone').value.trim();
   const msg = document.getElementById('cf-msg').value.trim();
-
-  if (!name || !phone) { showToast(t('toast_fill')); return; }
-
-  let waMsg = t('wa_contact_intro') + name;
-  waMsg += t('wa_contact_phone') + phone;
-  if (msg) waMsg += t('wa_contact_msg') + msg;
-
-  window.open(`https://wa.me/94707115227?text=${encodeURIComponent(waMsg)}`, '_blank');
+  let text = `Hello Suthuka Beauty Care,\n\nName: ${name}\nPhone: ${phone}\n\nMessage: ${msg}`;
+  window.open('https://wa.me/94707115227?text='+encodeURIComponent(text),'_blank');
 }
 
-/* ═══════════════════════════════════════════
-   WHY SECTION
-═══════════════════════════════════════════ */
-function renderWhy() {
-  const grid = document.getElementById('why-grid');
-  grid.innerHTML = whyCards.map(w => `
-    <div class="why-card fade-up">
-      <div class="why-icon">${w.icon}</div>
-      <div class="why-title">${currentLang === 'si' ? w.title_si : w.title_en}</div>
-      <div class="why-desc">${currentLang === 'si' ? w.desc_si : w.desc_en}</div>
-    </div>
-  `).join('');
-  observeFadeElements();
+// ─── TOAST ────────────────────────────────────────────────────────────────
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),2500);
 }
 
-/* ═══════════════════════════════════════════
-   FAQ SECTION
-═══════════════════════════════════════════ */
-function renderFAQ() {
-  const list = document.getElementById('faq-list');
-  list.innerHTML = faqs.map((f, i) => `
-    <div class="faq-item" id="faq-${i}">
-      <button class="faq-q" onclick="toggleFAQ(${i})">
-        <span>${currentLang === 'si' ? f.q_si : f.q_en}</span>
-        <span class="icon">+</span>
-      </button>
-      <div class="faq-a">${currentLang === 'si' ? f.a_si : f.a_en}</div>
-    </div>
-  `).join('');
+// ─── MOBILE MENU ──────────────────────────────────────────────────────────
+function toggleMenu(){
+  const m = document.getElementById('mobileMenu');
+  m.style.display = m.style.display==='flex'?'none':'flex';
 }
 
-function toggleFAQ(i) {
-  const item = document.getElementById(`faq-${i}`);
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-/* ═══════════════════════════════════════════
-   MOBILE MENU
-═══════════════════════════════════════════ */
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  mobileMenuOpen = !mobileMenuOpen;
-  if (mobileMenuOpen) {
-    menu.classList.add('shown');
-    setTimeout(() => menu.classList.add('open'), 10);
-  } else {
-    menu.classList.remove('open');
-    setTimeout(() => menu.classList.remove('shown'), 350);
-  }
-}
-
-/* ═══════════════════════════════════════════
-   TOAST
-═══════════════════════════════════════════ */
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
-}
-
-/* ═══════════════════════════════════════════
-   SCROLL EFFECTS
-═══════════════════════════════════════════ */
-function observeFadeElements() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
-}
-
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-/* ═══════════════════════════════════════════
-   SMOOTH SCROLL
-═══════════════════════════════════════════ */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = 72;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-
-/* ═══════════════════════════════════════════
-   INIT
-═══════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
-  setLang(currentLang);
-  renderProducts();
-  renderWhy();
-  renderFAQ();
-  updateCartCount();
-  observeFadeElements();
-});
+// ─── INIT ─────────────────────────────────────────────────────────────────
+renderProducts();
+renderFAQ();
+setLang(currentLang);
 </script>
 </body>
 </html>
+HTMLEOF
+echo "Done"
