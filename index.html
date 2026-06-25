@@ -747,134 +747,62 @@
 // DATA
 // =====================
 const products = [
-  {
-    id: 1,
-    <img src=<img src="https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing">
-    name_en: "Suthuka Face Brightening Serum",
-    name_si: "Suthuka Face Brightening Serum",
-    weight: "30g",
-    price: 1500,
-    original_price: 2450,
-    limited: true,
-    description_en: "A premium face brightening serum formulated with Kojic Acid and natural Aloe Vera gel. Penetrates deep into skin layers to restore natural radiance with a delightful Jasmine fragrance.",
-    description_si: "කොජික් ඇසිඩ් (Kojic acid) සහ ඇලෝවේරා සාරය (Aloe gel) මුසු කර නිපදවූ සුවිශේෂී සීරම් එකක්. සම අභ්‍යන්තරයටම ගොස් සම පැහැපත් කරන අතර, පිච්ච මල් සුවඳකින් (Jasmine fragrance) යුක්තයි.",
-    benefits_en: ["Eliminates skin dullness & unifies uneven skin tone", "Fades dark spots and blemishes for a flawless look"],
-    benefits_si: ["සමේ අඳුරු ගතිය නැති කර ස්වභාවික දීප්තියක් ලබා දෙයි", "ලප කැළැල් මකා දමා සමේ ඒකාකාරී පැහැය රැකදෙයි"],
-    howto_en: "After cleansing, apply a few drops to face and neck. Gently massage until absorbed. Use twice daily.",
-    howto_si: "මුහුණ පිරිසිදු කිරීමෙන් පසු, බිංදු කිහිපයක් දමා, සමට හොඳින් උරා ගන්නා තෙක් සම්බාහනය කරන්න. දිනකට දෙවරක් භාවිතා කරන්න."
-  },
-  {
-    id: 2,
-    emoji: "🌙",
-    name_en: "Suthuka Night Face Cream",
-    name_si: "Suthuka Night Face Cream",
-    weight: "25g",
-    price: 1700,
-    original_price: 2850,
-    limited: false,
-    description_en: "An advanced overnight treatment cream enriched with Hydrolyzed Collagen and Glutathione. Nourishes and rejuvenates your skin while you sleep. Suitable for all skin types.",
-    description_si: "හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed Collagen) සහ ග්ලූටතයෝන් (Glutathione) අඩංගු, රාත්‍රී නින්දේදී ඔබේ සමට පෝෂණය ලබා දෙන රාත්‍රී ක්‍රීම් එකකි. සියලුම සමේ වර්ග සඳහා සුදුසුයි.",
-    benefits_en: ["Reduces fine lines and wrinkles for a youthful glow", "Shea Butter & Aloe Gel deeply hydrate and lock in moisture"],
-    benefits_si: ["සමේ රැලි වැටීම් අවම කර තරුණ දීප්තිමත් පෙනුමක් ලබා දෙයි", "Shea Butter සහ Aloe Gel මගින් සම ගැඹුරින් පෝෂණය කරයි"],
-    howto_en: "Apply small amount to clean face before bedtime. Gently massage in upward circular motions until absorbed.",
-    howto_si: "රාත්‍රී නින්දට පෙර, මුහුණ පිරිසිදු කර කුඩා ප්‍රමාණයක් ආලේප කරන්න. උඩ අතට වෘත්තාකාරව සම්බාහනය කරන්න."
-  },
-  {
-    id: 3,
-    emoji: "🌿",
-    name_en: "Suthuka Face & Body Pack",
-    name_si: "Suthuka Face & Body Pack",
-    weight: "25g",
-    price: 1700,
-    original_price: 2650,
-    limited: false,
-    description_en: "A revitalizing face and body pack infused with Sandalwood, Multani Mitti and Hydrolyzed Collagen. Formulated to tighten skin and boost natural radiance.",
-    description_si: "සඳුන් (Sandalwood), මුල්තානි මිත්ති (Multani mitti) සහ හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed collagen) අඩංගු, සමේ තද බව වැඩි කර සමට නැවුම් දීප්තියක් ලබා දෙන ෆේස් ඇන්ඩ් බොඩි පැක් එකකි.",
-    benefits_en: ["Effectively tightens the skin and prevents sagging", "Deeply purifies, detoxifies and nourishes the skin"],
-    benefits_si: ["සමේ තද බව (Tightening) වැඩි කර එල්ලා වැටීම පාලනය කරයි", "ස්වභාවික අමුද්‍රව්‍ය මගින් සම පිරිසිදු කර පෝෂණය කරයි"],
-    howto_en: "Mix powder with yogurt, DI water or fresh milk. Apply to clean skin avoiding eye area. Leave 30–40 min, rinse off. Use 2–3 times/week.",
-    howto_si: "මීකිරි, පිරිසිදු ජලය හෝ නැවුම් කිරි සමග මිශ්‍ර කර ගන්න. ඇස් අවට ප්‍රදේශ මග හැර ආලේප කරන්න. මිනිත්තු 30-40 කළින් සෝදා හරින්න. (සතියකට 2-3)."
-  },
-  {
-    id: 4,
-    emoji: "☕",
-    name_en: "Suthuka Coffee Body Scrub",
-    name_si: "Suthuka Coffee Body Scrub",
-    weight: "30g",
-    price: 1700,
-    original_price: 2750,
-    limited: true,
-    description_en: "A powerful body scrub crafted with Coffee powder, Sugar and Glycolic Acid. Perfect for hard exfoliation and targeting hyperpigmentation across the body.",
-    description_si: "කෝපි කුඩු (Coffee powder) සහ සීනි (Sugar) අඩංගු, සමේ මැරුණු සෛල ගැඹුරින් ඉවත් කිරීමට සහ සමේ අවපැහැ ගැන්වීම් (Hyperpigmentation) මකා දැමීමට නිපදවූ බොඩි ස්ක්‍රබ් එකකි.",
-    benefits_en: ["Removes dead skin cells to reveal smooth, soft skin", "Gradually lightens dark patches and evens skin tone"],
-    benefits_si: ["සමේ රළු ගතිය නැති කර සම මෘදු සිනිඳු කරයි", "සිරුරේ අඳුරු ලප ක්‍රමයෙන් නැති කරයි"],
-    howto_en: "Apply to damp skin and massage in circular motions focusing on rough areas. Leave a few minutes, rinse off. Use 2–3 times/week. Not for dry/sensitive skin.",
-    howto_si: "තෙතමනය සහිත සම මත ආලේප කර, රළු ප්‍රදේශ කෙරෙහි අවධානය යොමු කරමින් වෘත්තාකාරව සම්බාහනය කරන්න. (සතියකට 2-3). වියළි සහ සංවේදී සමක් ඇති අය සඳහා සුදුසු නොවේ."
-  },
-  {
-    id: 5,
-    emoji: "🌛",
-    name_en: "Suthuka Night Body Lotion",
-    name_si: "Suthuka Night Body Lotion",
-    weight: "25g",
-    price: 1700,
-    original_price: 2950,
-    limited: false,
-    description_en: "A specialized night repair body lotion containing Glycerin, Hydrolyzed Collagen and Kojic Acid. Works overnight to repair skin cells and improve overall texture.",
-    description_si: "රාත්‍රී කාලයේදී සම ගැඹුරින් අලුත්වැඩියා කරන (For Night Repair) සුවිශේෂී බොඩි ලෝෂන් එකකි. ග්ලිසරින් (Glycerin), හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed Collagen) සහ කොජික් ඇසිඩ් (Kojic acid) සාරය අඩංගු.",
-    benefits_en: ["Reduces dark spots and promotes an even, brighter complexion", "Stimulates skin cell regeneration during sleep"],
-    benefits_si: ["සමේ අඳුරු ලප නැති කර, සිරුර ඒකාකාරීව පැහැපත් කරයි", "රාත්‍රී කාලයේදී සමේ සෛල වර්ධනය උත්තේජනය කරයි"],
-    howto_en: "Apply daily all over the body after bathing. Massage gently until fully absorbed.",
-    howto_si: "ස්නානය කිරීමෙන් පසු දිනපතා රාත්‍රී කාලයේදී මුළු සිරුරේම ආලේප කර හොඳින් සම්බාහනය කරන්න."
-  },
-  {
-    id: 6,
-    emoji: "☀️",
-    name_en: "Suthuka Day Body Lotion",
-    name_si: "Suthuka Day Body Lotion",
-    weight: "25g",
-    price: 1700,
-    original_price: 2950,
-    limited: false,
-    description_en: "A protective day shield body lotion formulated to guard your skin against harsh sunlight and environmental pollutants. Infused with a refreshing Lavender fragrance.",
-    description_si: "දහවල් කාලයේදී හිරු එළියෙන් සහ දූවිල්ලෙන් සම ආරක්ෂා කරන (For Day Shield) විශේෂිත බොඩි ලෝෂන් එකකි. ලැවෙන්ඩර් සුවඳකින් (Lavender Fragrance) යුක්තයි.",
-    benefits_en: ["Keeps skin deeply hydrated all day while preventing tanning", "Forms a lightweight protective barrier on skin surface"],
-    benefits_si: ["දවස පුරා සම තෙතමනයෙන් (Hydrated) තබා ගනිමින් අවපැහැ ගැන්වීම වළක්වයි", "සම මතුපිට ආරක්ෂිත ස්ථරයක් සාදයි"],
-    howto_en: "Apply daily all over the body before going out or after bathing. Massage gently until absorbed.",
-    howto_si: "උදෑසන ස්නානය කිරීමෙන් පසු හෝ නිවසින් පිටතට යාමට පෙර සිරුරේ ආලේප කර සම්බාහනය කරන්න."
-  },
-  {
-    id: 7,
-    emoji: "🌞",
-    name_en: "Suthuka Day Face Cream",
-    name_si: "Suthuka Day Face Cream",
-    weight: "",
-    price: 1650,
-    original_price: 2650,
-    limited: false,
-    description_en: "A nourishing daily face cream enriched with Sunflower Oil extract. Features a unique formula tailored for reliable UV protection during the day.",
-    description_si: "සූරියකාන්ත තෙල් (Sunflower Oil) සාරය අඩංගු, මුහුණ සඳහා නිපදවූ දහවල් සත්කාරක ක්‍රීම් එකකි. හානිකර UV කිරණවලින් මුහුණ ආරක්ෂා කිරීමට (For UV protection) විශේෂ සූත්‍රයක් අඩංගු.",
-    benefits_en: ["Controls excess facial oil while fading blemishes and spots", "Provides instant brightening effect and natural healthy glow"],
-    benefits_si: ["මුහුණේ තෙල් ගතිය පාලනය කරමින්, ලප කැළැල් මකා දමයි", "සමට ස්වභාවික පැහැපත් බවක් සහ ක්ෂණික දීප්තියක් ලබා දෙයි"],
-    howto_en: "Apply evenly to clean face and neck every morning. Massage gently until absorbed.",
-    howto_si: "උදෑසන මුහුණ සහ බෙල්ල පිරිසිදු කර මෘදුව ආලේප කරන්න. හොඳින් සම්බාහනය කරන්න."
-  },
-  {
-    id: 8,
-    emoji: "🧈",
-    name_en: "Suthuka Body Butter",
-    name_si: "Suthuka Body Butter",
-    weight: "",
-    price: 1850,
-    original_price: 3250,
-    limited: true,
-    description_en: "A luxurious, ultra-rich body butter made with natural Cocoa Butter. Ideally suited for dry, rough or dehydrated skin requiring intense moisturization.",
-    description_si: "ස්වභාවික කොකෝ බටර් (Coco Butter) ගුණයෙන් සපිරි, වියළි සහ රළු සමක් ඇති අයට ඉතාමත් සුදුසු දැඩි තෙතමනයක් සපයන සුඛෝපභෝගී බොඩි බටර් සත්කාරයකි.",
-    benefits_en: ["Prevents skin cracking and roughness, keeping it velvety soft for hours", "Restores skin elasticity and provides deep nourishment"],
-    benefits_si: ["සම පැලීම, රළු වීම් වළක්වා දිගු වේලාවක් සම මෘදු තබයි", "සමේ ඇදෙන සුළු බව (Elasticity) වැඩි කර සම පෝෂණය කරයි"],
-    howto_en: "Apply generous amount to dry or rough areas (elbows, knees, feet) after bath and massage thoroughly.",
-    howto_si: "ස්නානයෙන් පසු වියළි බව වැඩි වැලමිට, දණහිස්, හෝ සිරුරේ ආලේප කර හොඳින් සම්බාහනය කරන්න."
-  }
+ {
+  id: 1,
+  emoji: "✨",
+  image: "https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing",
+  name_en: "Suthuka Face Brightening Serum",
+  ...
+},
+{
+  id: 2,
+  emoji: "🌙",
+  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+  name_en: "Suthuka Night Face Cream",
+  ...
+},
+{
+  id: 3,
+  emoji: "🌿",
+  image: "https://drive.google.com/file/d/1FRR1oslc7hqdouWToJjTz62cLxXC5T9A/view?usp=sharing",
+  name_en: "Suthuka Face & Body Pack",
+  ...
+},
+{
+  id: 4,
+  emoji: "☕",
+  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+  name_en: "Suthuka Coffee Body Scrub",
+  ...
+},
+{
+  id: 5,
+  emoji: "🌙",
+  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+  name_en: "Suthuka Night Body Lotion",
+  ...
+},
+{
+  id: 6,
+  emoji: "☀️",
+  image: "https://drive.google.com/file/d/1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem/view?usp=sharing",
+  name_en: "Suthuka Day Body Lotion",
+  ...
+},
+{
+  id: 7,
+  emoji: "🌞",
+  image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
+  name_en: "Suthuka Day Face Cream",
+  ...
+},
+{
+  id: 8,
+  emoji: "🧈",
+  image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
+  name_en: "Suthuka Body Butter",
+  ...
+}
 ];
 
 // =====================
@@ -1022,91 +950,119 @@ const translations = {
 };
 
 // =====================
-// STATE
-// =====================
-let currentLang = localStorage.getItem('suthuka_lang') || 'en';
-let cart = {};
-
-// =====================
-// LANG
-// =====================
-function setLang(lang) {
-  currentLang = lang;
-  localStorage.setItem('suthuka_lang', lang);
-  document.getElementById('btnEn').className = lang === 'en' ? 'lang-btn active' : 'lang-btn';
-  document.getElementById('btnSi').className = lang === 'si' ? 'lang-btn active' : 'lang-btn';
-  applyTranslations();
-  renderProducts();
-  renderFAQ();
-  renderCart();
-}
-
-function t(key) {
-  return translations[currentLang][key] || translations.en[key] || key;
-}
-
-function applyTranslations() {
-  document.querySelectorAll('[data-t]').forEach(el => {
-    const key = el.getAttribute('data-t');
-    const val = translations[currentLang][key];
-    if (val !== undefined) el.innerHTML = val;
-  });
-  document.querySelectorAll('[data-t-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-t-placeholder');
-    const val = translations[currentLang][key];
-    if (val !== undefined) el.placeholder = val;
-  });
-}
-
-// =====================
 // PRODUCTS
 // =====================
+
+// Convert Google Drive share links to direct image links
+function driveToDirect(url) {
+  const match = url.match(/\/d\/([^/]+)/);
+  return match
+    ? `https://drive.google.com/uc?export=view&id=${match[1]}`
+    : url;
+}
+
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
+
   grid.innerHTML = products.map(p => {
     const name = p[`name_${currentLang}`] || p.name_en;
     const desc = p[`description_${currentLang}`] || p.description_en;
     const benefits = p[`benefits_${currentLang}`] || p.benefits_en;
     const howto = p[`howto_${currentLang}`] || p.howto_en;
     const qty = cart[p.id]?.qty || 0;
-    const discount = Math.round(((p.original_price - p.price) / p.original_price) * 100);
+    const discount = Math.round(
+      ((p.original_price - p.price) / p.original_price) * 100
+    );
 
     return `
     <div class="product-card" id="pcard-${p.id}">
       <div class="product-img-wrap">
-        <span style="font-size:72px;">${p.emoji}</span>
+
+        ${
+          p.image
+            ? `<img
+                src="${driveToDirect(p.image)}"
+                alt="${name}"
+                style="width:100%;height:100%;object-fit:contain;padding:20px;"
+                loading="lazy"
+                onerror="this.style.display='none';"
+              >`
+            : `<span style="font-size:72px;">${p.emoji}</span>`
+        }
+
         <span class="badge-sale">-${discount}% OFF</span>
         ${p.limited ? `<span class="badge-stock">${t('limited')}</span>` : ''}
+
       </div>
+
       <div style="padding:20px;">
-        <div style="font-size:11px;color:var(--warm-gray);letter-spacing:0.5px;margin-bottom:4px;text-transform:uppercase;">${p.weight ? p.weight : 'Skincare'}</div>
-        <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.3;">${name}</h3>
-        <p style="font-size:13px;color:var(--warm-gray);line-height:1.7;margin-bottom:12px;">${desc.substring(0, 100)}...</p>
-        <!-- Benefits -->
+        <div style="font-size:11px;color:var(--warm-gray);letter-spacing:0.5px;margin-bottom:4px;text-transform:uppercase;">
+          ${p.weight ? p.weight : 'Skincare'}
+        </div>
+
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.3;">
+          ${name}
+        </h3>
+
+        <p style="font-size:13px;color:var(--warm-gray);line-height:1.7;margin-bottom:12px;">
+          ${desc.substring(0, 100)}...
+        </p>
+
         <div style="margin-bottom:14px;">
-          <div style="font-size:12px;font-weight:700;color:var(--deep-rose);margin-bottom:6px;">${t('benefits')}</div>
-          ${benefits.map(b => `<div style="font-size:12px;color:var(--warm-gray);display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--rose-gold);flex-shrink:0;">✓</span><span>${b}</span></div>`).join('')}
+          <div style="font-size:12px;font-weight:700;color:var(--deep-rose);margin-bottom:6px;">
+            ${t('benefits')}
+          </div>
+
+          ${benefits.map(b => `
+            <div style="font-size:12px;color:var(--warm-gray);display:flex;gap:6px;margin-bottom:4px;">
+              <span style="color:var(--rose-gold);flex-shrink:0;">✓</span>
+              <span>${b}</span>
+            </div>
+          `).join('')}
         </div>
-        <!-- Price -->
+
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-          <span class="price-sale">Rs. ${p.price.toLocaleString()}</span>
-          <span class="price-original">Rs. ${p.original_price.toLocaleString()}</span>
+          <span class="price-sale">
+            Rs. ${p.price.toLocaleString()}
+          </span>
+
+          <span class="price-original">
+            Rs. ${p.original_price.toLocaleString()}
+          </span>
         </div>
-        <!-- Qty + Cart -->
+
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
           <button class="qty-btn" onclick="changeQty(${p.id}, -1)">−</button>
-          <span style="font-weight:700;font-size:16px;min-width:24px;text-align:center;" id="qty-${p.id}">${qty}</span>
+
+          <span
+            style="font-weight:700;font-size:16px;min-width:24px;text-align:center;"
+            id="qty-${p.id}"
+          >
+            ${qty}
+          </span>
+
           <button class="qty-btn" onclick="changeQty(${p.id}, 1)">+</button>
         </div>
+
         <div style="display:flex;gap:8px;">
-          <button onclick="addToCart(${p.id})" class="btn-outline flex-1 py-3 rounded-full text-sm">${t('addToCart')}</button>
-          <button onclick="buyNow(${p.id})" class="btn-primary flex-1 py-3 rounded-full text-sm">${t('buyNow')}</button>
+          <button
+            onclick="addToCart(${p.id})"
+            class="btn-outline flex-1 py-3 rounded-full text-sm"
+          >
+            ${t('addToCart')}
+          </button>
+
+          <button
+            onclick="buyNow(${p.id})"
+            class="btn-primary flex-1 py-3 rounded-full text-sm"
+          >
+            ${t('buyNow')}
+          </button>
         </div>
       </div>
     </div>`;
   }).join('');
 }
-
 // =====================
 // CART LOGIC
 // =====================
