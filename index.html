@@ -410,8 +410,8 @@
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
     <!-- Logo -->
     <a href="#home" class="flex items-center gap-2 no-underline">
-      <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-        <img src="https://drive.google.com/file/d/1VDjFMGQBl2hhRPsQbq3E1yCDU6_q79sx/view?usp=sharing" alt="Suthuka Logo" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--rose-gold),var(--deep-rose))';this.outerHTML='<span style=color:white;font-size:18px>🌸</span>'">
+      <div style="width:40px;height:40px;background:linear-gradient(135deg,var(--rose-gold),var(--deep-rose));border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <span style="color:white;font-size:18px;">🌸</span>
       </div>
       <div>
         <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:var(--charcoal);line-height:1.1;">Suthuka</div>
@@ -508,7 +508,7 @@
     <!-- Hero Visual -->
     <div class="flex-1 flex justify-center items-center relative z-10">
       <div style="width:280px;height:280px;md:width:360px;md:height:360px;background:linear-gradient(135deg,rgba(201,149,108,0.15),rgba(181,112,122,0.2));border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;">
-        <img src="https://drive.google.com/uc?export=view&id=1mSaPeG0PN2O05WGIUWa5Jc8DCWUbf-OQ" alt="Suthuka" style="width:220px;height:220px;object-fit:contain;border-radius:50%;" onerror="this.outerHTML='<div style=font-size:120px;line-height:1>🌸</div>'">
+        <div style="font-size:120px;line-height:1;">🌸</div>
         <!-- Floating badges -->
         <div style="position:absolute;top:10px;right:-20px;background:white;border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px rgba(61,43,47,0.12);font-size:12px;font-weight:600;color:var(--charcoal);">
           <div style="color:var(--deep-rose);font-size:16px;font-weight:700;">★★★★★</div>
@@ -642,7 +642,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <div style="width:36px;height:36px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;"><img src="https://drive.google.com/uc?export=view&id=1mSaPeG0PN2O05WGIUWa5Jc8DCWUbf-OQ" alt="Suthuka Logo" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--rose-gold),var(--deep-rose))';this.outerHTML='<span style=font-size:16px>🌸</span>'"></div>
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--rose-gold),var(--deep-rose));border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="font-size:16px;">🌸</span></div>
           <div>
             <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;">Suthuka Beauty Care</div>
             <div style="font-size:10px;opacity:0.6;letter-spacing:1px;">SUTHUKA ENTERPRISES (PVT) LTD</div>
@@ -749,8 +749,7 @@
 const products = [
   {
     id: 1,
-    emoji: "✨",
-    image: "https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing",
+    <img src=<img src="https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing">
     name_en: "Suthuka Face Brightening Serum",
     name_si: "Suthuka Face Brightening Serum",
     weight: "30g",
@@ -767,7 +766,6 @@ const products = [
   {
     id: 2,
     emoji: "🌙",
-    image: "https://drive.google.com/uc?export=view&id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2",
     name_en: "Suthuka Night Face Cream",
     name_si: "Suthuka Night Face Cream",
     weight: "25g",
@@ -784,7 +782,6 @@ const products = [
   {
     id: 3,
     emoji: "🌿",
-    image: "https://drive.google.com/uc?export=view&id=1FRR1oslc7hqdouWToJjTz62cLxXC5T9A",
     name_en: "Suthuka Face & Body Pack",
     name_si: "Suthuka Face & Body Pack",
     weight: "25g",
@@ -801,7 +798,6 @@ const products = [
   {
     id: 4,
     emoji: "☕",
-    image: "https://drive.google.com/uc?export=view&id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2",
     name_en: "Suthuka Coffee Body Scrub",
     name_si: "Suthuka Coffee Body Scrub",
     weight: "30g",
@@ -818,7 +814,6 @@ const products = [
   {
     id: 5,
     emoji: "🌛",
-    image: "https://drive.google.com/uc?export=view&id=1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2",
     name_en: "Suthuka Night Body Lotion",
     name_si: "Suthuka Night Body Lotion",
     weight: "25g",
@@ -835,7 +830,6 @@ const products = [
   {
     id: 6,
     emoji: "☀️",
-    image: "https://drive.google.com/uc?export=view&id=1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem",
     name_en: "Suthuka Day Body Lotion",
     name_si: "Suthuka Day Body Lotion",
     weight: "25g",
@@ -852,7 +846,6 @@ const products = [
   {
     id: 7,
     emoji: "🌞",
-    image: "https://drive.google.com/uc?export=view&id=1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE",
     name_en: "Suthuka Day Face Cream",
     name_si: "Suthuka Day Face Cream",
     weight: "",
@@ -869,7 +862,6 @@ const products = [
   {
     id: 8,
     emoji: "🧈",
-    image: "https://drive.google.com/uc?export=view&id=1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE",
     name_en: "Suthuka Body Butter",
     name_si: "Suthuka Body Butter",
     weight: "",
@@ -1082,7 +1074,7 @@ function renderProducts() {
     return `
     <div class="product-card" id="pcard-${p.id}">
       <div class="product-img-wrap">
-        ${p.image ? `<img src="${p.image}" alt="${p.name_en}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span style=font-size:72px>' + '${p.emoji}' + '</span>')">` : `<span style="font-size:72px;">${p.emoji}</span>`}
+        <span style="font-size:72px;">${p.emoji}</span>
         <span class="badge-sale">-${discount}% OFF</span>
         ${p.limited ? `<span class="badge-stock">${t('limited')}</span>` : ''}
       </div>
