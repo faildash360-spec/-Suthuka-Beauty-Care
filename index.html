@@ -1,1290 +1,774 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suthuka Beauty Care | Premium Skincare Sri Lanka</title>
-<meta name="description" content="Suthuka Beauty Care by Suthuka Enterprises. Premium skincare & beauty products crafted with natural ingredients. Fast islandwide delivery across Sri Lanka.">
-<meta property="og:title" content="Suthuka Beauty Care | Premium Skincare Sri Lanka">
-<meta property="og:description" content="Premium skincare & beauty products with natural ingredients. Order via WhatsApp for fast islandwide delivery.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  :root {
-    --rose-gold: #C9956C;
-    --deep-rose: #B5707A;
-    --blush: #FDEEF3;
-    --light-blush: #FFF5F8;
-    --ivory: #FFF9FB;
-    --charcoal: #3D2B2F;
-    --warm-gray: #7A6165;
-    --petal-pink: #F2C4CE;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suthuka Beauty Care | Premium Skincare in Sri Lanka</title>
+    <meta name="description" content="Discover Suthuka Beauty Care. Premium skincare products designed for your natural glow. Shop our whitening creams, serums, and body lotions.">
+    
+    <!-- Open Graph Tags for SEO -->
+    <meta property="og:title" content="Suthuka Beauty Care | Premium Skincare">
+    <meta property="og:description" content="High-quality beauty and skincare products with fast islandwide delivery in Sri Lanka.">
+    <meta property="og:image" content="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+    <meta property="og:url" content="https://suthukabeauty.lk">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; color: var(--charcoal); background: var(--ivory); margin: 0; }
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // Sky Blue
+                        primaryDark: '#0284c7',
+                        accent: '#1e3a8a', // Navy Blue
+                        light: '#e0f2fe' // Light Blue
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--blush); }
-  ::-webkit-scrollbar-thumb { background: var(--rose-gold); border-radius: 3px; }
-
-  /* NAV */
-  .nav-glass {
-    background: rgba(255,249,251,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,149,108,0.15);
-  }
-
-  /* HERO */
-  .hero-bg {
-    background: linear-gradient(135deg, #FFF0F5 0%, #FDEEF3 40%, #FFF5EE 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(201,149,108,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; left: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(181,112,122,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-
-  /* BUTTONS */
-  .btn-primary {
-    background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(181,112,122,0.4); }
-
-  .btn-whatsapp {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-  }
-  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
-
-  .btn-outline {
-    background: transparent;
-    border: 2px solid var(--rose-gold);
-    color: var(--rose-gold);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-  }
-  .btn-outline:hover { background: var(--rose-gold); color: white; transform: translateY(-2px); }
-
-  /* CARDS */
-  .product-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(61,43,47,0.07);
-    transition: all 0.35s ease;
-    border: 1px solid rgba(201,149,108,0.1);
-  }
-  .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(181,112,122,0.18); }
-
-  .product-img-wrap {
-    background: linear-gradient(135deg, #FFF0F5 0%, #FFF5EE 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-  }
-  .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-
-  .badge-sale {
-    background: linear-gradient(135deg, var(--deep-rose), #A0485C);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    position: absolute;
-    top: 12px; left: 12px;
-  }
-  .badge-stock {
-    background: linear-gradient(135deg, #FF8C42, #E85D26);
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 20px;
-    position: absolute;
-    top: 12px; right: 12px;
-  }
-
-  /* CART */
-  .cart-panel {
-    position: fixed;
-    top: 0; right: -420px;
-    width: 420px;
-    max-width: 95vw;
-    height: 100vh;
-    background: white;
-    box-shadow: -8px 0 40px rgba(61,43,47,0.15);
-    z-index: 1000;
-    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    display: flex;
-    flex-direction: column;
-  }
-  .cart-panel.open { right: 0; }
-  .cart-overlay {
-    position: fixed; inset: 0;
-    background: rgba(61,43,47,0.4);
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s;
-  }
-  .cart-overlay.open { opacity: 1; pointer-events: all; }
-
-  /* CHECKOUT MODAL */
-  .modal-overlay {
-    position: fixed; inset: 0;
-    background: rgba(61,43,47,0.5);
-    z-index: 1100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-  .modal-box {
-    background: white;
-    border-radius: 24px;
-    padding: 32px;
-    width: 100%;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: scale(0.9);
-    transition: transform 0.3s;
-  }
-  .modal-overlay.open .modal-box { transform: scale(1); }
-
-  /* INPUTS */
-  .form-input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 2px solid #EDD5DC;
-    border-radius: 12px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    color: var(--charcoal);
-    background: var(--light-blush);
-    transition: border-color 0.2s;
-    outline: none;
-  }
-  .form-input:focus { border-color: var(--rose-gold); background: white; }
-
-  /* QUANTITY */
-  .qty-btn {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    border: 2px solid var(--rose-gold);
-    background: transparent;
-    color: var(--rose-gold);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .qty-btn:hover { background: var(--rose-gold); color: white; }
-
-  /* FLOATING WA */
-  .wa-float {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    width: 60px; height: 60px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(37,211,102,0.5);
-    z-index: 998;
-    cursor: pointer;
-    transition: all 0.3s;
-    animation: wa-pulse 2.5s infinite;
-  }
-  .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.6); }
-  @keyframes wa-pulse {
-    0%,100% { box-shadow: 0 6px 20px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.3); }
-    50% { box-shadow: 0 6px 20px rgba(37,211,102,0.5), 0 0 0 14px rgba(37,211,102,0); }
-  }
-
-  /* SECTION DIVIDER */
-  .petal-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 auto 32px;
-    justify-content: center;
-  }
-  .petal-divider::before, .petal-divider::after {
-    content: '';
-    flex: 1;
-    max-width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--rose-gold));
-  }
-  .petal-divider::after { background: linear-gradient(90deg, var(--rose-gold), transparent); }
-
-  /* TRUST CARDS */
-  .trust-card {
-    background: white;
-    border-radius: 20px;
-    padding: 28px 24px;
-    text-align: center;
-    border: 1px solid rgba(201,149,108,0.12);
-    transition: all 0.3s;
-  }
-  .trust-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(201,149,108,0.15); }
-  .trust-icon {
-    width: 64px; height: 64px;
-    background: linear-gradient(135deg, #FDEEF3, #FFF5EE);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-size: 28px;
-  }
-
-  /* FAQ */
-  .faq-item summary {
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0;
-    font-weight: 600;
-    color: var(--charcoal);
-    border-bottom: 1px solid #EDD5DC;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item[open] summary { color: var(--deep-rose); }
-  .faq-item .faq-arrow { transition: transform 0.3s; font-size: 20px; }
-  .faq-item[open] .faq-arrow { transform: rotate(45deg); }
-  .faq-answer { padding: 14px 0 18px; color: var(--warm-gray); line-height: 1.8; }
-
-  /* LANG SWITCHER */
-  .lang-btn {
-    padding: 5px 12px;
-    border-radius: 20px;
-    border: 1.5px solid var(--rose-gold);
-    background: transparent;
-    color: var(--rose-gold);
-    font-family: 'Nunito', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .lang-btn.active { background: var(--rose-gold); color: white; }
-  .lang-btn:hover:not(.active) { background: rgba(201,149,108,0.1); }
-
-  /* PRODUCT PLACEHOLDER ICON */
-  .product-placeholder {
-    font-size: 64px;
-    opacity: 0.6;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-in { animation: fadeInUp 0.6s ease forwards; }
-
-  /* MOBILE */
-  @media (max-width: 640px) {
-    .cart-panel { width: 100vw; right: -100vw; }
-    .cart-panel.open { right: 0; }
-  }
-
-  /* SECTION BG */
-  .section-blush { background: linear-gradient(180deg, var(--blush) 0%, var(--light-blush) 100%); }
-  .section-white { background: white; }
-
-  /* PRICE */
-  .price-original { text-decoration: line-through; color: #A0989A; font-size: 13px; }
-  .price-sale { color: var(--deep-rose); font-weight: 700; font-size: 20px; }
-
-  .nav-link {
-    color: var(--charcoal);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.2s;
-    position: relative;
-  }
-  .nav-link:hover { color: var(--deep-rose); }
-
-  .cart-badge {
-    position: absolute;
-    top: -8px; right: -10px;
-    background: var(--deep-rose);
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-  }
-
-  .star { color: #F4B942; }
-  .delivery-strip {
-    background: linear-gradient(135deg, var(--charcoal), #5A3D42);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-
-  /* Mobile menu */
-  .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: white;
-    border-top: 1px solid rgba(201,149,108,0.15);
-    padding: 16px;
-    box-shadow: 0 8px 30px rgba(61,43,47,0.12);
-    z-index: 50;
-  }
-  .mobile-menu.open { display: block; }
-</style>
-</head>
-<body>
-
-<!-- DELIVERY STRIP -->
-<div class="delivery-strip" id="deliveryStrip">
-  ✨ <span data-t="deliveryStrip">FREE Islandwide Delivery on all orders | Call: +94 70 711 5227</span>
-</div>
-
-<!-- NAVIGATION -->
-<nav class="nav-glass sticky top-0 z-50" id="mainNav">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
-    <!-- Logo -->
-    <a href="#home" class="flex items-center gap-2 no-underline">
-      <div style="width:40px;height:40px;background:linear-gradient(135deg,var(--rose-gold),var(--deep-rose));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-        <span style="color:white;font-size:18px;">🌸</span>
-      </div>
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:var(--charcoal);line-height:1.1;">Suthuka</div>
-        <div style="font-size:10px;color:var(--warm-gray);letter-spacing:1px;text-transform:uppercase;">Beauty Care</div>
-      </div>
-    </a>
-
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-6">
-      <a href="#home" class="nav-link" data-t="navHome">Home</a>
-      <a href="#products" class="nav-link" data-t="navProducts">Products</a>
-      <a href="#about" class="nav-link" data-t="navAbout">About</a>
-      <a href="#faq" class="nav-link" data-t="navFaq">FAQ</a>
-      <a href="#contact" class="nav-link" data-t="navContact">Contact</a>
-    </div>
-
-    <!-- Right Actions -->
-    <div class="flex items-center gap-3">
-      <!-- Language Switcher -->
-      <div class="flex items-center gap-1">
-        <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" id="btnSi" onclick="setLang('si')">සිං</button>
-      </div>
-      <!-- Cart -->
-      <button onclick="toggleCart()" class="relative p-2 rounded-full hover:bg-pink-50 transition-colors" style="cursor:pointer;background:none;border:none;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:var(--charcoal)">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-        </svg>
-        <span class="cart-badge" id="cartBadge">0</span>
-      </button>
-      <!-- Mobile Hamburger -->
-      <button class="md:hidden p-2" onclick="toggleMobileMenu()" style="background:none;border:none;cursor:pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:var(--charcoal)">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu md:hidden" id="mobileMenu">
-      <div class="flex flex-col gap-3">
-        <a href="#home" class="nav-link py-2" data-t="navHome" onclick="closeMobileMenu()">Home</a>
-        <a href="#products" class="nav-link py-2" data-t="navProducts" onclick="closeMobileMenu()">Products</a>
-        <a href="#about" class="nav-link py-2" data-t="navAbout" onclick="closeMobileMenu()">About</a>
-        <a href="#faq" class="nav-link py-2" data-t="navFaq" onclick="closeMobileMenu()">FAQ</a>
-        <a href="#contact" class="nav-link py-2" data-t="navContact" onclick="closeMobileMenu()">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero-bg" id="home">
-  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
-    <div class="flex-1 text-center md:text-left relative z-10">
-      <div style="display:inline-block;background:linear-gradient(135deg,rgba(201,149,108,0.15),rgba(181,112,122,0.12));border:1px solid rgba(201,149,108,0.3);border-radius:30px;padding:6px 18px;font-size:13px;font-weight:600;color:var(--deep-rose);margin-bottom:20px;" data-t="heroBadge">
-        🌿 100% Natural Ingredients
-      </div>
-      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--charcoal);line-height:1.15;margin-bottom:16px;" data-t="heroTitle">
-        Reveal Your<br><em style="color:var(--deep-rose);font-style:italic;">Natural Radiance</em>
-      </h1>
-      <p style="font-size:16px;color:var(--warm-gray);line-height:1.8;max-width:480px;margin:0 auto 28px;" class="md:mx-0" data-t="heroDesc">
-        Premium skincare crafted with the finest natural ingredients. Trusted by thousands across Sri Lanka for glowing, healthy skin.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-        <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" class="btn-primary px-8 py-4 rounded-full text-base" data-t="heroShopBtn">
-          Shop Now ✨
-        </button>
-        <a href="https://wa.me/94707115227" target="_blank">
-          <button class="btn-whatsapp px-8 py-4 rounded-full text-base flex items-center gap-2 mx-auto sm:mx-0">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-t="heroWaBtn">Chat on WhatsApp</span>
-          </button>
-        </a>
-      </div>
-      <!-- Trust row -->
-      <div class="flex gap-6 mt-8 justify-center md:justify-start flex-wrap">
-        <div style="text-align:center">
-          <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--deep-rose)">5000+</div>
-          <div style="font-size:12px;color:var(--warm-gray);" data-t="statCustomers">Happy Customers</div>
-        </div>
-        <div style="width:1px;background:#EDD5DC;"></div>
-        <div style="text-align:center">
-          <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--deep-rose)">100%</div>
-          <div style="font-size:12px;color:var(--warm-gray);" data-t="statNatural">Natural Ingredients</div>
-        </div>
-        <div style="width:1px;background:#EDD5DC;"></div>
-        <div style="text-align:center">
-          <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--deep-rose)">⚡</div>
-          <div style="font-size:12px;color:var(--warm-gray);" data-t="statDelivery">Fast Delivery</div>
-        </div>
-      </div>
-    </div>
-    <!-- Hero Visual -->
-    <div class="flex-1 flex justify-center items-center relative z-10">
-      <div style="width:280px;height:280px;md:width:360px;md:height:360px;background:linear-gradient(135deg,rgba(201,149,108,0.15),rgba(181,112,122,0.2));border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;">
-        <div style="font-size:120px;line-height:1;">🌸</div>
-        <!-- Floating badges -->
-        <div style="position:absolute;top:10px;right:-20px;background:white;border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px rgba(61,43,47,0.12);font-size:12px;font-weight:600;color:var(--charcoal);">
-          <div style="color:var(--deep-rose);font-size:16px;font-weight:700;">★★★★★</div>
-          <div data-t="heroRating">Top Rated</div>
-        </div>
-        <div style="position:absolute;bottom:20px;left:-30px;background:white;border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px rgba(61,43,47,0.12);font-size:12px;font-weight:600;color:var(--charcoal);">
-          <div style="color:var(--rose-gold);font-size:20px;">🌿</div>
-          <div data-t="heroNatural">100% Natural</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="section-blush py-16" id="products">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <div class="petal-divider"><span style="font-size:20px;">🌸</span></div>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--charcoal);margin-bottom:10px;" data-t="productsTitle">Our Premium Collection</h2>
-      <p style="color:var(--warm-gray);max-width:500px;margin:0 auto;" data-t="productsDesc">Discover beauty secrets crafted with nature's finest ingredients</p>
-    </div>
-    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <!-- Products rendered by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- TRUST / WHY US -->
-<section class="section-white py-16" id="about">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <div class="petal-divider"><span style="font-size:20px;">💎</span></div>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--charcoal);margin-bottom:10px;" data-t="whyTitle">Why Choose Suthuka?</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="trust-card">
-        <div class="trust-icon">🌿</div>
-        <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;" data-t="trust1Title">Natural Ingredients</h3>
-        <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;" data-t="trust1Desc">Carefully selected natural ingredients that are gentle on your skin and effective in results.</p>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">😊</div>
-        <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;" data-t="trust2Title">Customer Satisfaction</h3>
-        <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;" data-t="trust2Desc">Over 5,000 happy customers trust Suthuka Beauty Care for their daily skincare routines.</p>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">🚚</div>
-        <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;" data-t="trust3Title">Fast Delivery</h3>
-        <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;" data-t="trust3Desc">Islandwide delivery across Sri Lanka. Get your products delivered right to your doorstep.</p>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon">🔬</div>
-        <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;" data-t="trust4Title">Quality Tested</h3>
-        <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;" data-t="trust4Desc">All products are carefully formulated and tested to ensure safety and maximum effectiveness.</p>
-      </div>
-    </div>
-
-    <!-- Delivery Banner -->
-    <div style="background:linear-gradient(135deg,var(--charcoal),#5A3D42);border-radius:24px;padding:40px 32px;margin-top:48px;text-align:center;color:white;position:relative;overflow:hidden;" id="deliveryBanner">
-      <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(201,149,108,0.2);border-radius:50%;"></div>
-      <div style="position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;background:rgba(181,112,122,0.2);border-radius:50%;"></div>
-      <h3 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:10px;font-family:'Playfair Display',serif;" data-t="deliveryTitle">⚡ Fast Islandwide Delivery</h3>
-      <p style="opacity:0.85;margin-bottom:24px;font-size:15px;" data-t="deliveryDesc">Order now via WhatsApp and get your products delivered anywhere in Sri Lanka within 2–4 business days.</p>
-      <a href="https://wa.me/94707115227" target="_blank">
-        <button class="btn-whatsapp px-8 py-4 rounded-full text-base flex items-center gap-2 mx-auto" data-t="deliveryCta">
-          📦 Order Now on WhatsApp
-        </button>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section-blush py-16" id="faq">
-  <div class="max-w-3xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <div class="petal-divider"><span style="font-size:20px;">❓</span></div>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--charcoal);" data-t="faqTitle">Frequently Asked Questions</h2>
-    </div>
-    <div id="faqContainer"></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section-white py-16" id="contact">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <div class="petal-divider"><span style="font-size:20px;">📞</span></div>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--charcoal);" data-t="contactTitle">Get In Touch</h2>
-      <p style="color:var(--warm-gray);margin-top:8px;" data-t="contactDesc">We're here to help! Reach out to us anytime.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <a href="https://wa.me/94707115227" target="_blank" style="text-decoration:none;">
-        <div class="trust-card cursor-pointer hover:border-green-200" style="border:2px solid transparent;transition:all 0.3s;" onmouseover="this.style.borderColor='#25D366'" onmouseout="this.style.borderColor='transparent'">
-          <div class="trust-icon" style="background:linear-gradient(135deg,#e8faf1,#d5f5e3);">💬</div>
-          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;" data-t="contactWaTitle">WhatsApp</h3>
-          <p style="font-size:14px;color:var(--warm-gray);">+94 70 711 5227</p>
-        </div>
-      </a>
-      <a href="tel:+94707115227" style="text-decoration:none;">
-        <div class="trust-card cursor-pointer">
-          <div class="trust-icon" style="background:linear-gradient(135deg,#EEF4FF,#E0EAFF);">📞</div>
-          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;" data-t="contactCallTitle">Call Us</h3>
-          <p style="font-size:14px;color:var(--warm-gray);">+94 70 711 5227</p>
-        </div>
-      </a>
-      <div class="trust-card">
-        <div class="trust-icon">🕐</div>
-        <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;" data-t="contactHoursTitle">Working Hours</h3>
-        <p style="font-size:14px;color:var(--warm-gray);" data-t="contactHoursDesc">Mon – Sat: 8AM – 8PM</p>
-      </div>
-    </div>
-
-    <!-- Contact Form -->
-    <div style="background:var(--blush);border-radius:24px;padding:32px;max-width:600px;margin:0 auto;">
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;text-align:center;" data-t="contactFormTitle">Send Us a Message</h3>
-      <div class="flex flex-col gap-4">
-        <input type="text" class="form-input" id="contactName" data-t-placeholder="contactNamePlaceholder" placeholder="Your Name">
-        <input type="tel" class="form-input" id="contactPhone" data-t-placeholder="contactPhonePlaceholder" placeholder="Phone Number">
-        <textarea class="form-input" id="contactMsg" rows="4" data-t-placeholder="contactMsgPlaceholder" placeholder="Your Message..." style="resize:vertical;"></textarea>
-        <button onclick="sendContactMsg()" class="btn-primary py-4 rounded-full text-base" data-t="contactSendBtn">Send via WhatsApp</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="background:var(--charcoal);color:white;padding:40px 16px 24px;">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--rose-gold),var(--deep-rose));border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="font-size:16px;">🌸</span></div>
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;">Suthuka Beauty Care</div>
-            <div style="font-size:10px;opacity:0.6;letter-spacing:1px;">SUTHUKA ENTERPRISES (PVT) LTD</div>
-          </div>
-        </div>
-        <p style="font-size:13px;opacity:0.7;line-height:1.8;" data-t="footerDesc">Premium natural skincare crafted with love in Sri Lanka. Bringing out your natural radiance.</p>
-      </div>
-      <div>
-        <h4 style="font-size:14px;font-weight:700;margin-bottom:14px;opacity:0.9;" data-t="footerLinksTitle">Quick Links</h4>
-        <div class="flex flex-col gap-2">
-          <a href="#home" style="color:white;opacity:0.7;text-decoration:none;font-size:13px;transition:opacity 0.2s;" data-t="navHome" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Home</a>
-          <a href="#products" style="color:white;opacity:0.7;text-decoration:none;font-size:13px;transition:opacity 0.2s;" data-t="navProducts" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Products</a>
-          <a href="#faq" style="color:white;opacity:0.7;text-decoration:none;font-size:13px;transition:opacity 0.2s;" data-t="navFaq" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">FAQ</a>
-          <a href="#contact" style="color:white;opacity:0.7;text-decoration:none;font-size:13px;transition:opacity 0.2s;" data-t="navContact" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h4 style="font-size:14px;font-weight:700;margin-bottom:14px;opacity:0.9;" data-t="footerContactTitle">Contact Us</h4>
-        <div class="flex flex-col gap-2" style="font-size:13px;opacity:0.7;">
-          <div>📱 +94 70 711 5227</div>
-          <div data-t="footerLocation">📍 Sri Lanka</div>
-          <div data-t="footerHours">🕐 Mon–Sat: 8AM–8PM</div>
-        </div>
-        <a href="https://wa.me/94707115227" target="_blank">
-          <button class="btn-whatsapp px-6 py-3 rounded-full text-sm mt-4 flex items-center gap-2" data-t="footerWaBtn">
-            💬 Chat on WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;text-align:center;font-size:12px;opacity:0.5;" data-t="footerCopy">
-      © 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.
-    </div>
-  </div>
-</footer>
-
-<!-- CART OVERLAY -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-
-<!-- CART PANEL -->
-<div class="cart-panel" id="cartPanel">
-  <div style="padding:20px 24px;border-bottom:1px solid #EDD5DC;display:flex;align-items:center;justify-content:between;gap:12px;">
-    <h3 style="font-size:20px;font-weight:700;flex:1;" data-t="cartTitle">🛒 Your Cart</h3>
-    <button onclick="toggleCart()" style="background:none;border:none;cursor:pointer;font-size:24px;color:var(--warm-gray);margin-left:auto;">&times;</button>
-  </div>
-  <div id="cartItems" style="flex:1;overflow-y:auto;padding:16px 24px;"></div>
-  <div id="cartFooter" style="padding:20px 24px;border-top:1px solid #EDD5DC;display:none;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <span style="font-weight:600;font-size:16px;" data-t="cartTotal">Total:</span>
-      <span style="font-weight:700;font-size:22px;color:var(--deep-rose);" id="cartTotalAmt">Rs. 0</span>
-    </div>
-    <button onclick="openCheckout()" class="btn-primary w-full py-4 rounded-full text-base" data-t="checkoutBtn">Proceed to Checkout</button>
-  </div>
-</div>
-
-<!-- CHECKOUT MODAL -->
-<div class="modal-overlay" id="checkoutModal">
-  <div class="modal-box">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
-      <h3 style="font-size:22px;font-weight:700;" data-t="checkoutTitle">Complete Your Order</h3>
-      <button onclick="closeCheckout()" style="background:none;border:none;cursor:pointer;font-size:24px;color:var(--warm-gray);">&times;</button>
-    </div>
-    <!-- Order Summary Mini -->
-    <div id="orderSummary" style="background:var(--blush);border-radius:16px;padding:16px;margin-bottom:24px;"></div>
-    <!-- Form -->
-    <div class="flex flex-col gap-4">
-      <div>
-        <label style="font-size:13px;font-weight:600;color:var(--charcoal);display:block;margin-bottom:6px;" data-t="formName">Full Name *</label>
-        <input type="text" class="form-input" id="orderName" data-t-placeholder="formNamePh" placeholder="Enter your full name">
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;color:var(--charcoal);display:block;margin-bottom:6px;" data-t="formPhone">Mobile Number *</label>
-        <input type="tel" class="form-input" id="orderPhone" data-t-placeholder="formPhonePh" placeholder="07X XXX XXXX">
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;color:var(--charcoal);display:block;margin-bottom:6px;" data-t="formAddress">Address *</label>
-        <textarea class="form-input" id="orderAddress" rows="2" data-t-placeholder="formAddressPh" placeholder="House No, Street, Area" style="resize:none;"></textarea>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;color:var(--charcoal);display:block;margin-bottom:6px;" data-t="formCity">City *</label>
-        <input type="text" class="form-input" id="orderCity" data-t-placeholder="formCityPh" placeholder="Colombo">
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;color:var(--charcoal);display:block;margin-bottom:6px;" data-t="formNotes">Additional Notes</label>
-        <textarea class="form-input" id="orderNotes" rows="2" data-t-placeholder="formNotesPh" placeholder="Any special instructions..." style="resize:none;"></textarea>
-      </div>
-      <button onclick="placeOrder()" class="btn-whatsapp py-4 rounded-full text-base flex items-center justify-center gap-2 mt-2">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-t="placeOrderBtn">Place Order via WhatsApp</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- FLOATING WA BUTTON -->
-<a href="https://wa.me/94707115227" target="_blank" class="wa-float" title="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script>
-// =====================
-// DATA
-// =====================
-const products = [
- {
-  id: 1,
-  emoji: "✨",
-  image: "https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing",
-  name_en: "Suthuka Face Brightening Serum",
-  ...
-},
-{
-  id: 2,
-  emoji: "🌙",
-  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
-  name_en: "Suthuka Night Face Cream",
-  ...
-},
-{
-  id: 3,
-  emoji: "🌿",
-  image: "https://drive.google.com/file/d/1FRR1oslc7hqdouWToJjTz62cLxXC5T9A/view?usp=sharing",
-  name_en: "Suthuka Face & Body Pack",
-  ...
-},
-{
-  id: 4,
-  emoji: "☕",
-  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
-  name_en: "Suthuka Coffee Body Scrub",
-  ...
-},
-{
-  id: 5,
-  emoji: "🌙",
-  image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
-  name_en: "Suthuka Night Body Lotion",
-  ...
-},
-{
-  id: 6,
-  emoji: "☀️",
-  image: "https://drive.google.com/file/d/1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem/view?usp=sharing",
-  name_en: "Suthuka Day Body Lotion",
-  ...
-},
-{
-  id: 7,
-  emoji: "🌞",
-  image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
-  name_en: "Suthuka Day Face Cream",
-  ...
-},
-{
-  id: 8,
-  emoji: "🧈",
-  image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
-  name_en: "Suthuka Body Butter",
-  ...
-}
-];
-
-// =====================
-// TRANSLATIONS
-// =====================
-const translations = {
-  en: {
-    deliveryStrip: "FREE Islandwide Delivery on all orders | Call: +94 70 711 5227",
-    navHome: "Home", navProducts: "Products", navAbout: "About", navFaq: "FAQ", navContact: "Contact",
-    heroBadge: "🌿 100% Natural Ingredients",
-    heroTitle: "Reveal Your<br><em style=\"color:var(--deep-rose);font-style:italic;\">Natural Radiance</em>",
-    heroDesc: "Premium skincare crafted with the finest natural ingredients. Trusted by thousands across Sri Lanka for glowing, healthy skin.",
-    heroShopBtn: "Shop Now ✨",
-    heroWaBtn: "Chat on WhatsApp",
-    heroRating: "Top Rated",
-    heroNatural: "100% Natural",
-    statCustomers: "Happy Customers",
-    statNatural: "Natural Ingredients",
-    statDelivery: "Fast Delivery",
-    productsTitle: "Our Premium Collection",
-    productsDesc: "Discover beauty secrets crafted with nature's finest ingredients",
-    addToCart: "Add to Cart",
-    buyNow: "Buy Now",
-    benefits: "Benefits:",
-    howToUse: "How to Use:",
-    salePrice: "Sale Price",
-    limited: "Limited Stock",
-    whyTitle: "Why Choose Suthuka?",
-    trust1Title: "Natural Ingredients", trust1Desc: "Carefully selected natural ingredients that are gentle on your skin and effective in results.",
-    trust2Title: "Customer Satisfaction", trust2Desc: "Over 5,000 happy customers trust Suthuka Beauty Care for their daily skincare routines.",
-    trust3Title: "Fast Delivery", trust3Desc: "Islandwide delivery across Sri Lanka. Get your products delivered right to your doorstep.",
-    trust4Title: "Quality Tested", trust4Desc: "All products are carefully formulated and tested to ensure safety and maximum effectiveness.",
-    deliveryTitle: "⚡ Fast Islandwide Delivery",
-    deliveryDesc: "Order now via WhatsApp and get your products delivered anywhere in Sri Lanka within 2–4 business days.",
-    deliveryCta: "📦 Order Now on WhatsApp",
-    faqTitle: "Frequently Asked Questions",
-    faqs: [
-      { q: "How do I place an order?", a: "Simply add products to your cart, click 'Checkout', fill in your details, and click 'Place Order via WhatsApp'. You'll be redirected to WhatsApp with your order details pre-filled." },
-      { q: "What is the delivery time?", a: "We deliver islandwide across Sri Lanka within 2–4 business days. Colombo and suburbs usually receive orders within 1–2 days." },
-      { q: "What are the payment methods?", a: "We accept Cash on Delivery (COD) islandwide. You pay when your products are delivered to your doorstep." },
-      { q: "How do I contact support?", a: "You can reach us via WhatsApp at +94 70 711 5227, or call us directly. We're available Monday to Saturday, 8AM to 8PM." }
-    ],
-    contactTitle: "Get In Touch",
-    contactDesc: "We're here to help! Reach out to us anytime.",
-    contactWaTitle: "WhatsApp",
-    contactCallTitle: "Call Us",
-    contactHoursTitle: "Working Hours",
-    contactHoursDesc: "Mon – Sat: 8AM – 8PM",
-    contactFormTitle: "Send Us a Message",
-    contactNamePlaceholder: "Your Name",
-    contactPhonePlaceholder: "Phone Number",
-    contactMsgPlaceholder: "Your Message...",
-    contactSendBtn: "Send via WhatsApp",
-    cartTitle: "🛒 Your Cart",
-    cartTotal: "Total:",
-    cartEmpty: "Your cart is empty 🛍️",
-    cartEmptyDesc: "Add some beautiful products to get started!",
-    checkoutBtn: "Proceed to Checkout",
-    checkoutTitle: "Complete Your Order",
-    formName: "Full Name *", formNamePh: "Enter your full name",
-    formPhone: "Mobile Number *", formPhonePh: "07X XXX XXXX",
-    formAddress: "Address *", formAddressPh: "House No, Street, Area",
-    formCity: "City *", formCityPh: "Colombo",
-    formNotes: "Additional Notes", formNotesPh: "Any special instructions...",
-    placeOrderBtn: "Place Order via WhatsApp",
-    footerDesc: "Premium natural skincare crafted with love in Sri Lanka. Bringing out your natural radiance.",
-    footerLinksTitle: "Quick Links",
-    footerContactTitle: "Contact Us",
-    footerLocation: "📍 Sri Lanka",
-    footerHours: "🕐 Mon–Sat: 8AM–8PM",
-    footerWaBtn: "💬 Chat on WhatsApp",
-    footerCopy: "© 2025 Suthuka Enterprises (Pvt) Ltd. All rights reserved.",
-    waMsg: (name, phone, address, city, notes, items, total) =>
-      `Hello Suthuka Beauty Care,%0A%0AI would like to place an order.%0A%0A*Customer Details:*%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}, ${city}%0A%0A*Products:*%0A${items}%0A%0A*Order Total: Rs. ${total}*%0A%0A${notes ? 'Notes: ' + notes + '%0A%0A' : ''}Please confirm my order.`
-  },
-  si: {
-    deliveryStrip: "සියලුම ඇණවුම් සඳහා නොමිලේ දිවයිනෙ配送 | ඇමතුම: +94 70 711 5227",
-    navHome: "මුල් පිටුව", navProducts: "නිෂ්පාදන", navAbout: "අප ගැන", navFaq: "ප්‍රශ්න", navContact: "සම්බන්ධ වන්න",
-    heroBadge: "🌿 100% ස්වභාවික අමුද්‍රව්‍ය",
-    heroTitle: "ඔබේ<br><em style=\"color:var(--deep-rose);font-style:italic;\">ස්වභාවික දීප්තිය</em> හෙළිකරන්න",
-    heroDesc: "ශ්‍රී ලංකාව පුරා දහස් ගණනක් ලෙස විශ්වාස කෙරෙන, ස්වභාවික අමුද්‍රව්‍ය සමඟ නිපදවූ ශ්‍රේෂ්ඨ සත්කාරක නිෂ්පාදන.",
-    heroShopBtn: "දැන් ගෙන්වා ගන්න ✨",
-    heroWaBtn: "WhatsApp හරහා ඇමතීමට",
-    heroRating: "ඉහළම ශ්‍රේණිගත",
-    heroNatural: "100% ස්වභාවික",
-    statCustomers: "සතුටු ගනුදෙනුකරුවන්",
-    statNatural: "ස්වභාවික අමුද්‍රව්‍ය",
-    statDelivery: "ඉක්මන් බෙදාහැරීම",
-    productsTitle: "අපේ ශ්‍රේෂ්ඨ නිෂ්පාදන",
-    productsDesc: "ස්වභාවයේ ශ්‍රේෂ්ඨ අමුද්‍රව්‍ය සමඟ නිපදවූ රූපලාවන්‍ය රහස් සොයා ගන්න",
-    addToCart: "කරත්තයට එකතු කරන්න",
-    buyNow: "දැන් ගෙන්වා ගන්න",
-    benefits: "ප්‍රතිලාභ:",
-    howToUse: "භාවිතා කරන ආකාරය:",
-    salePrice: "විශේෂ මිල",
-    limited: "සීමිත තොගයක් ඇත",
-    whyTitle: "ඇයි Suthuka තෝරා ගන්නේ?",
-    trust1Title: "ස්වභාවික අමුද්‍රව්‍ය", trust1Desc: "ඔබේ සමට මෘදු හා ඵලදායි ස්වභාවික අමුද්‍රව්‍ය ප්‍රවේශමෙන් තෝරා ගනු ලැබේ.",
-    trust2Title: "ගනුදෙනුකරු සතුට", trust2Desc: "5,000 කට වැඩි සතුටු ගනුදෙනුකරුවන් දෛනික සත්කාරක දිනචරියාව සඳහා Suthuka Beauty Care විශ්වාස කරති.",
-    trust3Title: "ඉක්මන් බෙදාහැරීම", trust3Desc: "ශ්‍රී ලංකාව පුරා දිවයිනේ ඕනෑම ස්ථානයකට ඔබේ දොරකඩ දක්වා නිෂ්පාදන ලබා ගන්න.",
-    trust4Title: "ගුණාත්මක ලෙස පරීක්ෂා කළ", trust4Desc: "සියලුම නිෂ්පාදන ආරක්ෂාව හා උපරිම ඵලදාව සහතික කිරීමට ප්‍රවේශමෙන් සකස් කර පරීක්ෂා කෙරේ.",
-    deliveryTitle: "⚡ ඉක්මන් දිවයිනේ බෙදාහැරීම",
-    deliveryDesc: "WhatsApp හරහා දැන් ඇණවුම් කර ව්‍යාපාරික දින 2–4 ක් ඇතුළත ශ්‍රී ලංකාවේ ඕනෑම ස්ථානයකට ඔබේ නිෂ්පාදන ලබා ගන්න.",
-    deliveryCta: "📦 WhatsApp හරහා දැන් ඇණවුම් කරන්න",
-    faqTitle: "නිතර අසන ප්‍රශ්න",
-    faqs: [
-      { q: "මම ඇණවුමක් කරන්නේ කෙසේද?", a: "නිෂ්පාදන කරත්තයට එකතු කර, 'ඇණවුම තහවුරු කරන්න' ක්ලික් කර ඔබේ තොරතුරු පුරවා 'WhatsApp හරහා ඇණවුම් කරන්න' ක්ලික් කරන්න. ඔබේ ඇණවුම් තොරතුරු පිරවී WhatsApp වෙත යොමු වනු ඇත." },
-      { q: "බෙදාහැරීමේ කාලය කොපමණද?", a: "අපි ව්‍යාපාරික දින 2–4 ක් ඇතුළත ශ්‍රී ලංකාව පුරා දිවයිනේ බෙදා හරිමු. කොළඹ සහ ප්‍රදේශ සාමාන්‍යයෙන් 1–2 දිනකින් ඇණවුම් ලබා ගනී." },
-      { q: "ගෙවීම් ක්‍රම මොනවාද?", a: "අපි දිවයිනේ Cash on Delivery (COD) භාර ගනිමු. නිෂ්පාදන ඔබේ දොරකඩ ලැබීමේදී ගෙවිය යුතුය." },
-      { q: "සහාය සම්බන්ධ කර ගන්නේ කෙසේද?", a: "+94 70 711 5227 WhatsApp හරහා හෝ කෙලින්ම ඇමතිය හැක. අපි සඳුදා සිට සෙනසුරාදා, 8AM සිට 8PM දක්වා ලබා ගත හැකිය." }
-    ],
-    contactTitle: "සම්බන්ධ වන්න",
-    contactDesc: "සහාය ලැබීමට සූදානම්! ඕනෑ වේලාවක සම්බන්ධ වන්න.",
-    contactWaTitle: "WhatsApp",
-    contactCallTitle: "අපට ඇමතීමට",
-    contactHoursTitle: "වැඩ කරන වේලාවන්",
-    contactHoursDesc: "සඳු – සෙන: 8AM – 8PM",
-    contactFormTitle: "අපට පණිවිඩයක් යවන්න",
-    contactNamePlaceholder: "ඔබේ නම",
-    contactPhonePlaceholder: "දුරකථන අංකය",
-    contactMsgPlaceholder: "ඔබේ පණිවිඩය...",
-    contactSendBtn: "WhatsApp හරහා යවන්න",
-    cartTitle: "🛒 ඔබේ කරත්තය",
-    cartTotal: "මුළු මුදල:",
-    cartEmpty: "ඔබේ කරත්තය හිස් ය 🛍️",
-    cartEmptyDesc: "ආරම්භ කිරීමට ලස්සන නිෂ්පාදන එකතු කරන්න!",
-    checkoutBtn: "ඇණවුම තහවුරු කරන්න",
-    checkoutTitle: "ඔබේ ඇණවුම සම්පූර්ණ කරන්න",
-    formName: "සම්පූර්ණ නම *", formNamePh: "ඔබේ සම්පූර්ණ නම ඇතුළත් කරන්න",
-    formPhone: "දුරකථන අංකය *", formPhonePh: "07X XXX XXXX",
-    formAddress: "ලිපිනය *", formAddressPh: "නිවස අංකය, වීදිය, ප්‍රදේශය",
-    formCity: "නගරය *", formCityPh: "කොළඹ",
-    formNotes: "අතිරේක සටහන්", formNotesPh: "විශේෂ උපදෙස් තිබේ නම්...",
-    placeOrderBtn: "WhatsApp හරහා ඇණවුම් කරන්න",
-    footerDesc: "ශ්‍රී ලංකාවේ ආදරයෙන් නිපදවූ ශ්‍රේෂ්ඨ ස්වභාවික සත්කාරකය. ඔබේ ස්වභාවික දීප්තිය හෙළිකිරීම.",
-    footerLinksTitle: "ඉක්මන් සබැඳි",
-    footerContactTitle: "අපව සම්බන්ධ කරගන්න",
-    footerLocation: "📍 ශ්‍රී ලංකාව",
-    footerHours: "🕐 සඳු–සෙන: 8AM–8PM",
-    footerWaBtn: "💬 WhatsApp හරහා ඇමතීමට",
-    footerCopy: "© 2025 Suthuka Enterprises (Pvt) Ltd. සියලු හිමිකම් ඇවිරිණි.",
-    waMsg: (name, phone, address, city, notes, items, total) =>
-      `ආයුබෝවන් Suthuka Beauty Care,%0A%0Aමට ඇණවුමක් කිරීමට අවශ්‍යයි.%0A%0A*ගනුදෙනුකාර විස්තර:*%0Aනම: ${name}%0Aදුරකථනය: ${phone}%0Aලිපිනය: ${address}, ${city}%0A%0A*නිෂ්පාදන:*%0A${items}%0A%0A*මුළු මුදල: රු. ${total}*%0A%0A${notes ? 'සටහන්: ' + notes + '%0A%0A' : ''}කරුණාකර ඇණවුම තහවුරු කරන්න.`
-  }
-};
-
-// =====================
-// PRODUCTS
-// =====================
-
-// Convert Google Drive share links to direct image links
-function driveToDirect(url) {
-  const match = url.match(/\/d\/([^/]+)/);
-  return match
-    ? `https://drive.google.com/uc?export=view&id=${match[1]}`
-    : url;
-}
-
-function renderProducts() {
-  const grid = document.getElementById('productsGrid');
-
-  grid.innerHTML = products.map(p => {
-    const name = p[`name_${currentLang}`] || p.name_en;
-    const desc = p[`description_${currentLang}`] || p.description_en;
-    const benefits = p[`benefits_${currentLang}`] || p.benefits_en;
-    const howto = p[`howto_${currentLang}`] || p.howto_en;
-    const qty = cart[p.id]?.qty || 0;
-    const discount = Math.round(
-      ((p.original_price - p.price) / p.original_price) * 100
-    );
-
-    return `
-    <div class="product-card" id="pcard-${p.id}">
-      <div class="product-img-wrap">
-
-        ${
-          p.image
-            ? `<img
-                src="${driveToDirect(p.image)}"
-                alt="${name}"
-                style="width:100%;height:100%;object-fit:contain;padding:20px;"
-                loading="lazy"
-                onerror="this.style.display='none';"
-              >`
-            : `<span style="font-size:72px;">${p.emoji}</span>`
+    <style>
+        /* Custom Styles for aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
 
-        <span class="badge-sale">-${discount}% OFF</span>
-        ${p.limited ? `<span class="badge-stock">${t('limited')}</span>` : ''}
+        /* Hide scrollbar for cart but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-      </div>
+        /* Loader */
+        #loader { transition: opacity 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased relative">
 
-      <div style="padding:20px;">
-        <div style="font-size:11px;color:var(--warm-gray);letter-spacing:0.5px;margin-bottom:4px;text-transform:uppercase;">
-          ${p.weight ? p.weight : 'Skincare'}
-        </div>
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 glass-nav shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" alt="Suthuka Beauty Care Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover shadow-sm group-hover:scale-105 transition">
+                <span class="text-xl md:text-2xl font-bold text-accent tracking-tight">Suthuka <span class="text-primary">Beauty</span></span>
+            </a>
 
-        <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.3;">
-          ${name}
-        </h3>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#home" class="hover:text-primary transition" data-i18n="navHome">Home</a>
+                <a href="#products" class="hover:text-primary transition" data-i18n="navProducts">Products</a>
+                <a href="#faq" class="hover:text-primary transition" data-i18n="navFAQ">FAQ</a>
+                <a href="#contact" class="hover:text-primary transition" data-i18n="navContact">Contact</a>
+            </nav>
 
-        <p style="font-size:13px;color:var(--warm-gray);line-height:1.7;margin-bottom:12px;">
-          ${desc.substring(0, 100)}...
-        </p>
+            <!-- Actions (Lang Toggle & Cart) -->
+            <div class="flex items-center gap-4">
+                
+                <!-- Language Toggle -->
+                <button id="langToggle" class="flex items-center gap-2 bg-light text-primaryDark px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition shadow-sm border border-primary/20">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="langText">සිංහල</span>
+                </button>
 
-        <div style="margin-bottom:14px;">
-          <div style="font-size:12px;font-weight:700;color:var(--deep-rose);margin-bottom:6px;">
-            ${t('benefits')}
-          </div>
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative text-accent hover:text-primary transition p-2">
+                    <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                    <span id="cartCount" class="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow">0</span>
+                </button>
 
-          ${benefits.map(b => `
-            <div style="font-size:12px;color:var(--warm-gray);display:flex;gap:6px;margin-bottom:4px;">
-              <span style="color:var(--rose-gold);flex-shrink:0;">✓</span>
-              <span>${b}</span>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-accent p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
-          `).join('')}
         </div>
 
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-          <span class="price-sale">
-            Rs. ${p.price.toLocaleString()}
-          </span>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col p-4 gap-4 font-medium text-center">
+                <a href="#home" class="hover:text-primary" data-i18n="navHome" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Home</a>
+                <a href="#products" class="hover:text-primary" data-i18n="navProducts" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Products</a>
+                <a href="#faq" class="hover:text-primary" data-i18n="navFAQ" onclick="document.getElementById('mobileMenu').classList.add('hidden')">FAQ</a>
+                <a href="#contact" class="hover:text-primary" data-i18n="navContact" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Contact</a>
+            </div>
+        </div>
+    </header>
 
-          <span class="price-original">
-            Rs. ${p.original_price.toLocaleString()}
-          </span>
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-light to-white overflow-hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1 text-center md:text-left z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4" data-i18n="heroBadge">Premium Skincare Sri Lanka</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-accent leading-tight mb-6" data-i18n="heroTitle">
+                    Reveal Your <span class="text-primary">Natural</span> Glow
+                </h1>
+                <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-lg mx-auto md:mx-0" data-i18n="heroSub">
+                    Experience the luxury of scientifically formulated beauty products. Safe, effective, and perfectly crafted for your skin.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#products" class="bg-primary hover:bg-primaryDark text-white px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-primary/30 text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-cart-shopping"></i> <span data-i18n="btnShopNow">Shop Now</span>
+                    </a>
+                    <a href="https://wa.me/94707115227" target="_blank" class="bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-semibold transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span data-i18n="btnConsult">Expert Consultation</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-90"></div>
+                <!-- Hero Image Placeholder -->
+                <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" alt="Premium Beauty Products" class="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="py-10 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4">
+                <i class="fa-solid fa-leaf text-3xl text-primary mb-3"></i>
+                <h4 class="font-bold text-accent" data-i18n="trust1Title">Quality Ingredients</h4>
+                <p class="text-sm text-gray-500 mt-1" data-i18n="trust1Sub">100% safe & tested</p>
+            </div>
+            <div class="p-4">
+                <i class="fa-solid fa-truck-fast text-3xl text-primary mb-3"></i>
+                <h4 class="font-bold text-accent" data-i18n="trust2Title">Islandwide Delivery</h4>
+                <p class="text-sm text-gray-500 mt-1" data-i18n="trust2Sub">Fast & reliable shipping</p>
+            </div>
+            <div class="p-4">
+                <i class="fa-solid fa-star text-3xl text-primary mb-3"></i>
+                <h4 class="font-bold text-accent" data-i18n="trust3Title">Customer Satisfaction</h4>
+                <p class="text-sm text-gray-500 mt-1" data-i18n="trust3Sub">Thousands of happy clients</p>
+            </div>
+            <div class="p-4">
+                <i class="fa-solid fa-shield-halved text-3xl text-primary mb-3"></i>
+                <h4 class="font-bold text-accent" data-i18n="trust4Title">Secure Ordering</h4>
+                <p class="text-sm text-gray-500 mt-1" data-i18n="trust4Sub">Via direct WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4" data-i18n="sectionProducts">Our Premium Collection</h2>
+                <div class="h-1 w-20 bg-primary mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-600" data-i18n="sectionProductsSub">Explore our exclusive range of skincare crafted to perfection.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Products dynamically injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4" data-i18n="faqTitle">Frequently Asked Questions</h2>
+                <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-gray-50 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm border border-gray-100">
+                    <summary class="flex justify-between items-center font-bold text-lg text-accent">
+                        <span data-i18n="faq1Q">How do I place an order?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed" data-i18n="faq1A">Simply browse our products, add them to your cart, and click "Place Order via WhatsApp". Your order details will be automatically sent to us!</p>
+                </details>
+                <!-- FAQ Item 2 -->
+                <details class="group bg-gray-50 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm border border-gray-100">
+                    <summary class="flex justify-between items-center font-bold text-lg text-accent">
+                        <span data-i18n="faq2Q">What is the delivery time?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed" data-i18n="faq2A">We offer islandwide delivery in Sri Lanka. Orders are typically delivered within 2-4 working days depending on your location.</p>
+                </details>
+                <!-- FAQ Item 3 -->
+                <details class="group bg-gray-50 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm border border-gray-100">
+                    <summary class="flex justify-between items-center font-bold text-lg text-accent">
+                        <span data-i18n="faq3Q">What are the payment methods?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed" data-i18n="faq3A">Currently, we support Cash on Delivery (COD) and Bank Transfers. We will confirm your preferred method via WhatsApp.</p>
+                </details>
+                <!-- FAQ Item 4 -->
+                <details class="group bg-gray-50 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm border border-gray-100">
+                    <summary class="flex justify-between items-center font-bold text-lg text-accent">
+                        <span data-i18n="faq4Q">How can I contact customer support?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed" data-i18n="faq4A">You can reach out to us instantly via WhatsApp at +94 70 711 5227, or call us directly. We are always happy to help!</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <div class="bg-accent text-white p-10 md:w-2/5 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-6" data-i18n="contactTitle">Get in Touch</h3>
+                    <p class="mb-8 text-blue-200" data-i18n="contactSub">Suthuka Enterprises (Pvt) Ltd. We are here to answer any questions you may have.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="text-sm text-blue-200" data-i18n="phoneLabel">Call Us</p>
+                                <p class="font-bold text-lg">+94 70 711 5227</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <p class="text-sm text-blue-200" data-i18n="waLabel">WhatsApp</p>
+                                <p class="font-bold text-lg">+94 70 711 5227</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 md:w-3/5">
+                    <h4 class="text-2xl font-bold text-accent mb-6" data-i18n="contactFormTitle">Send us a direct message</h4>
+                    <form onsubmit="sendContactForm(event)" class="space-y-4">
+                        <input type="text" id="contactName" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-primary transition" required>
+                        <textarea id="contactMessage" rows="4" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-primary transition" required></textarea>
+                        <button type="submit" class="bg-primary hover:bg-primaryDark text-white font-bold py-3 px-8 rounded-lg transition shadow-md w-full sm:w-auto" data-i18n="btnSendMsg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800 text-center">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center mb-6">
+                <img src="https://drive.google.com/file/d/1VDjFMGQBl2hhRPsQbq3E1yCDU6_q79sx/view?usp=sharing" alt="Suthuka Logo" class="w-16 h-16 rounded-full opacity-80 grayscale hover:grayscale-0 transition">
+            </div>
+            <p class="mb-2">© 2026 Suthuka Enterprises (Pvt) Ltd. All Rights Reserved.</p>
+            <p class="text-sm">Made with ❤️ for Sri Lankan Beauty.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/94707115227" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 hover:bg-[#20b858] transition-all z-40 pulse-animation">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Shopping Cart Sidebar (Slide-in) -->
+    <div id="cartOverlay" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity" onclick="toggleCart()"></div>
+    
+    <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Cart Header -->
+        <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+            <h3 class="text-xl font-bold text-accent flex items-center gap-2">
+                <i class="fa-solid fa-basket-shopping text-primary"></i>
+                <span data-i18n="cartTitle">Your Shopping Cart</span>
+            </h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-red-500 transition text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
 
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-          <button class="qty-btn" onclick="changeQty(${p.id}, -1)">−</button>
-
-          <span
-            style="font-weight:700;font-size:16px;min-width:24px;text-align:center;"
-            id="qty-${p.id}"
-          >
-            ${qty}
-          </span>
-
-          <button class="qty-btn" onclick="changeQty(${p.id}, 1)">+</button>
+        <!-- Cart Items Container -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 no-scrollbar bg-white">
+            <!-- Items injected by JS -->
         </div>
 
-        <div style="display:flex;gap:8px;">
-          <button
-            onclick="addToCart(${p.id})"
-            class="btn-outline flex-1 py-3 rounded-full text-sm"
-          >
-            ${t('addToCart')}
-          </button>
-
-          <button
-            onclick="buyNow(${p.id})"
-            class="btn-primary flex-1 py-3 rounded-full text-sm"
-          >
-            ${t('buyNow')}
-          </button>
+        <!-- Checkout Section -->
+        <div class="p-5 border-t border-gray-100 bg-gray-50">
+            <div class="flex justify-between items-center mb-4 text-lg font-bold text-accent">
+                <span data-i18n="total">Total:</span>
+                <span id="cartTotalDisplay" class="text-primary">Rs. 0</span>
+            </div>
+            
+            <!-- Checkout Form -->
+            <form id="checkoutForm" onsubmit="placeOrder(event)" class="space-y-3 mb-4">
+                <h4 class="font-semibold text-sm text-gray-600 mb-2 uppercase tracking-wider" data-i18n="checkoutDetails">Delivery Details</h4>
+                <input type="text" id="custName" placeholder="Full Name" required class="w-full p-2.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:border-primary">
+                <input type="tel" id="custMobile" placeholder="Mobile Number (e.g. 07XXXXXXXX)" required class="w-full p-2.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:border-primary">
+                <input type="text" id="custAddress" placeholder="Delivery Address" required class="w-full p-2.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:border-primary">
+                <input type="text" id="custCity" placeholder="City" required class="w-full p-2.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:border-primary">
+                <textarea id="custNotes" placeholder="Additional Notes (Optional)" rows="2" class="w-full p-2.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:border-primary"></textarea>
+                
+                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-3.5 rounded-lg shadow-lg flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span data-i18n="btnPlaceOrder">Place Order via WhatsApp</span>
+                </button>
+            </form>
         </div>
-      </div>
-    </div>`;
-  }).join('');
-}
-// =====================
-// CART LOGIC
-// =====================
-function changeQty(id, delta) {
-  const current = (cart[id]?.qty || 0) + delta;
-  if (current <= 0) {
-    delete cart[id];
-    document.getElementById('qty-'+id).textContent = '0';
-  } else {
-    const p = products.find(x => x.id === id);
-    cart[id] = { qty: current, name_en: p.name_en, name_si: p.name_si, price: p.price };
-    document.getElementById('qty-'+id).textContent = current;
-  }
-  updateCartBadge();
-}
+    </div>
 
-function addToCart(id) {
-  changeQty(id, 1);
-  updateCartBadge();
-  showToast(t('addToCart') + ' ✓');
-}
+    <!-- Application Logic -->
+    <script>
+        // ----------------------------------------------------
+        // 1. PRODUCT DATABASE (JSON Array)
+        // ----------------------------------------------------
+        const products = [
+            {
+                id: 1,
+                image: "https://drive.google.com/file/d/1ae1EE_xWZsEKPw55QKUuIdatLx-yLejr/view?usp=sharing",
+                price: 1500,
+                regularPrice: 2450,
+                en: {
+                    name: "Suthuka Face Brightening Serum (30g)",
+                    description: "A premium face brightening serum formulated with Kojic Acid and natural Aloe Vera gel. It penetrates deep into the skin layers to restore natural radiance, leaving a delightful Jasmine fragrance.",
+                    benefits: "Eliminates skin dullness and unifies uneven skin tone. Fades dark spots and blemishes for a flawless look."
+                },
+                si: {
+                    name: "Suthuka Face Brightening Serum (30g)",
+                    description: "කොජික් ඇසිඩ් (Kojic acid) සහ ඇලෝවේරා සාරය (Aloe gel) මුසු කර නිපදවූ සුවිශේෂී Serum එකක්. සම අභ්‍යන්තරයටම ගොස් සම පැහැපත් කරන අතර, සිත්ගන්නාසුලු පිච්ච මල් සුවඳකින් (Jasmine fragrance) යුක්තයි.",
+                    benefits: "සමේ අඳුරු ගතිය සහ අවපැහැය නැති කර ස්වභාවික දීප්තියක් ලබා දෙයි. ලප කැළැල් මකා දමා සමේ ඒකාකාරී පැහැය රැකදෙයි."
+                }
+            },
+            {
+                id: 2,
+                image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+                price: 1700,
+                regularPrice: 2850,
+                en: {
+                    name: "Suthuka Night Face Cream with Hydrolyzed Collagen (25g)",
+                    description: "An advanced overnight treatment cream enriched with Hydrolyzed Collagen and Glutathione. Specially designed for all skin types to nourish and rejuvenate your skin while you sleep.",
+                    benefits: "Reduces the appearance of fine lines and wrinkles for a youthful glow. Enriched with Shea Butter and Aloe Gel to deeply hydrate and lock in moisture."
+                },
+                si: {
+                    name: "Suthuka Night Face Cream with Hydrolyzed Collagen (25g)",
+                    description: "හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed Collagen) සහ ග්ලූටතයෝන් (Glutathione) අඩංගු, රාත්‍රී නින්දේදී ඔබේ සමට අත්‍යවශ්‍ය පෝෂණය ලබා දෙන විශේෂිත රාත්‍රී සත්කාරක ක්‍රීම් එකකි. සියලුම සමේ වර්ග සඳහා සුදුසුයි (For all skin types).",
+                    benefits: "සමේ රැලි වැටීම් අවම කර තරුණ සහ දීප්තිමත් පෙනුමක් ලබා දෙයි. Shea Butter සහ Aloe Gel මගින් සම ගැඹුරින් පෝෂණය කර තෙතමනය රැකදෙයි."
+                }
+            },
+            {
+                id: 3,
+                image: "https://drive.google.com/file/d/1FRR1oslc7hqdouWToJjTz62cLxXC5T9A/view?usp=sharing",
+                price: 1700,
+                regularPrice: 2650,
+                en: {
+                    name: "Suthuka Face & Body Pack with Sandalwood (25g)",
+                    description: "A revitalizing face and body pack infused with the goodness of Sandalwood, Multani Mitti, and Hydrolyzed Collagen. Formulated specifically to tighten the skin and boost natural radiance.",
+                    benefits: "Effectively tightens the skin and prevents sagging. Deeply purifies, detoxifies, and nourishes the skin."
+                },
+                si: {
+                    name: "Suthuka Face & Body Pack with Sandalwood (25g)",
+                    description: "සඳුන් (Sandalwood), මුල්තානි මිත්ති (Multani mitti) සහ හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed collagen) අඩංගු, සමේ තද බව වැඩි කර සමට නැවුම් දීප්තියක් ලබා දෙන විශේෂිත Face and Body Pack එකකි.",
+                    benefits: "සමේ තද බව (Tightening) වැඩි කර එල්ලා වැටීම පාලනය කරයි. ස්වභාවික අමුද්‍රව්‍ය මගින් සම පිරිසිදු කර පෝෂණය කරයි."
+                }
+            },
+            {
+                id: 4,
+                image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+                price: 1700,
+                regularPrice: 2750,
+                en: {
+                    name: "Suthuka Coffee Body Scrub (30g)",
+                    description: "A powerful body scrub crafted with Coffee powder, Sugar, and Glycolic Acid. Perfect for hard exfoliation and targeting hyperpigmentation across the body.",
+                    benefits: "Removes dead skin cells effectively to reveal smooth and soft skin. Gradually lightens dark patches and evens out skin discoloration."
+                },
+                si: {
+                    name: "Suthuka Coffee Body Scrub (30g)",
+                    description: "කෝපි කුඩු (Coffee powder) සහ සීනි (Sugar) අඩංගු, සමේ මැරුණු සෛල ගැඹුරින් ඉවත් කිරීමට (Hard exfoliation) සහ සමේ ඇතිවන අවපැහැ ගැන්වීම් (Hyperpigmentation) මකා දැමීමට විශේෂයෙන් නිපදවූ Body Scrub එකකි.",
+                    benefits: "සමේ ඇති රළු ගතිය නැති කර සම මෘදු සහ සිනිඳු කරයි. සිරුරේ අඳුරු ලප සහ අවපැහැ ගැන්වුණු ස්ථාන ක්‍රමයෙන් නැති කරයි."
+                }
+            },
+            {
+                id: 5,
+                image: "https://drive.google.com/file/d/1vAo-vPI6n8ujL8C86W2EH5SSRmpuWDE2/view?usp=sharing",
+                price: 1700,
+                regularPrice: 2950,
+                en: {
+                    name: "Suthuka Night Body Lotion (25g)",
+                    description: "A specialized night repair body lotion containing Glycerin, Hydrolyzed Collagen, and Kojic Acid. It works overnight to repair skin cells and improve overall texture.",
+                    benefits: "Reduces dark spots and promotes an even, brighter body complexion. Stimulates skin cell regeneration during your sleep."
+                },
+                si: {
+                    name: "Suthuka Night Body Lotion (25g)",
+                    description: "රාත්‍රී කාලයේදී සම ගැඹුරින් අලුත්වැඩියා කර පෝෂණය කරන (For Night Repair) සුවිශේෂී Body Lotion එකකි. මෙහි අඩංගු ග්ලිසරින් (Glycerin), හයිඩ්‍රොලයිස්ඩ් කොලජන් (Hydrolyzed Collagen) සහ කොජික් ඇසිඩ් (Kojic acid) සාරය මගින් සමේ තරුණ බව රැකදෙයි.",
+                    benefits: "සමේ අඳුරු ලප නැති කර, සිරුර ඒකාකාරීව පැහැපත් කරයි. රාත්‍රී කාලයේදී සමේ සෛල වර්ධනය උත්තේජනය කරයි."
+                }
+            },
+            {
+                id: 6,
+                image: "https://drive.google.com/file/d/1ZeC1kUoYNXoSnG8DKDzsnFJbDpsbSNem/view?usp=sharing",
+                price: 1700,
+                regularPrice: 2950,
+                en: {
+                    name: "Suthuka Day Body Lotion (25g)",
+                    description: "A protective day shield body lotion formulated to guard your skin against harsh sunlight and environmental pollutants. Infused with a refreshing Lavender fragrance.",
+                    benefits: "Keeps the skin deeply hydrated all day long while preventing tanning. Forms a lightweight protective barrier on the skin surface."
+                },
+                si: {
+                    name: "Suthuka Day Body Lotion (25g)",
+                    description: "දහවල් කාලයේදී හිරු එළියෙන් සහ දූවිල්ලෙන් සම ආරක්ෂා කරන (For Day Shield) විශේෂිත Body Lotion එකකි. පාරිභෝගිකයා ප්‍රබෝධමත්ව තබන ඉතාමත් සුවඳවත් ලැවෙන්ඩර් සුවඳකින් (Lavender Fragrance) යුක්තයි.",
+                    benefits: "දවස පුරා සම තෙතමනයෙන් යුතුව (Hydrated) තබා ගනිමින් සම අවපැහැ ගැන්වීම වළක්වයි. සම මතුපිට ආරක්ෂිත ස්ථරයක් සාදයි."
+                }
+            },
+            {
+                id: 7,
+                image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
+                price: 1650,
+                regularPrice: 2650,
+                en: {
+                    name: "Suthuka Day Face Cream",
+                    description: "A nourishing daily face cream enriched with Sunflower Oil extract. It features a unique formula tailored for reliable UV protection during the day.",
+                    benefits: "Controls excess facial oil while fading away blemishes and spots. Provides an instant brightening effect and a natural healthy glow."
+                },
+                si: {
+                    name: "Suthuka Day Face Cream",
+                    description: "සූරියකාන්ත තෙල් (Sunflower Oil) සාරය අඩංගු කර විශේෂයෙන් මුහුණ සඳහා නිපදවූ දහවල් සත්කාරක ක්‍රීම් එකකි. හානිකර UV කිරණවලින් මුහුණ ආරක්ෂා කිරීමට (For UV protection) මෙහි විශේෂ සූත්‍රයක් අඩංගු වේ.",
+                    benefits: "මුහුණේ තෙල් ගතිය පාලනය කරමින්, ලප කැළැල් මකා දමයි. සමට ස්වභාවික පැහැපත් බවක් සහ ක්ෂණික දීප්තියක් ලබා දෙයි."
+                }
+            },
+            {
+                id: 8,
+                image: "https://drive.google.com/file/d/1lVW84wnWIOoTZEmEF70nzExMEtPSUpkE/view?usp=sharing",
+                price: 1850,
+                regularPrice: 3250,
+                en: {
+                    name: "Suthuka Body Butter",
+                    description: "A luxurious, ultra-rich body butter made with natural Cocoa Butter. Ideally suited for dry, rough, or dehydrated skin requiring intense moisturization.",
+                    benefits: "Prevents skin cracking and roughness, keeping it velvety soft for hours. Restores skin elasticity and provides deep nourishment."
+                },
+                si: {
+                    name: "Suthuka Body Butter",
+                    description: "ස්වභාවික කොකෝ බටර් (Coco Butter) ගුණයෙන් සපිරි, වියළි සහ රළු සමක් ඇති අයට ඉතාමත් සුදුසු දැඩි තෙතමනයක් සපයන සුඛෝපභෝගී Body Butter සත්කාරයකි.",
+                    benefits: "සම පැලීම, රළු වීම් වළක්වා සමදිගු වේලාවක් මෘදුව සහ සිනිඳුව තබයි. සමේ ඇදෙන සුළු බව (Elasticity) වැඩි කර සම පෝෂණය කරයි."
+                }
+            }
+        ];
 
-function buyNow(id) {
-  cart = {};
-  products.forEach(p => { delete cart[p.id]; });
-  document.querySelectorAll('[id^="qty-"]').forEach(el => el.textContent = '0');
-  changeQty(id, 1);
-  openCheckout();
-}
+        // ----------------------------------------------------
+        // 2. MULTI-LANGUAGE TRANSLATIONS
+        // ----------------------------------------------------
+        const i18n = {
+            en: {
+                navHome: "Home", navProducts: "Products", navFAQ: "FAQ", navContact: "Contact",
+                langBtn: "සිංහල", // What the button shows when in EN
+                heroBadge: "Premium Skincare Sri Lanka",
+                heroTitle: 'Reveal Your <span class="text-primary">Natural</span> Glow',
+                heroSub: "Experience the luxury of scientifically formulated beauty products. Safe, effective, and perfectly crafted for your skin.",
+                btnShopNow: "Shop Now", btnConsult: "Expert Consultation",
+                trust1Title: "Quality Ingredients", trust1Sub: "100% safe & tested",
+                trust2Title: "Islandwide Delivery", trust2Sub: "Fast & reliable shipping",
+                trust3Title: "Customer Satisfaction", trust3Sub: "Thousands of happy clients",
+                trust4Title: "Secure Ordering", trust4Sub: "Via direct WhatsApp",
+                sectionProducts: "Our Premium Collection", sectionProductsSub: "Explore our exclusive range of skincare crafted to perfection.",
+                btnAddCart: "Add to Cart", btnAdded: "Added!",
+                faqTitle: "Frequently Asked Questions",
+                faq1Q: "How do I place an order?", faq1A: "Simply browse our products, add them to your cart, and click 'Place Order via WhatsApp'. Your order details will be automatically sent to us!",
+                faq2Q: "What is the delivery time?", faq2A: "We offer islandwide delivery in Sri Lanka. Orders are typically delivered within 2-4 working days depending on your location.",
+                faq3Q: "What are the payment methods?", faq3A: "Currently, we support Cash on Delivery (COD) and Bank Transfers. We will confirm your preferred method via WhatsApp.",
+                faq4Q: "How can I contact customer support?", faq4A: "You can reach out to us instantly via WhatsApp at +94 70 711 5227, or call us directly. We are always happy to help!",
+                contactTitle: "Get in Touch", contactSub: "Suthuka Enterprises (Pvt) Ltd. We are here to answer any questions you may have.",
+                phoneLabel: "Call Us", waLabel: "WhatsApp",
+                contactFormTitle: "Send us a direct message", btnSendMsg: "Send Message",
+                cartTitle: "Your Shopping Cart", total: "Total:",
+                emptyCart: "Your cart is empty. Let's add some glow!", checkoutDetails: "Delivery Details",
+                btnPlaceOrder: "Place Order via WhatsApp",
+                namePlaceholder: "Full Name", mobilePlaceholder: "Mobile Number", addressPlaceholder: "Delivery Address", cityPlaceholder: "City", notesPlaceholder: "Additional Notes (Optional)"
+            },
+            si: {
+                navHome: "මුල් පිටුව", navProducts: "නිෂ්පාදන", navFAQ: "ගැටලු", navContact: "සම්බන්ධ වන්න",
+                langBtn: "English", // What the button shows when in SI
+                heroBadge: "ශ්‍රී ලංකාවේ Premium රූපලාවණ්‍ය සත්කාරය",
+                heroTitle: 'ඔබේ <span class="text-primary">ස්වභාවික</span> සුන්දරත්වය මතුකර ගන්න',
+                heroSub: "විද්‍යානුකූලව නිපදවූ Premium Skincare නිෂ්පාදනවල සුඛෝපභෝගී අත්දැකීම ලබාගන්න. ඔබේ සමට වඩාත් සුදුසු, ආරක්ෂිත සහ ප්‍රතිඵලදායක සත්කාර.",
+                btnShopNow: "මිලදී ගන්න", btnConsult: "උපදෙස් ලබාගන්න",
+                trust1Title: "ගුණාත්මක අමුද්‍රව්‍ය", trust1Sub: "100% ආරක්ෂිත බව",
+                trust2Title: "දිවයින පුරා බෙදාහැරීම", trust2Sub: "කඩිනම් සහ විශ්වාසනීය",
+                trust3Title: "පාරිභෝගික විශ්වාසය", trust3Sub: "සෑහීමකට පත්වූ දහසක් පාරිභෝගිකයින්",
+                trust4Title: "ආරක්ෂිත ඇණවුම් කිරීම්", trust4Sub: "WhatsApp හරහා සෘජුවම",
+                sectionProducts: "අපගේ Premium නිෂ්පාදන", sectionProductsSub: "පරිපූර්ණත්වයෙන් නිපදවූ අපගේ සුවිශේෂී Skincare නිෂ්පාදන පෙළ මෙතැනින්.",
+                btnAddCart: "කරත්තයට එක් කරන්න", btnAdded: "එක් කළා!",
+                faqTitle: "නිතර අසන ප්‍රශ්න (FAQ)",
+                faq1Q: "මම ඇණවුමක් කරන්නේ කොහොමද?", faq1A: "නිෂ්පාදන තෝරාගෙන ඔබේ කරත්තයට (Cart) එක් කර, 'WhatsApp හරහා ඇණවුම් කරන්න' බොත්තම ඔබන්න. ඔබේ විස්තර අපට ස්වයංක්‍රීයව ලැබෙනු ඇත!",
+                faq2Q: "බෙදාහැරීමට (Delivery) කොපමණ කාලයක් ගතවේද?", faq2A: "අපි දිවයින පුරා බෙදාහැරීම් සිදු කරන්නෙමු. ඔබේ ප්‍රදේශය අනුව සාමාන්‍යයෙන් වැඩ කරන දින 2-4 ක් ඇතුළත ඇණවුම ලැබේ.",
+                faq3Q: "මුදල් ගෙවීමේ ක්‍රම මොනවාද?", faq3A: "දැනට අප සතුව භාණ්ඩ ලැබුණු පසු මුදල් ගෙවීම (COD) සහ බැංකු හරහා මුදල් හුවමාරුව (Bank Transfer) යන පහසුකම් ඇත. WhatsApp හරහා අපි එය තහවුරු කරගන්නෙමු.",
+                faq4Q: "පාරිභෝගික සේවාව සම්බන්ධ කරගන්නේ කෙසේද?", faq4A: "+94 70 711 5227 අංකයෙන් WhatsApp හරහා හෝ සෘජු ඇමතුමක් හරහා ඕනෑම වේලාවක අපව සම්බන්ධ කරගත හැක.",
+                contactTitle: "අපව සම්බන්ධ කරගන්න", contactSub: "Suthuka Enterprises (Pvt) Ltd. ඔබට ඇති ඕනෑම ගැටලුවකට පිළිතුරු දීමට අප සූදානම්.",
+                phoneLabel: "ඇමතුම් සඳහා", waLabel: "WhatsApp සඳහා",
+                contactFormTitle: "ඔබේ පණිවිඩය අපට එවන්න", btnSendMsg: "පණිවිඩය යවන්න",
+                cartTitle: "ඔබේ සාප්පු කරත්තය", total: "මුළු මුදල:",
+                emptyCart: "ඔබේ කරත්තය හිස්ය.", checkoutDetails: "බෙදාහැරීමේ විස්තර",
+                btnPlaceOrder: "WhatsApp හරහා ඇණවුම් කරන්න",
+                namePlaceholder: "සම්පූර්ණ නම", mobilePlaceholder: "ජංගම දුරකථන අංකය", addressPlaceholder: "බෙදාහරින ලිපිනය", cityPlaceholder: "නගරය", notesPlaceholder: "අමතර සටහන් (ඇත්නම්)"
+            }
+        };
 
-function updateCartBadge() {
-  const count = Object.values(cart).reduce((s, v) => s + v.qty, 0);
-  const badge = document.getElementById('cartBadge');
-  badge.textContent = count;
-  badge.style.display = count > 0 ? 'flex' : 'none';
-}
+        let currentLang = localStorage.getItem('suthukaLang') || 'en';
+        let cart = JSON.parse(localStorage.getItem('suthukaCart')) || [];
 
-function toggleCart() {
-  document.getElementById('cartPanel').classList.toggle('open');
-  document.getElementById('cartOverlay').classList.toggle('open');
-  renderCart();
-}
+        // ----------------------------------------------------
+        // 3. CORE FUNCTIONS
+        // ----------------------------------------------------
 
-function renderCart() {
-  const itemsEl = document.getElementById('cartItems');
-  const footerEl = document.getElementById('cartFooter');
-  const keys = Object.keys(cart);
+        // Init App
+        function init() {
+            applyTranslation();
+            renderProducts();
+            updateCartUI();
+            
+            // Setup Language Toggle
+            document.getElementById('langToggle').addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'si' : 'en';
+                localStorage.setItem('suthukaLang', currentLang);
+                applyTranslation();
+                renderProducts(); // Re-render products to change language
+                updateCartUI();   // Re-render cart to change language
+            });
+        }
 
-  if (keys.length === 0) {
-    itemsEl.innerHTML = `<div style="text-align:center;padding:60px 20px;">
-      <div style="font-size:56px;margin-bottom:12px;">🛍️</div>
-      <div style="font-weight:700;font-size:16px;margin-bottom:6px;">${t('cartEmpty')}</div>
-      <div style="color:var(--warm-gray);font-size:14px;">${t('cartEmptyDesc')}</div>
-    </div>`;
-    footerEl.style.display = 'none';
-    return;
-  }
+        // Apply Translations to DOM
+        function applyTranslation() {
+            const strings = i18n[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (strings[key]) {
+                    el.innerHTML = strings[key];
+                }
+            });
+            document.getElementById('langText').innerText = strings.langBtn;
 
-  let total = 0;
-  itemsEl.innerHTML = keys.map(id => {
-    const item = cart[id];
-    const name = item[`name_${currentLang}`] || item.name_en;
-    total += item.price * item.qty;
-    return `<div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #EDD5DC;">
-      <div style="flex:1;">
-        <div style="font-weight:600;font-size:14px;margin-bottom:2px;">${name}</div>
-        <div style="font-size:13px;color:var(--deep-rose);font-weight:600;">Rs. ${(item.price * item.qty).toLocaleString()}</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <button class="qty-btn" style="width:28px;height:28px;font-size:14px;" onclick="changeQty(${id}, -1);renderCart();">−</button>
-        <span style="font-weight:700;min-width:20px;text-align:center;">${item.qty}</span>
-        <button class="qty-btn" style="width:28px;height:28px;font-size:14px;" onclick="changeQty(${id}, 1);renderCart();">+</button>
-      </div>
-      <button onclick="delete cart[${id}];document.getElementById('qty-${id}').textContent='0';updateCartBadge();renderCart();" style="background:none;border:none;cursor:pointer;color:#C0A0A5;font-size:18px;padding:4px;">✕</button>
-    </div>`;
-  }).join('');
+            // Input placeholders update
+            document.getElementById('custName').placeholder = strings.namePlaceholder;
+            document.getElementById('custMobile').placeholder = strings.mobilePlaceholder;
+            document.getElementById('custAddress').placeholder = strings.addressPlaceholder;
+            document.getElementById('custCity').placeholder = strings.cityPlaceholder;
+            document.getElementById('custNotes').placeholder = strings.notesPlaceholder;
+        }
 
-  document.getElementById('cartTotalAmt').textContent = `Rs. ${total.toLocaleString()}`;
-  footerEl.style.display = 'block';
+        // Render Product Grid
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
 
-  // Update the total text key
-  document.querySelectorAll('[data-t="cartTotal"]').forEach(el => el.textContent = t('cartTotal'));
-}
+            products.forEach(product => {
+                const pData = product[currentLang];
+                const savePercent = Math.round(((product.regularPrice - product.price) / product.regularPrice) * 100);
 
-function openCheckout() {
-  const keys = Object.keys(cart);
-  if (keys.length === 0) { showToast('Please add items to cart first!'); return; }
-  document.getElementById('cartPanel').classList.remove('open');
-  document.getElementById('cartOverlay').classList.remove('open');
+                const card = `
+                <div class="bg-white rounded-2xl p-5 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full group relative">
+                    <!-- Discount Badge -->
+                    <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md z-10">
+                        ${savePercent}% OFF
+                    </div>
+                    
+                    <div class="relative overflow-hidden rounded-xl mb-4 bg-gray-50 flex items-center justify-center aspect-square">
+                        <img src="${product.image}" alt="${pData.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    
+                    <div class="flex-1 flex flex-col">
+                        <h3 class="font-bold text-lg text-accent mb-2 leading-snug">${pData.name}</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">${pData.description}</p>
+                        
+                        <div class="mt-auto">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-2xl font-extrabold text-primary">Rs. ${product.price}</span>
+                                <span class="text-sm text-gray-400 line-through">Rs. ${product.regularPrice}</span>
+                            </div>
+                            
+                            <button onclick="addToCart(${product.id})" class="w-full bg-light text-primaryDark hover:bg-primary hover:text-white font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> <span data-i18n="btnAddCart">${i18n[currentLang].btnAddCart}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
 
-  // Render order summary
-  let summaryHTML = '<div style="font-size:13px;font-weight:600;margin-bottom:8px;">Order Summary</div>';
-  let total = 0;
-  for (const id in cart) {
-    const item = cart[id];
-    const name = item[`name_${currentLang}`] || item.name_en;
-    summaryHTML += `<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--warm-gray);margin-bottom:4px;"><span>${name} × ${item.qty}</span><span>Rs. ${(item.price*item.qty).toLocaleString()}</span></div>`;
-    total += item.price * item.qty;
-  }
-  summaryHTML += `<div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-top:8px;padding-top:8px;border-top:1px solid #EDD5DC;color:var(--deep-rose);"><span>${t('cartTotal')}</span><span>Rs. ${total.toLocaleString()}</span></div>`;
-  document.getElementById('orderSummary').innerHTML = summaryHTML;
+        // ----------------------------------------------------
+        // 4. CART LOGIC
+        // ----------------------------------------------------
 
-  applyTranslations();
-  document.getElementById('checkoutModal').classList.add('open');
-}
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
 
-function closeCheckout() {
-  document.getElementById('checkoutModal').classList.remove('open');
-}
+        function addToCart(productId) {
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ id: productId, qty: 1 });
+            }
+            saveCart();
+            updateCartUI();
+            
+            // Optional: Show tiny toast or animation
+            toggleCart(); // Open cart to show user
+        }
 
-function placeOrder() {
-  const name = document.getElementById('orderName').value.trim();
-  const phone = document.getElementById('orderPhone').value.trim();
-  const address = document.getElementById('orderAddress').value.trim();
-  const city = document.getElementById('orderCity').value.trim();
-  const notes = document.getElementById('orderNotes').value.trim();
+        function updateQty(productId, delta) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                saveCart();
+                updateCartUI();
+            }
+        }
 
-  if (!name || !phone || !address || !city) {
-    showToast('Please fill in all required fields!'); return;
-  }
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartUI();
+        }
 
-  let itemsStr = '';
-  let total = 0;
-  for (const id in cart) {
-    const item = cart[id];
-    const name_item = item[`name_${currentLang}`] || item.name_en;
-    itemsStr += `${name_item} x ${item.qty} (Rs.${item.price*item.qty})%0A`;
-    total += item.price * item.qty;
-  }
+        function saveCart() {
+            localStorage.setItem('suthukaCart', JSON.stringify(cart));
+        }
 
-  const msg = translations[currentLang].waMsg(
-    encodeURIComponent(name), encodeURIComponent(phone),
-    encodeURIComponent(address), encodeURIComponent(city),
-    encodeURIComponent(notes), itemsStr, total.toLocaleString()
-  );
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const countBadge = document.getElementById('cartCount');
+            const totalDisplay = document.getElementById('cartTotalDisplay');
+            
+            container.innerHTML = '';
+            let total = 0;
+            let totalQty = 0;
 
-  window.open(`https://wa.me/94707115227?text=${msg}`, '_blank');
-  closeCheckout();
-  cart = {};
-  products.forEach(p => {
-    const el = document.getElementById('qty-'+p.id);
-    if (el) el.textContent = '0';
-  });
-  updateCartBadge();
-}
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                        <i class="fa-solid fa-cart-arrow-down text-5xl mb-4 opacity-50"></i>
+                        <p>${i18n[currentLang].emptyCart}</p>
+                    </div>`;
+            } else {
+                cart.forEach(cartItem => {
+                    const productInfo = products.find(p => p.id === cartItem.id);
+                    if (!productInfo) return;
 
-// =====================
-// FAQ
-// =====================
-function renderFAQ() {
-  const faqs = translations[currentLang].faqs;
-  document.getElementById('faqContainer').innerHTML = faqs.map(f => `
-    <details class="faq-item">
-      <summary>${f.q}<span class="faq-arrow">+</span></summary>
-      <div class="faq-answer">${f.a}</div>
-    </details>`).join('');
-}
+                    const pData = productInfo[currentLang];
+                    const itemTotal = productInfo.price * cartItem.qty;
+                    total += itemTotal;
+                    totalQty += cartItem.qty;
 
-// =====================
-// CONTACT
-// =====================
-function sendContactMsg() {
-  const name = document.getElementById('contactName').value.trim();
-  const phone = document.getElementById('contactPhone').value.trim();
-  const msg = document.getElementById('contactMsg').value.trim();
-  if (!name || !msg) { showToast('Please fill in your name and message.'); return; }
-  const waMsg = `Hello Suthuka Beauty Care,%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0A%0AMessage: ${encodeURIComponent(msg)}`;
-  window.open(`https://wa.me/94707115227?text=${waMsg}`, '_blank');
-}
+                    container.innerHTML += `
+                    <div class="flex gap-4 border-b border-gray-100 pb-4 items-center">
+                        <img src="${productInfo.image}" alt="${pData.name}" class="w-16 h-16 object-cover rounded-md bg-gray-50 border border-gray-100">
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold text-accent leading-tight mb-1">${pData.name}</h4>
+                            <div class="text-primary font-bold text-sm">Rs. ${productInfo.price}</div>
+                            
+                            <div class="flex items-center gap-3 mt-2">
+                                <button onclick="updateQty(${productInfo.id}, -1)" class="w-7 h-7 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 text-gray-600">-</button>
+                                <span class="font-semibold text-sm w-4 text-center">${cartItem.qty}</span>
+                                <button onclick="updateQty(${productInfo.id}, 1)" class="w-7 h-7 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 text-gray-600">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${productInfo.id})" class="text-gray-300 hover:text-red-500 transition p-2">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                    `;
+                });
+            }
 
-// =====================
-// TOAST
-// =====================
-function showToast(msg) {
-  const existing = document.getElementById('toast');
-  if (existing) existing.remove();
-  const toast = document.createElement('div');
-  toast.id = 'toast';
-  toast.style.cssText = `position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--charcoal);color:white;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:9999;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.2);animation:fadeInUp 0.3s ease;`;
-  toast.textContent = msg;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2500);
-}
+            countBadge.innerText = totalQty;
+            totalDisplay.innerText = `Rs. ${total.toLocaleString()}`;
+        }
 
-// =====================
-// MOBILE MENU
-// =====================
-function toggleMobileMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-}
+        // ----------------------------------------------------
+        // 5. WHATSAPP ORDER GENERATION
+        // ----------------------------------------------------
+        function placeOrder(e) {
+            e.preventDefault();
+            
+            if (cart.length === 0) {
+                alert(currentLang === 'si' ? "ඔබේ කරත්තය හිස්ය!" : "Your cart is empty!");
+                return;
+            }
 
-// =====================
-// INIT
-// =====================
-document.addEventListener('DOMContentLoaded', () => {
-  renderProducts();
-  renderFAQ();
-  setLang(currentLang);
+            const name = document.getElementById('custName').value.trim();
+            const mobile = document.getElementById('custMobile').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const city = document.getElementById('custCity').value.trim();
+            const notes = document.getElementById('custNotes').value.trim();
 
-  // Intersection observer for animate-in
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+            let orderText = `*Hello Suthuka Beauty Care,*\nI would like to place an order.\n\n`;
+            orderText += `*Customer Details:*\n`;
+            orderText += `Name: ${name}\n`;
+            orderText += `Phone: ${mobile}\n`;
+            orderText += `Address: ${address}, ${city}\n\n`;
+            
+            orderText += `*Products:*\n`;
+            let total = 0;
+            
+            cart.forEach(item => {
+                // Always use English name for the order message clarity to admin
+                const pInfo = products.find(p => p.id === item.id);
+                const subTotal = pInfo.price * item.qty;
+                total += subTotal;
+                orderText += `- ${pInfo.en.name} x ${item.qty} (Rs. ${subTotal})\n`;
+            });
 
-  // Animate product cards lazily
-  setTimeout(() => {
-    document.querySelectorAll('.product-card,.trust-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
-    });
-  }, 100);
-});
-</script>
+            orderText += `\n*Order Total:* Rs. ${total.toLocaleString()}\n`;
+            
+            if(notes) {
+                orderText += `\n*Notes:* ${notes}\n`;
+            }
+            
+            orderText += `\nPlease confirm my order.`;
+
+            // Encode for URL
+            const waUrl = `https://wa.me/94707115227?text=${encodeURIComponent(orderText)}`;
+            
+            // Redirect
+            window.open(waUrl, '_blank');
+        }
+
+        function sendContactForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const msg = document.getElementById('contactMessage').value;
+            const text = `Hello Suthuka, this is ${name}.\n${msg}`;
+            window.open(`https://wa.me/94707115227?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', init);
+
+    </script>
 </body>
 </html>
